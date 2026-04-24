@@ -2,3 +2,9 @@
 __pycache__/
 *.pyc
 data/vision/_tmp/
+frontend/node_modules/
+frontend/dist/
+backend/data/db.sqlite3
+backend/staticfiles/
+backend/chroma/*
+!backend/chroma/.gitkeep
