@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data/vision:/app/data/vision
+      - ./data/processed:/app/data/processed
+      - ./src:/app/src
+    env_file:
+      - .env
+    command: tail -f /dev/null
