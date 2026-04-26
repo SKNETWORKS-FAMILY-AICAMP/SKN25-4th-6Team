@@ -1,9 +1,13 @@
 :root {
   font-family: "Pretendard", "Noto Sans KR", sans-serif;
-  color: #122033;
-  background: linear-gradient(180deg, #f5f8ff 0%, #eef3f8 100%);
   line-height: 1.5;
   font-weight: 400;
+  color: #132132;
+  background: linear-gradient(180deg, #f5f8ff 0%, #ecf2f7 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -22,7 +26,6 @@ textarea {
   font: inherit;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+code {
+  font-family: "D2Coding", "Fira Code", monospace;
 }
