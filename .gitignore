@@ -10,3 +10,4 @@ backend/chroma/*
 !backend/chroma/.gitkeep
 frontend/.vite/
 frontend/.env
+.codex
