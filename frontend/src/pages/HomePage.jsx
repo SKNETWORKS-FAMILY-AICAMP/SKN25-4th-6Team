@@ -13,64 +13,19 @@ function HomePage() {
   };
 
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        display: "grid",
-        placeItems: "center",
-        padding: "24px",
-      }}
-    >
-      <section
-        style={{
-          width: "min(720px, 100%)",
-          background: "#ffffff",
-          borderRadius: "24px",
-          padding: "40px",
-          boxShadow: "0 18px 50px rgba(18, 32, 51, 0.12)",
-        }}
-      >
-        <p style={{ margin: 0, color: "#4d6480", fontWeight: 700 }}>React + Django Base</p>
-        <h1 style={{ margin: "12px 0", fontSize: "2.5rem", lineHeight: 1.15 }}>
-          SKN25 4th 6Team Starter
-        </h1>
-        <p style={{ margin: 0, color: "#58687d" }}>
-          Docker base is ready. Frontend can start from <code>frontend/src</code>, backend can
-          start from <code>backend/apps</code> and <code>backend/rag</code>.
+    <main className="app-shell">
+      <section className="hero-panel">
+        <p className="eyebrow">Official Vite Base + Project Structure</p>
+        <h1>SKN25 4th 6Team Frontend Starter</h1>
+        <p className="description">
+          React official scaffold is in place. Frontend development can continue from{" "}
+          <code>src/pages</code>, <code>src/components</code>, and <code>src/api</code>.
         </p>
-
-        <div
-          style={{
-            marginTop: "28px",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "12px",
-          }}
-        >
-          <button
-            type="button"
-            onClick={handleHealthCheck}
-            style={{
-              border: "none",
-              borderRadius: "999px",
-              background: "#122033",
-              color: "#ffffff",
-              padding: "12px 20px",
-              cursor: "pointer",
-            }}
-          >
+        <div className="actions">
+          <button type="button" className="primary-button" onClick={handleHealthCheck}>
             Backend Health Check
           </button>
-          <div
-            style={{
-              borderRadius: "999px",
-              background: "#eef3f8",
-              color: "#24364a",
-              padding: "12px 18px",
-            }}
-          >
-            API: {apiBaseUrl}
-          </div>
+          <span className="api-pill">API: {apiBaseUrl}</span>
         </div>
       </section>
     </main>
