@@ -8,3 +8,5 @@ backend/data/db.sqlite3
 backend/staticfiles/
 backend/chroma/*
 !backend/chroma/.gitkeep
+frontend/.vite/
+frontend/.env
