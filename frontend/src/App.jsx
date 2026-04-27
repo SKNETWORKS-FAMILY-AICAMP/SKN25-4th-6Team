@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import useUserStore from './store/userStore';
+import SplashScreen from './pages/SplashScreen';
 import OnboardingPage from './pages/OnboardingPage';
 import ChatPage from './pages/ChatPage';
 import MyPage from './pages/MyPage';
@@ -11,17 +12,12 @@ const queryClient = new QueryClient({
 
 function AppContent() {
   const { isOnboarded } = useUserStore();
+  const [showSplash, setShowSplash] = useState(true);
   const [page, setPage] = useState('chat');
 
-  // 온보딩 미완료 → 온보딩 화면
+  if (showSplash) return <SplashScreen onFinish={() => setShowSplash(false)} />;
   if (!isOnboarded) return <OnboardingPage />;
-
-  // 마이페이지
-  if (page === 'mypage') {
-    return <MyPage onGoChat={() => setPage('chat')} />;
-  }
-
-  // 채팅 화면 (기본)
+  if (page === 'mypage') return <MyPage onGoChat={() => setPage('chat')} />;
   return <ChatPage onGoMyPage={() => setPage('mypage')} />;
 }
 
