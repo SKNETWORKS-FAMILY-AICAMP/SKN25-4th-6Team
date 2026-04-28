@@ -63,6 +63,8 @@ COMPANY_KR_MAP = {
     "ibk": "IBK기업은행",
     "bc card": "BC카드",
     "bccard": "BC카드",
+    "비씨카드": "BC카드",
+    "bc바로카드": "BC카드",
 }
 
 
