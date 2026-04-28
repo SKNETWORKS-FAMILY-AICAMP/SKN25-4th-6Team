@@ -11,7 +11,8 @@ PROJECT_ROOT = BASE_DIR.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-load_dotenv(PROJECT_ROOT / ".env")
+load_dotenv(PROJECT_ROOT / ".env")        # 루트 .env (Docker 없이 로컬 실행 시 대안)
+load_dotenv(BASE_DIR / ".env", override=False)  # backend/.env (로컬 기본)
 
 SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-raichu-change-in-prod")
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
