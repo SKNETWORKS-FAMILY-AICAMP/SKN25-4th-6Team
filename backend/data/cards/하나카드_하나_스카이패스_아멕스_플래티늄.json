@@ -1,0 +1,404 @@
+{
+  "metadata": {
+    "카드명": "하나 스카이패스 아멕스 플래티늄 카드",
+    "카드사": "하나카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "하나카드_하나_스카이패스_아멕스_플래티늄.pdf"
+  },
+  "card": {
+    "name": "하나 스카이패스 아멕스 플래티늄 카드",
+    "bank": "하나카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "American Express"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 45000,
+      "partnership": 0,
+      "total": 45000,
+      "amount": 45000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 20000,
+      "partnership": 0,
+      "total": 20000,
+      "amount": 20000,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 45000,
+          "partnership": 0,
+          "total": 45000,
+          "amount": 45000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 45000,
+          "partnership": 0,
+          "total": 45000,
+          "amount": 45000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 20000,
+          "partnership": 0,
+          "total": 20000,
+          "amount": 20000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 20000,
+          "partnership": 0,
+          "total": 20000,
+          "amount": 20000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "연회비 청구기준 : 카드 발급일(발급 첫해에는 카드사용등록일)이 속한 카드이용기간의 첫 결제일에 청구되며, 카드발급 시점을 기준으로 1년 단위로 청구됩니다.",
+    "brand_fees": [
+      {
+        "scope": "해외겸용",
+        "brand": "American Express",
+        "amount": 45000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 45000,
+      "max": 45000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "American Express"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "국내 이용금액 1천원당 1마일리지 적립 해외 이용금액 1천원당 2마일리지 적립 인천공항 라운지 이용 시 무료서비스 제공"
+    },
+    "benefit_items": [
+      {
+        "category": "항공마일리지",
+        "description": "국내 이용금액 1천원당 1마일리지 적립",
+        "type": "포인트적립",
+        "rate": "1마일",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "",
+        "note": "적립 대상이 되는 총 청구금액 합산 기준으로 적립"
+      },
+      {
+        "category": "항공마일리지",
+        "description": "해외 이용금액 1천원당 2마일리지 적립",
+        "type": "포인트적립",
+        "rate": "2마일",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 1,
+        "annual_occurrence_limit": 2,
+        "per_transaction_min": 0,
+        "applicable_stores": "",
+        "note": "지난달 실적 50만원 이상 시 제공"
+      },
+      {
+        "category": "공항서비스",
+        "description": "인천공항 라운지 이용 시 무료서비스 제공",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 1,
+        "annual_occurrence_limit": 2,
+        "per_transaction_min": 0,
+        "applicable_stores": "스카이허브 라운지, 마티나 라운지",
+        "note": "라운지 이용 시 안내데스크에 당일 탑승권, 여권 및 하나 스카이패스 아멕스 플래티늄카드를 제시 후, 입장 가능"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": []
+        }
+      }
+    },
+    "spending_thresholds": []
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "해외 이용 시 1천원당 2마일리지 적립",
+      "국내 이용 시 1천원당 1마일리지 적립",
+      "인천공항 라운지 무료 이용"
+    ],
+    "weaknesses": [
+      "연회비가 상대적으로 높음",
+      "특별 적립 조건이 있음",
+      "적립 제외 항목이 많음"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "공과금",
+      "상품권 및 기프트카드 구매"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "하나 스카이패스 아멕스 플래티늄 카드",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "하나",
+        "스카이패스",
+        "아멕스",
+        "플래티늄",
+        "카드"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "본인: 4만 5천원, 가족: 2만원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "본인",
+        "4만",
+        "5천원",
+        "가족",
+        "2만원"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "국내 이용금액 1천원당 1마일리지 적립, 해외 이용금액 1천원당 2마일리지 적립, 인천공항 라운지 이용 시 무료서비스 제공",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내",
+        "이용금액",
+        "1천원당",
+        "1마일리지",
+        "적립",
+        "해외",
+        "이용금액",
+        "1천원당",
+        "2마일리지",
+        "적립",
+        "인천공항",
+        "라운지"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 해외 이용 시 1천원당 2마일리지 적립, 국내 이용 시 1천원당 1마일리지 적립, 인천공항 라운지 무료 이용; 약점: 연회비가 상대적으로 높음, 특별 적립 조건이 있음, 적립 제외 항목이 많음",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "해외",
+        "이용",
+        "시",
+        "1천원당",
+        "2마일리지",
+        "적립",
+        "국내",
+        "이용",
+        "시",
+        "1천원당",
+        "1마일리지"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "혜택 제외 업종: 국세, 지방세, 공과금, 상품권 및 기프트카드 구매",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "혜택",
+        "제외",
+        "업종",
+        "국세",
+        "지방세",
+        "공과금",
+        "상품권",
+        "및",
+        "기프트카드",
+        "구매"
+      ],
+      "토큰수": 10
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "하나 스카이패스 아멕스 플래티늄 카드",
+      "💳 연회비 구조": "본인: 4만 5천원, 가족: 2만원",
+      "🎁 주요 혜택": "국내 이용금액 1천원당 1마일리지 적립, 해외 이용금액 1천원당 2마일리지 적립, 인천공항 라운지 이용 시 무료서비스 제공",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 해외 이용 시 1천원당 2마일리지 적립, 국내 이용 시 1천원당 1마일리지 적립, 인천공항 라운지 무료 이용; 약점: 연회비가 상대적으로 높음, 특별 적립 조건이 있음, 적립 제외 항목이 많음",
+      "⚠️ 주의사항 및 제외사항": "혜택 제외 업종: 국세, 지방세, 공과금, 상품권 및 기프트카드 구매"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 0,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "하나 스카이패스 아멕스 플래티늄 카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "하나카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "American Express",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "45000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 1.0
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 792,
+    "총글자수": 261,
+    "총단어수": 65,
+    "키워드": [
+      "하나",
+      "스카이패스",
+      "아멕스",
+      "플래티늄",
+      "카드",
+      "본인",
+      "4만",
+      "5천원",
+      "가족",
+      "2만원",
+      "국내",
+      "이용금액",
+      "1천원당",
+      "1마일리지",
+      "적립",
+      "해외",
+      "이용금액",
+      "1천원당",
+      "2마일리지",
+      "적립"
+    ],
+    "소제목수": 0
+  }
+}

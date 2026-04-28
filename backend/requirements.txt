@@ -1,3 +1,7 @@
+django>=4.2
+djangorestframework
+django-cors-headers
+python-dotenv
 langchain
 langchain-community
 langchain-text-splitters
@@ -8,7 +12,6 @@ markdown
 pypdf
 openai
 tiktoken
-python-dotenv
 pyyaml
 requests
 pandas
@@ -16,7 +19,6 @@ pdf2image
 matplotlib
 easyocr
 sqlalchemy
-django
-djangorestframework
-django-cors-headers
+Jinja2==3.1.4
+numpy
 gunicorn
