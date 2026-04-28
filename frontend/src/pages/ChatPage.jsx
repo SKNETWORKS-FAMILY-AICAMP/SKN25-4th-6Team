@@ -16,6 +16,78 @@ const INITIAL_MSG = {
   text: `안녕하세요! 저는 RAIchU예요 ⚡\n맞춤 카드 추천과 혜택 질문을 도와드릴게요.\n무엇이 궁금하신가요?`,
 };
 
+function CardBlocks({ cards }) {
+  const [openId, setOpenId] = useState(null);
+
+  return (
+    <div className="flex flex-col gap-2">
+      <div className="text-xs text-[#888] mb-1">추천 카드 {cards.length}개 · 카드를 눌러 혜택을 확인해보세요</div>
+      {cards.map((card) => {
+        const isOpen = openId === card.card_id;
+        return (
+          <div
+            key={card.card_id}
+            className="bg-[#FAFAF8] rounded-xl border border-[#E5E5E0] overflow-hidden transition-all duration-200"
+            style={{ borderColor: isOpen ? '#F5C842' : undefined }}
+          >
+            <div
+              onClick={() => setOpenId(isOpen ? null : card.card_id)}
+              className="px-4 py-3 cursor-pointer hover:bg-[#FFFBEB] transition-colors duration-150 select-none"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex-1 min-w-0">
+                  <div className="text-[10px] text-[#999] mb-0.5">{card.company}</div>
+                  <div className="text-sm font-semibold text-[#1A1A1A] truncate">{card.name}</div>
+                  <div className="text-xs text-[#777] mt-0.5">연회비 {card.annual_fee}</div>
+                </div>
+                <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
+                  <span className="text-[10px] text-[#BBB]">{isOpen ? '▲' : '▼'}</span>
+                  <div className="flex gap-1 flex-wrap justify-end">
+                    {card.categories.slice(0, 3).map((cat) => (
+                      <span
+                        key={cat}
+                        className="px-1.5 py-0.5 bg-[#F5C842]/20 text-[#8A6E00] text-[9px] rounded-full font-medium"
+                      >
+                        {cat}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {isOpen && (
+              <div className="px-4 pb-4 border-t border-[#F0EFE9]">
+                {card.benefit_groups.length > 0 ? (
+                  card.benefit_groups.map((group, i) => (
+                    <div key={i} className="mt-3">
+                      <div className="text-[10px] font-bold text-[#F5C842] tracking-wide mb-1.5">
+                        {group.threshold_label}
+                      </div>
+                      <div className="flex flex-col gap-1">
+                        {group.items.map((item, j) => (
+                          <div
+                            key={j}
+                            className="text-xs text-[#444] pl-2.5 border-l-2 border-[#F5C842]/40 leading-relaxed"
+                          >
+                            {item}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div className="text-xs text-[#999] mt-3">혜택 상세 정보가 없어요.</div>
+                )}
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function ChatPage({ onGoMyPage }) {
   const profile = useUserStore((s) => s.profile);
   const [messages, setMessages] = useState([INITIAL_MSG]);
@@ -73,8 +145,9 @@ export default function ChatPage({ onGoMyPage }) {
       });
 
       const answerText = response.data.answer;
+      const cards = response.data.cards || [];
       await addMessage(sessionId, 'assistant', answerText);
-      setMessages([...newMessages, { id: Date.now() + 1, role: 'assistant', text: answerText }]);
+      setMessages([...newMessages, { id: Date.now() + 1, role: 'assistant', text: answerText, cards }]);
     } catch {
       setMessages([
         ...newMessages,
@@ -208,29 +281,42 @@ export default function ChatPage({ onGoMyPage }) {
       <main className="flex-1 flex flex-col overflow-hidden">
         <div className="flex-1 overflow-y-auto px-12 py-8">
           <div className="max-w-[700px] mx-auto flex flex-col gap-5">
-            {messages.map((msg) => (
-              <div
-                key={msg.id}
-                className={`flex items-start gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
-              >
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden
-                  ${msg.role === 'user' ? 'bg-[#E5E5E0] text-xl' : 'bg-[#F5C842]'}`}
+            {messages.map((msg) => {
+              const hasCards = msg.role === 'assistant' && msg.cards?.length >= 2;
+              return (
+                <div
+                  key={msg.id}
+                  className={`flex items-start gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
                 >
-                  {msg.role === 'user'
-                    ? (profile.avatar || '🧑‍💻')
-                    : <img src={raichuImg} alt="RAIchU" className="w-full h-full object-cover" />
-                  }
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden
+                    ${msg.role === 'user' ? 'bg-[#E5E5E0] text-xl' : 'bg-[#F5C842]'}`}
+                  >
+                    {msg.role === 'user'
+                      ? (profile.avatar || '🧑‍💻')
+                      : <img src={raichuImg} alt="RAIchU" className="w-full h-full object-cover" />
+                    }
+                  </div>
+
+                  {hasCards ? (
+                    <div className="flex-1 max-w-[75%]">
+                      <div className="px-5 py-3.5 rounded-2xl rounded-tl-sm bg-white shadow-sm text-sm text-[#1A1A1A] mb-2 leading-relaxed">
+                        맞춤 카드를 찾았어요! 🎯
+                      </div>
+                      <CardBlocks cards={msg.cards} />
+                    </div>
+                  ) : (
+                    <div className={`max-w-[75%] px-5 py-3.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap
+                      ${msg.role === 'user'
+                        ? 'bg-white text-[#1A1A1A] rounded-tr-sm shadow-sm'
+                        : 'bg-white text-[#1A1A1A] rounded-tl-sm shadow-sm'
+                      }`}
+                    >
+                      {msg.text}
+                    </div>
+                  )}
                 </div>
-                <div className={`max-w-[75%] px-5 py-3.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap
-                  ${msg.role === 'user'
-                    ? 'bg-white text-[#1A1A1A] rounded-tr-sm shadow-sm'
-                    : 'bg-white text-[#1A1A1A] rounded-tl-sm shadow-sm'
-                  }`}
-                >
-                  {msg.text}
-                </div>
-              </div>
-            ))}
+              );
+            })}
 
             {isLoading && (
               <div className="flex items-start gap-3">

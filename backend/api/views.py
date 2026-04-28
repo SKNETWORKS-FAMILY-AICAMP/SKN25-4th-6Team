@@ -70,6 +70,57 @@ def _normalize_company(company: str) -> str:
     return COMPANY_KR_MAP.get(company.strip().lower(), company)
 
 
+def _serialize_card(card: dict) -> dict:
+    try:
+        from src.cards import annual_fee_display
+        from src.utils import safe_get
+    except Exception:
+        return {}
+
+    name = safe_get(card, ["card", "name"], "알수없음")
+    bank = safe_get(card, ["card", "bank"], "미분류")
+    fee_text, _ = annual_fee_display(card)
+    categories = safe_get(card, ["_derived", "categories"], []) or []
+    benefit_items = safe_get(card, ["benefits", "benefit_items"], []) or []
+    brands = safe_get(card, ["card", "brandType"], []) or []
+
+    by_threshold: dict = {}
+    for item in benefit_items:
+        if not isinstance(item, dict):
+            continue
+        threshold = item.get("monthly_min_spending", 0) or 0
+        cat = item.get("category", "")
+        rate = item.get("rate", "")
+        desc = (item.get("description") or "")[:60]
+        cap = item.get("monthly_cap", 0) or 0
+        label = cat
+        if rate:
+            label += f" {rate}"
+        if desc and desc != cat:
+            label += f" — {desc}"
+        if cap:
+            label += f" (월 {cap:,}원 한도)"
+        by_threshold.setdefault(threshold, []).append(label)
+
+    benefit_groups = [
+        {
+            "threshold_label": "조건없음" if t == 0 else f"전월 {t:,}원 이상",
+            "items": items[:4],
+        }
+        for t, items in sorted(by_threshold.items())
+    ][:4]
+
+    return {
+        "card_id": card.get("_file", "").replace(".json", ""),
+        "name": name,
+        "company": _normalize_company(bank),
+        "annual_fee": fee_text,
+        "categories": categories[:5],
+        "brands": brands[:3] if isinstance(brands, list) else [],
+        "benefit_groups": benefit_groups,
+    }
+
+
 @require_http_methods(["GET"])
 def cards_list_view(request):
     """data/cards/ 의 JSON 파일을 읽어 카드 목록 반환"""
@@ -126,8 +177,12 @@ def chat_view(request):
             app_state=app_state,
         )
 
+        cards_data = [_serialize_card(card) for _, card in result.get("retrieved", [])[:5]]
+        cards_data = [c for c in cards_data if c.get("name")]
+
         return JsonResponse({
             "answer": result["answer"],
+            "cards": cards_data,
             "inferred_filters": result.get("inferred_filters", {}),
         })
 
