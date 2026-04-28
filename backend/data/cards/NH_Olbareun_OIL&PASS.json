@@ -1,0 +1,223 @@
+{
+  "metadata": {
+    "카드명": "올바른OIL&PASS카드",
+    "카드사": "NH농협카드",
+    "분석일": "2026-04-28",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "NH_Olbareun_OIL&PASS.txt"
+  },
+  "card": {
+    "name": "올바른OIL&PASS카드",
+    "bank": "NH농협카드",
+    "brandType": [
+      "Local",
+      "MasterCard"
+    ],
+    "grade": "미확인",
+    "features": {
+      "usage_scope": "국내전용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "amount": 6000,
+      "total": 13000
+    },
+    "brand_fees": [
+      {
+        "brand": "Local",
+        "amount": 7000
+      },
+      {
+        "brand": "MasterCard",
+        "amount": 9000
+      }
+    ]
+  },
+  "benefits": {
+    "benefit_items": [
+      {
+        "category": "교통",
+        "description": "버스/지하철/택시/철도 이용 시 청구할인",
+        "type": "청구할인",
+        "rate": "7%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "버스, 지하철, 택시, 철도(고속·시외버스 포함, 카카오T택시, 타다 포함, KTX·SRT 포함)",
+        "note": "전월실적 조건은 텍스트에 명시되지 않음"
+      },
+      {
+        "category": "교통",
+        "description": "공유모빌리티 이용 시 청구할인",
+        "type": "청구할인",
+        "rate": "7%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "렌터카, 쏘카, 그린카, 카카오T바이크",
+        "note": "렌터카의 경우 NH농협카정상렌탈카의 경우 이륜차 대여 할인, 카카오T바이크의 경우 자전거대여시 1회에 한함"
+      },
+      {
+        "category": "교통",
+        "description": "전기차 충전 이용 시 청구할인",
+        "type": "청구할인",
+        "rate": "7%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "제휴된 주차장/충전기, 환경친화적 자동차 충전기 충전요금",
+        "note": "IC칩 카드사 비필수 서비스 통합할인 제외"
+      },
+      {
+        "category": "생활",
+        "description": "이동통신요금 자동납부 시 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "SKT, KT, LGU+ 자동납부",
+        "note": "월 1건"
+      },
+      {
+        "category": "생활",
+        "description": "오토매이커/배달앱 이용 시 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "쿠팡, 배달의민족, 요기요, 11번가, G마켓, 옥션, 농협몰",
+        "note": "오토매이커는 «배달앱»에 한하며, 국내거래 및 가맹점으로 구분되어 혜택이 제공됩니다."
+      },
+      {
+        "category": "문화",
+        "description": "스포츠/문화 업종 이용 시 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "종합스포츠센터, 영화관, 놀이공원, 레저, 볼링장",
+        "note": "월 1건"
+      },
+      {
+        "category": "주유",
+        "description": "주유/충전소 이용 시 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "주유소/충전소",
+        "note": "월 2건, 지역별/카드종류/카드번호에 따라 일부 혜택이 적용되지 않을 수 있음"
+      },
+      {
+        "category": "주유",
+        "description": "주유기준금액 2,000원 청구할인",
+        "type": "청구할인",
+        "rate": "2000원",
+        "monthly_min_spending": 40000,
+        "monthly_cap": 2000,
+        "applicable_stores": "스터디, 이디아, 커피빈, 투썸플레이스",
+        "note": "이용건당 1만원 이상 결제 시 제공, 월 2회"
+      },
+      {
+        "category": "쇼핑",
+        "description": "주유기준금액 1,000원 청구할인",
+        "type": "청구할인",
+        "rate": "1000원",
+        "monthly_min_spending": 40000,
+        "monthly_cap": 1000,
+        "applicable_stores": "GS25, CU",
+        "note": "이용건당 1만원 이상 결제 시 제공, 월 2회"
+      },
+      {
+        "category": "주유",
+        "description": "스피드메이트 윈스 및 와이퍼 무료교환",
+        "type": "할인",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "스피드메이트",
+        "note": "연 1회"
+      },
+      {
+        "category": "주유",
+        "description": "기아오토큐/티스테이션/타이어뱅크/인테리어 관련 자동차 정비/점검/수리 및 부품/소모품 할인",
+        "type": "할인",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "기아오토큐, 티스테이션, 타이어뱅크, 인테리어",
+        "note": "연 1회"
+      },
+      {
+        "category": "주유",
+        "description": "차량구매 시 청구할인",
+        "type": "청구할인",
+        "rate": "1%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "국산차·수입/중고차 판매인, 자동차 견적, 시승 등 행사",
+        "note": "연 1회, 전월실적 조건 및 월 한도 없음"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "year1": {
+        "summary": "Smart PASS 팩과 Best Oil 팩 혜택이 제공되며, 교통 7% 청구할인, 생활 5% 청구할인, 주유/차량 관련 혜택 및 공통 서비스가 포함된다.",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "텍스트에 연차별 혜택 차이는 명시되어 있지 않다.",
+        "monthly_min_spending": 0
+      }
+    }
+  },
+  "exclusions": {
+    "excluded_items": [
+      "대학(대학원)등록",
+      "교육비(학부모부담금)",
+      "임대료",
+      "각종 세금 및 공과금",
+      "우체국 우편요금",
+      "사회보험(국민건강/국민연금/고용/산재)",
+      "아파트관리비",
+      "도시가스요금",
+      "전기요금",
+      "상품권 및 선불카드구매(충전 포함)",
+      "단기카드대출(현금서비스)",
+      "장기카드대출(카드론)",
+      "각종 수수료 및 이자",
+      "연체료",
+      "연회비",
+      "거래 취소금액",
+      "포인트(전부/일부) 결제 시 포인트 사용분",
+      "무이자 할부 이용 시 할인서비스",
+      "상품권 구매(선불카드 구입, 충전포함)",
+      "백화점/할인점/쇼핑몰 내 입매대장"
+    ],
+    "notes": "전월실적 산정 제외 항목과 서비스 공통 유의사항에 따른 제외 항목이 포함된다. 해외 이용금액은 전월 접수일 기준으로 합산 적용되며, 해외원화결제 시 DCC수수료가 포함될 수 있다."
+  },
+  "document_understanding": {
+    "section_map": {
+      "📋 카드 기본 정보": "올바른OIL&PASS카드, NH농협카드, 신용카드 개인회원(기존회원 포함) 대상, 국내전용(Local) 및 국내외겸용(MasterCard) 제공",
+      "💳 연회비 구조": "국내전용 Local 총 연회비 13,000원(기본 6,000원, 제휴 7,000원), 국내외겸용 MasterCard 총 연회비 15,000원(기본 6,000원, 제휴 9,000원)",
+      "🎁 주요 혜택": "교통 7% 청구할인(버스/지하철/택시/철도, 공유모빌리티, 전기차 충전), 생활 5% 청구할인(이동통신요금, 오토매이커/배달앱, 스포츠/문화), 주유/충전소 5% 청구할인, 주유기준금액 2,000원/1,000원 청구할인, 차량구매 1% 청구할인, 스피드메이트 윈스 및 와이퍼 무료교환",
+      "👥 추천 대상": "모든 교통수단 이용, 주유/충전, 차량 관련 서비스, 배달앱 및 생활업종 할인 혜택을 원하는 고객",
+      "💡 카드의 강점 및 약점": "강점: 교통·주유·차량·생활 영역을 폭넓게 할인. 약점: 전월실적 조건과 월 할인한도, 월 1건/2건 제한이 있으며 일부 항목은 연 1회 제공",
+      "⚠️ 주의사항 및 제외사항": "전월실적 제외 항목이 많고, 무이자 할부 및 상품권/선불카드 구매는 할인 제외. 해외이용 시 국제브랜드수수료와 해외서비스수수료가 부과되며, DCC수수료가 포함될 수 있음"
+    }
+  },
+  "characteristics": {
+    "strengths": [
+      "교통, 주유, 차량, 생활 영역을 폭넓게 할인 제공",
+      "버스/지하철/택시/철도와 공유모빌리티, 전기차 충전까지 교통 혜택이 다양함",
+      "차량구매, 정비, 소모품, 무료교환 등 차량 관련 혜택이 포함됨"
+    ],
+    "weaknesses": [
+      "전월실적 제외 항목이 많음",
+      "월 1건, 월 2건, 연 1회 등 이용 제한이 있음",
+      "무이자 할부, 상품권/선불카드 구매 등은 할인 제외"
+    ],
+    "recommended_scenario": "대중교통, 택시, 공유모빌리티, 전기차 충전, 주유와 차량 정비를 자주 이용하는 고객에게 적합하다.",
+    "positioning": "교통과 차량 유지비를 중심으로 생활 할인까지 아우르는 실용형 카드"
+  }
+}

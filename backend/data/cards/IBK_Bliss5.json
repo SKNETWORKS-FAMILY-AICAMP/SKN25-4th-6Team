@@ -1,0 +1,265 @@
+{
+  "metadata": {
+    "카드명": "BLISS.5",
+    "카드사": "IBK기업은행",
+    "분석일": "2026-04-28",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "IBK_Bliss5.txt"
+  },
+  "card": {
+    "name": "BLISS.5",
+    "bank": "IBK기업은행",
+    "brandType": [
+      "VISA",
+      "BC",
+      "BC 글로벌"
+    ],
+    "grade": "플래티늄",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "amount": 100000,
+      "total": 100000
+    },
+    "brand_fees": [
+      {
+        "brand": "BC 글로벌",
+        "amount": 95000
+      },
+      {
+        "brand": "BC",
+        "amount": 90000
+      },
+      {
+        "brand": "VISA",
+        "amount": 100000
+      }
+    ]
+  },
+  "benefits": {
+    "benefit_items": [
+      {
+        "category": "식음료",
+        "description": "외식 통합 상품권 바우처 10만원",
+        "type": "바우처",
+        "rate": "",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 0,
+        "applicable_stores": "아웃백, TGIF 등 패밀리레스토랑",
+        "note": "본인회원만 사용 가능, 잔액 환불 불가, 신청 후 취소 및 변경 불가"
+      },
+      {
+        "category": "쇼핑",
+        "description": "신세계상품권 모바일 교환권 바우처 10만원권",
+        "type": "바우처",
+        "rate": "",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 0,
+        "applicable_stores": "신세계백화점 상품권샵, 이마트 매장 내 키오스크",
+        "note": "신세계상품권으로 교환 후 사용, 교환권 유효기간 6개월"
+      },
+      {
+        "category": "쇼핑",
+        "description": "신라면세점 S.Rewards 포인트 교환 바우처 9만포인트",
+        "type": "바우처",
+        "rate": "",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 0,
+        "applicable_stores": "신라면세점 홈페이지 및 지정 오프라인 지점",
+        "note": "본인회원만 사용 가능, 교환 후 포인트 유효기간 3년"
+      },
+      {
+        "category": "포인트적립",
+        "description": "TOP포인트 8만점 적립 바우처",
+        "type": "포인트적립",
+        "rate": "8만점",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 0,
+        "applicable_stores": "IBK기업은행, BLISS 고객센터, BC페이북",
+        "note": "바우처 발송 없이 다음 영업일 적립"
+      },
+      {
+        "category": "항공마일리지",
+        "description": "국내외 일시불, 유이자할부금액에 대해 항공 마일리지 적립",
+        "type": "마일리지적립",
+        "rate": "1,500원당 1마일",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "국내외 가맹점",
+        "note": "제휴항공사 대한항공, 법인회원(지정자)은 3,000원당 1마일, 아파트관리비/통신요금/자동이체 포함"
+      },
+      {
+        "category": "포인트적립",
+        "description": "국내외 일시불, 유이자할부금액에 대해 TOP포인트 적립",
+        "type": "포인트적립",
+        "rate": "1,500원당 10 TOP포인트",
+        "monthly_min_spending": 0,
+        "monthly_cap": 100000,
+        "applicable_stores": "국내외 가맹점",
+        "note": "법인회원(지정자)은 3,000원당 10 TOP포인트, 개인 1건당 최고 10만 포인트"
+      },
+      {
+        "category": "여행",
+        "description": "공항라운지 무료이용 서비스",
+        "type": "무료이용",
+        "rate": "연간 최대 3회",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "전세계 1,200개 공항라운지",
+        "note": "VISA 브랜드로 발급 시 제공, BC/BC글로벌 브랜드는 미제공"
+      },
+      {
+        "category": "여행",
+        "description": "국제선 항공권 할인 서비스",
+        "type": "할인",
+        "rate": "3%~7%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "비씨카드 여행서비스",
+        "note": "발권 수수료 별도, TAX/유류할증료/발권수수료 본인부담"
+      },
+      {
+        "category": "여행",
+        "description": "해외 패키지여행 할인 서비스",
+        "type": "할인",
+        "rate": "3%~7%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "비씨카드 여행서비스",
+        "note": "특가 상품 및 기획전 상품 제외"
+      },
+      {
+        "category": "여행",
+        "description": "국내호텔, 콘도 할인 서비스",
+        "type": "할인",
+        "rate": "3%~10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "비씨카드 여행서비스",
+        "note": "성수기와 연휴에도 가능"
+      },
+      {
+        "category": "여행",
+        "description": "제주도 렌터카 48시간 이용 시 24시간 지원 서비스",
+        "type": "할인",
+        "rate": "24시간 지원",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "비씨카드 여행서비스",
+        "note": "성수기 제외"
+      },
+      {
+        "category": "교통",
+        "description": "KTX/SRT 승차권 할인 서비스",
+        "type": "할인",
+        "rate": "10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "비씨카드 여행서비스",
+        "note": "본인회원 연 2회, 전 노선/전 구간/일반석 한정, 3일전 예약 기준"
+      },
+      {
+        "category": "여행",
+        "description": "해외호텔 할인 서비스",
+        "type": "할인",
+        "rate": "10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "비씨카드 여행서비스",
+        "note": ""
+      },
+      {
+        "category": "식음료",
+        "description": "카페아티제 동반자 1인 무료음료 제공",
+        "type": "무료제공",
+        "rate": "1잔",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 12,
+        "applicable_stores": "카페아티제 지정 매장",
+        "note": "본인 음료 구매 시 동반 1인 동일 음료 무료, 월 1회/연 12회"
+      },
+      {
+        "category": "문화",
+        "description": "영화예매 할인 서비스",
+        "type": "청구할인",
+        "rate": "2,000원",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 6,
+        "applicable_stores": "CGV, 롯데시네마, 메가박스",
+        "note": "1만원 이상 결제 시, 영화관 통합 월 1회/연 6회"
+      },
+      {
+        "category": "문화",
+        "description": "CGV 콤보 무료 이용 서비스",
+        "type": "무료이용",
+        "rate": "CGV 콤보세트",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 6,
+        "applicable_stores": "CGV 전국매장(일부 매장 제외)",
+        "note": "실물카드로 키오스크 인증 후 무료제공, 월 1회/연 6회"
+      },
+      {
+        "category": "생활",
+        "description": "바로알림(SMS) 서비스 무료 가입",
+        "type": "무료가입",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "BLISS 고객센터, ARS",
+        "note": "고객이 직접 신청한 경우에 한하여 제공"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": true,
+      "year1": {
+        "summary": "초년도는 카드 발급 후 바우처 신청일 이전까지 이용실적 30만원 이상 및 연회비 납부 시 바우처 신청 가능하며, 바우처 신청 및 유효기간은 카드 발급일로부터 1년이다.",
+        "monthly_min_spending": 300000
+      },
+      "year2_and_beyond": {
+        "summary": "2년차부터는 연회비 청구월 기준 전년도 이용실적 300만원 이상 및 해당연도 연회비 납부 시 바우처 신청 가능하며, 매년 1회 바우처 신청 및 유효기간이 재설정된다.",
+        "monthly_min_spending": 3000000
+      }
+    }
+  },
+  "exclusions": {
+    "excluded_items": [
+      "제세공과금(국세, 지방세 등)",
+      "상품권(선불카드 포함) 구입 및 충전금액",
+      "대학등록금",
+      "단기카드대출(현금서비스)",
+      "무이자할부(부분 무이자할부 포함)"
+    ],
+    "notes": "이용실적 및 적립 산정 시 일부 항목은 제외되며, 법인회원(지정자) 및 소기업 혜택 미적용 안내가 포함되어 있다. 바우처는 중복 이용이 불가하고 선택 후 교환 및 환불이 되지 않는 항목이 있다."
+  },
+  "document_understanding": {
+    "section_map": {
+      "📋 카드 기본 정보": "BLISS.5 / IBK기업은행 / 해외겸용 / 플래티늄 / 본인회원, 개인사업자(지정자), 가족회원, 법인회원(지정자) 안내",
+      "💳 연회비 구조": "본인회원, 개인사업자(지정자): 국내외겸용(VISA) 10만원, (BC 글로벌) 9만 5천원, 국내전용(BC) 9만원 / 가족회원 5만원 / 법인회원(지정자): 국내전용(BC) 9천원, 국내외겸용(VISA, BC글로벌) 1만원",
+      "🎁 주요 혜택": "외식 통합 상품권 바우처 10만원, 신세계상품권 모바일 교환권 바우처 10만원권, 신라면세점 S.Rewards 포인트 교환 바우처 9만포인트, TOP포인트 8만점 적립 바우처, 대한항공 마일리지 1,500원당 1마일, TOP포인트 1,500원당 10포인트, 공항라운지 무료이용, 여행/호텔/렌터카/철도/영화/카페아티제 할인 및 무료서비스",
+      "👥 추천 대상": "바우처와 여행·호텔·라운지·마일리지/포인트 적립 혜택을 함께 활용하려는 고객",
+      "💡 카드의 강점 및 약점": "강점: 바우처 선택형 혜택과 여행·프리미엄 서비스가 다양함 / 약점: 전월실적 조건이 있는 서비스가 많고, 일부 혜택은 브랜드(VISA) 또는 회원구분에 따라 제한됨",
+      "⚠️ 주의사항 및 제외사항": "바우처는 본인회원만 사용 가능하며 중복 이용·교환·환불 제한이 있고, 적립 제외 항목이 있으며, 법인회원(지정자) 및 소기업 혜택 미제공 안내가 포함됨"
+    }
+  },
+  "characteristics": {
+    "strengths": [
+      "바우처 선택형 혜택이 다양함",
+      "항공 마일리지와 TOP포인트 적립을 함께 제공함",
+      "공항라운지, 호텔, 렌터카, 철도 등 여행 관련 프리미엄 서비스가 많음",
+      "영화, 카페아티제, 면세점 등 생활형 혜택도 포함됨"
+    ],
+    "weaknesses": [
+      "전월실적 조건이 있는 서비스가 많음",
+      "바우처는 본인회원만 사용 가능하고 가족회원은 불가함",
+      "브랜드 및 회원구분에 따라 일부 서비스가 제한됨",
+      "적립 제외 항목이 많음"
+    ],
+    "recommended_scenario": "여행과 프리미엄 라운지, 호텔, 바우처 혜택을 자주 활용하고 포인트/마일리지 적립도 함께 원하는 고객",
+    "positioning": "여행·프리미엄·바우처 중심의 플래티늄 카드"
+  }
+}

@@ -1,0 +1,276 @@
+{
+  "metadata": {
+    "카드명": "KB Star B카드",
+    "카드사": "KB국민카드",
+    "분석일": "2026-04-28",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "Kookmin_Star_B_20210923.txt"
+  },
+  "card": {
+    "name": "KB Star B카드",
+    "bank": "KB국민카드",
+    "brandType": [
+      "K-World (UPI)",
+      "Master"
+    ],
+    "grade": "미확인",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "amount": 100000,
+      "total": 100000
+    },
+    "brand_fees": [
+      {
+        "brand": "K-World (UPI)",
+        "amount": 100000
+      },
+      {
+        "brand": "Master",
+        "amount": 100000
+      }
+    ]
+  },
+  "benefits": {
+    "benefit_items": [
+      {
+        "category": "식음료",
+        "description": "커피전문점 업종 청구할인",
+        "type": "청구할인",
+        "rate": "50%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "applicable_stores": "커피전문점 업종",
+        "note": "상품권 구입 및 선불식 충전카드 이용금액 제외, 백화점·대형마트 등에 입점한 일부 가맹점은 할인대상에서 제외될 수 있음"
+      },
+      {
+        "category": "간편결제",
+        "description": "간편페이(Pay) 이용금액 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "삼성페이, 네이버페이, 카카오페이, KB Pay 등 간편결제",
+        "note": "ISP·MISP 이용금액 제외, 선택서비스 내 다른 서비스와 중복적용 가능"
+      },
+      {
+        "category": "교육",
+        "description": "서점/학원 업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "문리계/외국어/예체능/기술 학원, 서점 업종",
+        "note": "온라인 가맹점, PG(결제대행) 이용금액 제외"
+      },
+      {
+        "category": "여행",
+        "description": "항공/숙박/여행 업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "항공사, 기타관광호텔, 기타숙박업, 일반관광호텔, 특급관광호텔, 펜션/민박, 관광여행사 업종",
+        "note": "온라인 가맹점, PG(결제대행) 이용금액 제외"
+      },
+      {
+        "category": "교통",
+        "description": "대중교통(버스, 지하철) 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "applicable_stores": "버스, 지하철",
+        "note": "시외버스, 고속버스, 택시 제외, 이용대금명세서상 기재된 이용일 기준으로 할인 적용"
+      },
+      {
+        "category": "쇼핑",
+        "description": "편의점 업종 청구할인",
+        "type": "청구할인",
+        "rate": "50%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "applicable_stores": "편의점 업종",
+        "note": ""
+      },
+      {
+        "category": "쇼핑",
+        "description": "6대 온라인쇼핑몰 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "G마켓, 옥션, 인터파크, 11번가, 롯데ON(구 롯데닷컴), 신세계몰",
+        "note": "롯데ON은 홈페이지 내 롯데ON몰 이용 건에 한함, 백화점 등 오프라인 매장 온라인몰 승인 건 제외"
+      },
+      {
+        "category": "통신",
+        "description": "이동통신요금 자동이체 청구할인",
+        "type": "청구할인",
+        "rate": "20%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "applicable_stores": "SKT, KT olleh, LGU+ 이동통신요금 자동납부",
+        "note": "인터넷, IPTV 등 결합상품 및 알뜰폰 서비스 제외"
+      },
+      {
+        "category": "쇼핑",
+        "description": "대형마트 업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "applicable_stores": "대형마트 업종",
+        "note": "온라인 쇼핑몰, 상품권 구매 및 SSM(이마트에브리데이, 홈플러스익스프레스, 롯데슈퍼) 제외"
+      },
+      {
+        "category": "쇼핑",
+        "description": "3대 소셜커머스 청구할인",
+        "type": "청구할인",
+        "rate": "20%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "위메프, 쿠팡, 티몬",
+        "note": ""
+      },
+      {
+        "category": "식음료",
+        "description": "제과·아이스크림/패스트푸드 업종 청구할인",
+        "type": "청구할인",
+        "rate": "20%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "제과·아이스크림/패스트푸드 업종",
+        "note": ""
+      },
+      {
+        "category": "의료",
+        "description": "병원/약국 업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "종합병원, 일반병원(한의원), 동물병원, 약국 업종",
+        "note": ""
+      },
+      {
+        "category": "레저",
+        "description": "골프장/골프연습장 업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 30000,
+        "applicable_stores": "골프장/골프연습장 업종",
+        "note": ""
+      },
+      {
+        "category": "쇼핑",
+        "description": "백화점/면세점 업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "백화점/면세점 업종",
+        "note": "온라인 쇼핑몰, 상품권 구매 제외"
+      },
+      {
+        "category": "식음료",
+        "description": "음식점 업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 5000,
+        "applicable_stores": "일반음식점, 휴게음식점, 일반주점 업종",
+        "note": "패밀리레스토랑, 유흥(단란)주점 업종 제외"
+      },
+      {
+        "category": "미용",
+        "description": "미용실/화장품/피부미용업종 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "미용실/화장품/피부미용업종",
+        "note": ""
+      },
+      {
+        "category": "쇼핑",
+        "description": "4대 홈쇼핑 청구할인",
+        "type": "청구할인",
+        "rate": "20%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "CJ홈쇼핑, GS홈쇼핑, 현대홈쇼핑, 롯데홈쇼핑",
+        "note": ""
+      },
+      {
+        "category": "해외이용",
+        "description": "해외 이용금액 할인 캐시백",
+        "type": "캐시백",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "applicable_stores": "해외 이용금액",
+        "note": "할인금액은 다음달 둘째주에 결제계좌로 입금, 해외구매 사이트 외화 승인거래 포함"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "year1": {
+        "summary": "선택서비스 17개 중 6개를 선택하여 청구할인 제공, 해외 이용금액은 10% 캐시백 제공. 전월 이용실적 40만원 이상 기준으로 혜택 제공.",
+        "monthly_min_spending": 400000
+      },
+      "year2_and_beyond": {
+        "summary": "선택서비스 17개 중 6개를 선택하여 청구할인 제공, 해외 이용금액은 10% 캐시백 제공. 전월 이용실적 40만원 이상 기준으로 혜택 제공.",
+        "monthly_min_spending": 400000
+      }
+    }
+  },
+  "exclusions": {
+    "excluded_items": [
+      "KB Star B카드로 할인 받은 이용금액(해당 매출 전체, 단 해외캐시백 제외)",
+      "단기카드대출(현금서비스)",
+      "장기카드대출(카드론)",
+      "각종 세금 및 공과금",
+      "아파트관리비",
+      "정부지원금",
+      "대학(원)등록금",
+      "각종 수수료 및 이자",
+      "연체료",
+      "연회비",
+      "상품권 및 선불카드(선불전자지급수단 포함) 구입·충전금액",
+      "무승인전표(대중교통, 자판기, 터널이용료, 항공기 내 이용 등)",
+      "무이자할부 이용금액"
+    ],
+    "notes": "선택서비스는 월 1회 변경 가능하며 변경/등록 후 다음달부터 적용. 선택서비스는 매월 1일부터 말일 기준으로 운영되며, 월간 잔여할인한도는 이월되지 않음. 할인 받은 이용건을 취소할 경우 취소 전표가 실시간 접수되지 않아 할인 한도가 즉시 복원되지 않을 수 있음. 해외 이용 시 국제브랜드 수수료와 해외서비스 수수료가 포함되어 청구됨."
+  },
+  "document_understanding": {
+    "section_map": {
+      "📋 카드 기본 정보": "KB Star B카드, KB국민카드, KB금융그룹 임직원 전용상품, 본인회원 기준 1매 발급 가능, 해외겸용",
+      "💳 연회비 구조": "K-World (UPI) 국내외겸용(Master) 100,000원 (기본연회비 7,000원 + 제휴연회비 93,000원), 가족카드는 별도의 연회비를 부과하지 않음",
+      "🎁 주요 혜택": "선택서비스 17개 중 6개 선택, 커피전문점 50%, 간편페이 10%, 서점/학원 10%, 항공/숙박/여행 10%, 대중교통 10%, 편의점 50%, 6대 온라인쇼핑몰 10%, 이동통신요금 자동이체 20%, 대형마트 10%, 3대 소셜커머스 20%, 제과·아이스크림/패스트푸드 20%, 병원/약국 10%, 골프장/골프연습장 10%, 백화점/면세점 10%, 음식점 10%, 미용실/화장품/피부미용 10%, 4대 홈쇼핑 20%, 해외 이용금액 10% 캐시백",
+      "👥 추천 대상": "KB금융그룹 임직원(가족회원 1인 포함)",
+      "💡 카드의 강점 및 약점": "강점: 다양한 생활업종에서 선택형 청구할인과 해외 캐시백 제공. 약점: 선택서비스 6개 필수 선택, 전월실적 조건과 월 할인한도 존재, 연회비가 높음.",
+      "⚠️ 주의사항 및 제외사항": "선택서비스는 6개 필수 선택 및 월 1회 변경 가능, 일부 업종/가맹점 제외, 무이자할부 및 상품권·선불카드 구입/충전 제외, 해외 이용 시 수수료 부과"
+    }
+  },
+  "characteristics": {
+    "strengths": [
+      "17개 선택서비스 중 6개를 골라 생활밀착형 혜택 구성 가능",
+      "해외 이용금액 10% 캐시백 제공",
+      "간편결제(Pay)와 다른 선택서비스 중복 적용 가능"
+    ],
+    "weaknesses": [
+      "연회비가 100,000원으로 높음",
+      "전월 이용실적 40만원 이상 조건과 월 할인한도가 있음",
+      "선택서비스 6개를 반드시 선택해야 함"
+    ],
+    "recommended_scenario": "KB금융그룹 임직원이 커피, 교통, 쇼핑, 여행, 통신 등 다양한 생활영역에서 선택형 할인과 해외 캐시백을 함께 활용하려는 경우",
+    "positioning": "임직원 전용의 고연회비 프리미엄 선택형 할인 카드"
+  }
+}
