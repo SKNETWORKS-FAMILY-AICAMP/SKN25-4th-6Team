@@ -10,6 +10,7 @@ const useUserStore = create((set) => ({
     monthly_spend: '',
     owned_cards: [],
     preferred_benefits: [],
+    avatar: '👤',
   },
 
   // 온보딩 완료 여부
@@ -34,6 +35,7 @@ const useUserStore = create((set) => ({
         monthly_spend: '',
         owned_cards: [],
         preferred_benefits: [],
+        avatar: '👤',
       },
     }),
 }));

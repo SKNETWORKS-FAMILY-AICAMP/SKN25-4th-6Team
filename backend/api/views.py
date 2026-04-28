@@ -6,6 +6,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
+from .models import ChatSession, ChatMessage
+
 logger = logging.getLogger(__name__)
 
 BACKEND_ROOT = Path(__file__).resolve().parent.parent
@@ -22,9 +24,9 @@ def _get_app_state():
         from src.service import load_app_state
         _app_state = load_app_state(
             data_dir=BACKEND_ROOT / "data" / "cards",
-            category_config_path=BACKEND_ROOT / "config_files" / "card_category_rules.json",
-            rag_config_path=BACKEND_ROOT / "config_files" / "rag_settings.json",
-            synonyms_config_path=BACKEND_ROOT / "config_files" / "synonyms.json",
+            category_config_path=BACKEND_ROOT / "rag_config" / "card_category_rules.json",
+            rag_config_path=BACKEND_ROOT / "rag_config" / "rag_settings.json",
+            synonyms_config_path=BACKEND_ROOT / "rag_config" / "synonyms.json",
             rag_artifacts_dir=BACKEND_ROOT / "vector_store",
         )
         logger.info("AppState 로드 완료: 카드 %d개", len(_app_state.cards))
@@ -37,6 +39,58 @@ def _get_app_state():
 
 def health_check(request):
     return JsonResponse({"status": "ok"})
+
+
+CARDS_DIR = BACKEND_ROOT / "data" / "cards"
+
+COMPANY_KR_MAP = {
+    "hyundai card": "현대카드",
+    "hyundaicard": "현대카드",
+    "samsung card": "삼성카드",
+    "samsungcard": "삼성카드",
+    "shinhan card": "신한카드",
+    "shinhancard": "신한카드",
+    "kb card": "KB국민카드",
+    "kb kookmin card": "KB국민카드",
+    "lotte card": "롯데카드",
+    "lottecard": "롯데카드",
+    "hana card": "하나카드",
+    "hanacard": "하나카드",
+    "woori card": "우리카드",
+    "wooricard": "우리카드",
+    "nh card": "NH농협카드",
+    "nh농협": "NH농협카드",
+    "ibk": "IBK기업은행",
+    "bc card": "BC카드",
+    "bccard": "BC카드",
+}
+
+
+def _normalize_company(company: str) -> str:
+    return COMPANY_KR_MAP.get(company.strip().lower(), company)
+
+
+@require_http_methods(["GET"])
+def cards_list_view(request):
+    """data/cards/ 의 JSON 파일을 읽어 카드 목록 반환"""
+    cards = []
+    for idx, path in enumerate(sorted(CARDS_DIR.glob("*.json")), start=1):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            card_info = data.get("card", {})
+            name = card_info.get("name") or data.get("metadata", {}).get("카드명", path.stem)
+            company_raw = card_info.get("bank") or data.get("metadata", {}).get("카드사", "")
+            company = _normalize_company(company_raw)
+            cards.append({
+                "id": idx,
+                "name": name,
+                "company": company,
+                "card_id": path.stem,
+            })
+        except Exception as e:
+            logger.warning("카드 파일 로드 실패 %s: %s", path.name, e)
+
+    return JsonResponse({"cards": cards})
 
 
 @csrf_exempt
@@ -52,6 +106,7 @@ def chat_view(request):
         return JsonResponse({"error": "message 필드가 필요합니다."}, status=400)
 
     history = body.get("history", [])
+    profile = body.get("profile", {})
 
     user_filters = {
         "banks": [],
@@ -67,6 +122,7 @@ def chat_view(request):
             question=question,
             chat_history=history,
             user_filters=user_filters,
+            user_profile=profile,
             app_state=app_state,
         )
 
@@ -78,3 +134,55 @@ def chat_view(request):
     except Exception as e:
         logger.exception("chat_view 처리 중 오류")
         return JsonResponse({"error": f"서버 오류: {str(e)}"}, status=500)
+
+
+@csrf_exempt
+@require_http_methods(["GET", "POST"])
+def sessions_view(request):
+    if request.method == "GET":
+        sessions = ChatSession.objects.all()
+        data = [{"id": s.id, "title": s.title} for s in sessions]
+        return JsonResponse(data, safe=False)
+
+    try:
+        body = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "잘못된 JSON 형식입니다."}, status=400)
+
+    title = body.get("title", "새 대화")
+    session = ChatSession.objects.create(title=title)
+    return JsonResponse({"id": session.id, "title": session.title}, status=201)
+
+
+@csrf_exempt
+@require_http_methods(["GET", "POST", "DELETE"])
+def session_detail_view(request, session_id):
+    try:
+        session = ChatSession.objects.get(id=session_id)
+    except ChatSession.DoesNotExist:
+        return JsonResponse({"error": "세션을 찾을 수 없습니다."}, status=404)
+
+    if request.method == "DELETE":
+        session.delete()
+        return JsonResponse({"ok": True})
+
+    if request.method == "GET":
+        messages = session.messages.all()
+        return JsonResponse({
+            "id": session.id,
+            "title": session.title,
+            "messages": [{"id": m.id, "role": m.role, "text": m.text} for m in messages],
+        })
+
+    try:
+        body = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "잘못된 JSON 형식입니다."}, status=400)
+
+    role = body.get("role")
+    text = body.get("text")
+    if role not in ("user", "assistant") or not text:
+        return JsonResponse({"error": "role과 text가 필요합니다."}, status=400)
+
+    msg = ChatMessage.objects.create(session=session, role=role, text=text)
+    return JsonResponse({"id": msg.id, "role": msg.role, "text": msg.text}, status=201)

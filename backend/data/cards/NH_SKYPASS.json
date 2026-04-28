@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "카드명": "NH농협카드 KOREAN AIR SKYPASS",
+    "카드사": "NH농협카드",
+    "분석일": "2026-04-28",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "NH_SKYPASS.txt"
+  },
+  "card": {
+    "name": "NH농협카드 KOREAN AIR SKYPASS",
+    "bank": "NH농협카드",
+    "brandType": [
+      "VISA",
+      "Mastercard",
+      "JCB"
+    ],
+    "grade": "미확인",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "amount": 15000,
+      "total": 15000
+    },
+    "brand_fees": [
+      {
+        "brand": "VISA",
+        "amount": 15000
+      },
+      {
+        "brand": "Mastercard",
+        "amount": 15000
+      },
+      {
+        "brand": "JCB",
+        "amount": 15000
+      }
+    ]
+  },
+  "benefits": {
+    "benefit_items": [
+      {
+        "category": "포인트적립",
+        "description": "국내/해외 이용금액에 대해 스카이패스 마일리지 적립",
+        "type": "포인트적립",
+        "rate": "1천 5백원당 1마일리지",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "국내/해외 가맹점",
+        "note": "제세공과금(국세, 지방세, 우체국 우편요금), 상품권, 기프트카드, 해외물품 구매 등의 이용금액은 제외. 무이자 할부 이용금액은 제외."
+      },
+      {
+        "category": "쇼핑",
+        "description": "영화, 커피, 서적 업종에서 2배 마일리지 적립",
+        "type": "포인트적립",
+        "rate": "1천 5백원당 2마일리지",
+        "monthly_min_spending": 0,
+        "monthly_cap": 200,
+        "applicable_stores": "CGV, 롯데시네마, 메가박스, 스타벅스, 커피빈, 탐앤탐스, 교보문고, 영풍문고, 반디앤루니스, 인터파크도서, Yes24, 알라딘",
+        "note": "상품권 구매(기프트카드 구입·충전 포함) 및 백화점/대형마트 입점 점포 적립 제외. 백화점/대형마트 및 일부 대형 입점 도서 매장은 적립 제외. 한도 초과매출은 1마일리지 적립. 무이자 할부 이용금액은 제외."
+      },
+      {
+        "category": "여행",
+        "description": "면세점 및 항공권 구매 시 3배 마일리지 적립",
+        "type": "포인트적립",
+        "rate": "1천 5백원당 3마일리지",
+        "monthly_min_spending": 0,
+        "monthly_cap": 300,
+        "applicable_stores": "국내 모든 면세점 및 대한항공 기내 면세점, 대한항공 온·오프라인 직판항공권 구매시",
+        "note": "한도 초과매출은 1마일리지 적립. 무이자 할부 이용금액은 제외."
+      },
+      {
+        "category": "여행",
+        "description": "외화 환전 수수료 현장할인",
+        "type": "할인",
+        "rate": "30~50%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "외화 환전",
+        "note": "타 환전 할인서비스와 중복 불가"
+      },
+      {
+        "category": "여행",
+        "description": "해외로밍 현장할인",
+        "type": "할인",
+        "rate": "5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "와이드 모바일",
+        "note": "통화요금 5% 할인, 임대폰 무료 등"
+      },
+      {
+        "category": "교육",
+        "description": "전화영어 현장할인",
+        "type": "할인",
+        "rate": "전화영어 50%, 화상영어 37.5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "행복예감",
+        "note": ""
+      },
+      {
+        "category": "여행",
+        "description": "국내·외 여행 패키지 현장 할인",
+        "type": "할인",
+        "rate": "3~5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "NH농협카드 가득",
+        "note": "반드시 NH농협카드 가득(www.nhgadk.com) 통해 예약 시 할인 가능. 일부 특가 상품 제외."
+      },
+      {
+        "category": "웨딩",
+        "description": "웨딩토탈 서비스 이용 시 현장할인",
+        "type": "할인",
+        "rate": "5~10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "한드레시아",
+        "note": ""
+      },
+      {
+        "category": "여행",
+        "description": "금강산콘도미니엄 현장할인",
+        "type": "할인",
+        "rate": "45~77%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "고성 금강산콘도미니엄, 제주 금강산콘도미니엄",
+        "note": "예약 시 NH농협카드 회원임을 통보"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "year1": {
+        "summary": "국내/해외 이용 시 스카이패스 마일리지 기본 적립, 영화·커피·서적 2배 적립, 면세점·항공권 3배 적립, 외화 환전/해외로밍/전화영어/여행패키지/웨딩/콘도 할인 제공",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "최근 1년간 국내·외 가맹점 이용금액이 13백만원 이상인 경우 차년도 연회비 면제",
+        "monthly_min_spending": 0
+      }
+    }
+  },
+  "exclusions": {
+    "excluded_items": [
+      "제세공과금(국세, 지방세, 우체국 우편요금)",
+      "상품권",
+      "기프트카드",
+      "해외물품 구매",
+      "무이자 할부 이용금액",
+      "상품권 구매(기프트카드 구입·충전 포함)",
+      "백화점/대형마트 입점 점포",
+      "백화점/대형마트 및 일부 대형 입점 도서 매장",
+      "타 환전 할인서비스와 중복"
+    ],
+    "notes": "2025년 4월 2일부터 아시아나클럽 카드 신청이 불가합니다. 국내전용 발급 불가. 해외 이용 시 국제브랜드수수료와 해외 이용 수수료가 부과됩니다. 해외ATM 현금인출 및 예금 잔액 조회 수수료가 있습니다."
+  },
+  "document_understanding": {
+    "section_map": {
+      "📋 카드 기본 정보": "NH농협카드 KOREAN AIR SKYPASS, NH농협카드, 해외겸용, 국내전용 발급 불가, 2025년 4월 2일부터 아시아나클럽 카드 신청 불가",
+      "💳 연회비 구조": "국내·외 겸용 1만 5천원(VISA/Mastercard/JCB), 기본연회비 5천원 + 제휴연회비 1만원",
+      "🎁 주요 혜택": "국내/해외 1천 5백원당 1마일리지 기본적립, 영화/커피/서적 1천 5백원당 2마일리지, 면세점/항공권 1천 5백원당 3마일리지, 외화 환전 30~50% 할인, 해외로밍 5% 할인, 전화영어 50%/37.5% 할인, 여행패키지 3~5% 할인, 웨딩 5~10% 할인, 금강산콘도미니엄 45~77% 할인",
+      "👥 추천 대상": "항공마일리지 적립과 여행 관련 할인 혜택을 원하는 고객",
+      "💡 카드의 강점 및 약점": "강점: 항공마일리지 적립과 여행/생활 할인 혜택이 다양함. 약점: 무이자 할부, 상품권 등 제외 항목이 많고, 아시아나클럽 카드 신청이 불가함.",
+      "⚠️ 주의사항 및 제외사항": "무이자 할부 이용금액 제외, 상품권/기프트카드/해외물품 구매 제외, 백화점/대형마트 입점 점포 제외, 타 환전 할인서비스와 중복 불가, 해외 이용 수수료 및 ATM 수수료 부과"
+    }
+  },
+  "characteristics": {
+    "strengths": [
+      "국내/해외 기본 마일리지 적립",
+      "영화·커피·서적 2배 적립",
+      "면세점·항공권 3배 적립",
+      "여행 관련 할인 혜택 제공"
+    ],
+    "weaknesses": [
+      "무이자 할부 이용금액은 적립 제외",
+      "상품권, 기프트카드, 해외물품 구매 등 제외 항목이 많음",
+      "아시아나클럽 카드 신청이 불가함"
+    ],
+    "recommended_scenario": "항공 마일리지 적립과 여행, 문화생활, 외화 환전 할인 혜택을 함께 활용하려는 경우",
+    "positioning": "항공마일리지와 여행 특화 할인에 강한 해외겸용 카드"
+  }
+}

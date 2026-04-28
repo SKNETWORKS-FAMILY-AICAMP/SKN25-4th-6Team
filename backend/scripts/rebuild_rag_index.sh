@@ -19,12 +19,12 @@ fi
 MODEL="${1:-text-embedding-3-small}"
 BATCH_SIZE="${2:-64}"
 
-python3 scripts/build_chunks.py --data-dir data/cards --out vector_store/chunks.jsonl
-python3 scripts/build_embeddings.py \
+python3 src/pipeline/build_01_chunks.py --data-dir data/cards --out vector_store/chunks.jsonl
+python3 src/pipeline/build_02_embeddings.py \
   --chunks vector_store/chunks.jsonl \
   --out vector_store/embeddings.jsonl \
   --model "$MODEL" \
   --batch-size "$BATCH_SIZE"
-python3 scripts/build_vector_index.py --embeddings vector_store/embeddings.jsonl --out-dir vector_store --normalize
+python3 src/pipeline/build_03_vector_index.py --embeddings vector_store/embeddings.jsonl --out-dir vector_store --normalize
 
 echo "[OK] RAG 인덱스 재생성 완료"

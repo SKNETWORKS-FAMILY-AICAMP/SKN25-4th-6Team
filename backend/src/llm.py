@@ -5,22 +5,44 @@ LLM 답변 생성
 """
 
 import os
+from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
 from .cards import annual_fee_display, safe_get, summarize_key_benefits
 from .context import build_context, build_evidence_footer
 
+PROMPTS_DIR = Path(__file__).resolve().parent.parent / "prompts"
 
-SYSTEM_PROMPT = (
-    "당신은 RAIchU(Real AI card hub system for you)의 신용카드 추천 상담사다. "
-    "반드시 제공된 카드 컨텍스트 안에서만 답한다. "
-    "컨텍스트에 없는 사실은 절대 추가하지 않는다. 모르면 '데이터 근거 부족'이라고 답한다. "
-    "답변은 한국어로, 근거 카드명과 근거 필드(혜택/실적조건/제외항목/브랜드/연회비)를 반드시 포함한다. "
-    "항상 혜택 근거를 최우선으로 제시하고 연회비는 후순위로 설명한다. "
-    "출력 형식은 반드시 다음 순서를 지킨다: "
-    "1) 한 줄 요약 2) 추천 카드 TOP3 (각 카드별 이유 2개) 3) 선택 팁 4) 주의사항. "
-    "원시 데이터 나열처럼 보이지 않게 자연스러운 상담 문장으로 작성한다."
+_FALLBACK_SYSTEM_PROMPT = (
+    "당신은 RAIchU(Real AI card hub system for you)의 신용카드 추천 상담사야. "
+    "친근하고 캐주얼하게 존댓말(~요, ~해요 체)로 말해줘. "
+    "반드시 제공된 카드 컨텍스트 안에서만 답하고, 컨텍스트에 없는 사실은 절대 추가하지 마. "
+    "추천할 때는 카드명, 혜택 내용(할인율/적립률/한도), 연회비를 함께 안내해. "
+    "이모지를 적절히 활용해도 괜찮아."
 )
+
+
+def _render_system_prompt(user_profile: Dict[str, Any]) -> str:
+    try:
+        from jinja2 import Environment, FileSystemLoader
+        env = Environment(loader=FileSystemLoader(str(PROMPTS_DIR)))
+        tmpl = env.get_template("system_prompt.j2")
+        owned = user_profile.get("owned_cards", [])
+        normalized_owned = [
+            c if isinstance(c, dict) else {"name": c, "company": ""}
+            for c in owned
+        ]
+        return tmpl.render(
+            age_group=user_profile.get("age_group") or "미확인",
+            has_car=bool(user_profile.get("has_car")),
+            annual_fee_range=user_profile.get("annual_fee_range") or "미확인",
+            lifestyles=user_profile.get("lifestyles") or [],
+            monthly_spend=user_profile.get("monthly_spend") or "미확인",
+            owned_cards=normalized_owned,
+            preferred_benefits=user_profile.get("preferred_benefits") or [],
+        )
+    except Exception:
+        return _FALLBACK_SYSTEM_PROMPT
 
 
 def fallback_answer(question: str, retrieved: List[Tuple[float, Dict[str, Any]]]) -> str:
@@ -63,10 +85,35 @@ def fallback_answer(question: str, retrieved: List[Tuple[float, Dict[str, Any]]]
     return "\n".join(lines) + build_evidence_footer(retrieved)
 
 
+def _build_profile_context(user_profile: Dict[str, Any]) -> str:
+    """사용자 프로필을 LLM에 전달할 텍스트로 변환"""
+    if not user_profile:
+        return ""
+    lines = ["[사용자 프로필]"]
+    owned = user_profile.get("owned_cards", [])
+    if owned:
+        card_names = ", ".join(c.get("name", "") for c in owned if c.get("name"))
+        lines.append(f"- 보유 카드: {card_names}")
+    if user_profile.get("age_group"):
+        lines.append(f"- 나이대: {user_profile['age_group']}")
+    if user_profile.get("monthly_spend"):
+        lines.append(f"- 월 사용액: {user_profile['monthly_spend']}")
+    if user_profile.get("annual_fee_range"):
+        lines.append(f"- 연회비 허용: {user_profile['annual_fee_range']}")
+    lifestyles = user_profile.get("lifestyles", [])
+    if lifestyles:
+        lines.append(f"- 라이프스타일: {', '.join(lifestyles)}")
+    benefits = user_profile.get("preferred_benefits", [])
+    if benefits:
+        lines.append(f"- 선호 혜택: {', '.join(benefits)}")
+    return "\n".join(lines)
+
+
 def llm_answer(
     question: str,
     retrieved: List[Tuple[float, Dict[str, Any]]],
     chat_history: List[Dict[str, str]],
+    user_profile: Dict[str, Any],
     model: str,
     temperature: float,
 ) -> str:
@@ -79,8 +126,9 @@ def llm_answer(
 
         client = OpenAI(api_key=api_key)
         context = build_context(retrieved)
+        system_prompt = _render_system_prompt(user_profile)
 
-        messages: List[Dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
+        messages: List[Dict[str, str]] = [{"role": "system", "content": system_prompt}]
         for m in chat_history[-8:]:
             messages.append({"role": m["role"], "content": m["content"]})
 

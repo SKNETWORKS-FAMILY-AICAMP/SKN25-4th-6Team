@@ -1,0 +1,87 @@
+{
+  "metadata": {
+    "카드명": "Business Sky카드",
+    "카드사": "BC바로카드",
+    "분석일": "2026-04-28",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "BC_Business_Sky.txt"
+  },
+  "card": {
+    "name": "Business Sky카드",
+    "bank": "BC바로카드",
+    "brandType": [
+      "VISA"
+    ],
+    "grade": "골드",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "amount": 10000,
+      "total": 10000
+    },
+    "brand_fees": [
+      {
+        "brand": "VISA",
+        "amount": 10000
+      }
+    ]
+  },
+  "benefits": {
+    "benefit_items": [
+      {
+        "category": "여행",
+        "description": "항공 및 관광 업종 전용 카드로 항공 및 관광 업종만 이용 가능하며 그 외 가맹점 거래는 불가함",
+        "type": "",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "항공 및 관광 업종",
+        "note": "기업전용 카드"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0
+      }
+    }
+  },
+  "exclusions": {
+    "excluded_items": [
+      "그 외 가맹점 거래"
+    ],
+    "notes": "항공 및 관광 업종만 이용 가능"
+  },
+  "document_understanding": {
+    "section_map": {
+      "📋 카드 기본 정보": "Business Sky카드, BC바로카드, VISA, 골드, 기업, 발급가능",
+      "💳 연회비 구조": "연회비 10,000원",
+      "🎁 주요 혜택": "기업전용, 항공 및 관광 업종 전용 카드, 항공 및 관광 업종만 이용 가능(그 외 가맹점 거래 불가)",
+      "👥 추천 대상": "기업",
+      "💡 카드의 강점 및 약점": "강점: 항공 및 관광 업종 전용으로 해당 업종 이용에 특화됨. 약점: 그 외 가맹점 거래가 불가함.",
+      "⚠️ 주의사항 및 제외사항": "항공 및 관광 업종만 이용 가능(그 외 가맹점 거래 불가), 연체이자율은 회원별·이용상품별 약정이율 + 최대 3%이며 법정 최고금리(20%) 이내, 카드 이용대금과 이에 수반되는 모든 수수료를 지정된 대금 결제일에 상환해야 함"
+    }
+  },
+  "characteristics": {
+    "strengths": [
+      "항공 및 관광 업종 전용으로 해당 업종 이용에 특화됨",
+      "기업전용 카드"
+    ],
+    "weaknesses": [
+      "그 외 가맹점 거래가 불가함",
+      "연회비가 10,000원임"
+    ],
+    "recommended_scenario": "항공 및 관광 업종에서만 카드를 사용하려는 기업 고객",
+    "positioning": "항공 및 관광 업종 전용 기업카드"
+  }
+}

@@ -1,18 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getCards } from '../api/client';
 import useUserStore from '../store/userStore';
-
-const CARDS = [
-  { id: 1,  name: '토스 올인원 체크카드',      company: '토스뱅크',    card_id: 'TOSS_ALLINONE_001' },
-  { id: 2,  name: '신한카드 Deep Dream',        company: '신한카드',    card_id: 'SHINHAN_DEEP_DREAM_001' },
-  { id: 3,  name: '삼성 iD SIMPLE 카드',        company: '삼성카드',    card_id: 'SAMSUNG_ID_SIMPLE_001' },
-  { id: 4,  name: 'KB국민 My WE:SH 카드',       company: 'KB국민카드',  card_id: 'KB_MYWESH_001' },
-  { id: 5,  name: '현대카드 ZERO Edition2',     company: '현대카드',    card_id: 'HYUNDAI_ZERO_ED2_001' },
-  { id: 6,  name: '우리카드 카드의정석 COOKIE', company: '우리카드',    card_id: 'WOORI_COOKIE_001' },
-  { id: 7,  name: 'NH올원 Pay 카드',            company: 'NH농협카드',  card_id: 'NH_ALLONE_PAY_001' },
-  { id: 8,  name: '롯데카드 LOCA 365',          company: '롯데카드',    card_id: 'LOTTE_LOCA365_001' },
-  { id: 9,  name: 'IBK 참! 좋은 카드',          company: 'IBK기업은행', card_id: 'IBK_GOOD_001' },
-  { id: 10, name: '하나카드 원큐 페이',         company: '하나카드',    card_id: 'HANA_1Q_PAY_001' },
-];
 
 const LIFESTYLES = [
   { icon: '🚗', label: '카라이프',     value: '카라이프' },
@@ -45,6 +33,16 @@ export default function OnboardingPage() {
   const [selectedCards, setSelectedCards] = useState(new Set());
   const [preferredBenefits, setBenefits]  = useState([]);
 
+  const [cards, setCards]         = useState([]);
+  const [cardsLoading, setCardsLoading] = useState(true);
+
+  useEffect(() => {
+    getCards()
+      .then(res => setCards(res.data.cards ?? []))
+      .catch(() => setCards([]))
+      .finally(() => setCardsLoading(false));
+  }, []);
+
   const toggleLifestyle = (value) => {
     setLifestyles(prev => {
       if (prev.includes(value)) return prev.filter(v => v !== value);
@@ -64,9 +62,10 @@ export default function OnboardingPage() {
   const toggleBenefit = (v) =>
     setBenefits(prev => prev.includes(v) ? prev.filter(x => x !== v) : [...prev, v]);
 
-  const filteredCards = CARDS.filter(c =>
-    c.name.includes(cardSearch) || c.company.includes(cardSearch)
-  );
+  const filteredCards = cards.filter(c => {
+    const q = cardSearch.toLowerCase();
+    return c.name.toLowerCase().includes(q) || c.company.toLowerCase().includes(q);
+  });
 
   const handleComplete = () => {
     setProfile({
@@ -75,7 +74,7 @@ export default function OnboardingPage() {
       annual_fee_range: annualFeeRange,
       lifestyles,
       monthly_spend: monthlySpend,
-      owned_cards: CARDS.filter(c => selectedCards.has(c.id)).map(({ name, company, card_id }) => ({ name, company, card_id })),
+      owned_cards: cards.filter(c => selectedCards.has(c.id)).map(({ name, company, card_id }) => ({ name, company, card_id })),
       preferred_benefits: preferredBenefits,
     });
   };
@@ -288,19 +287,22 @@ export default function OnboardingPage() {
                     <input type="text" placeholder="카드명 또는 카드사 검색" value={cardSearch} onChange={e => setCardSearch(e.target.value)} />
                   </div>
                   <div className="ob-card-list">
-                    {filteredCards.map(c => (
-                      <div key={c.id} className={`ob-card-item ${selectedCards.has(c.id)?'selected':''}`} onClick={() => toggleCard(c.id)}>
-                        <div className="ob-card-check">{selectedCards.has(c.id)?'✓':''}</div>
-                        <div>
-                          <div className="ob-card-name">{c.name}</div>
-                          <div className="ob-card-company">{c.company}</div>
-                        </div>
-                      </div>
-                    ))}
+                    {cardsLoading
+                      ? <div style={{padding:'12px',color:'var(--text-light)',fontSize:'13px'}}>카드 목록 불러오는 중…</div>
+                      : filteredCards.map(c => (
+                          <div key={c.id} className={`ob-card-item ${selectedCards.has(c.id)?'selected':''}`} onClick={() => toggleCard(c.id)}>
+                            <div className="ob-card-check">{selectedCards.has(c.id)?'✓':''}</div>
+                            <div>
+                              <div className="ob-card-name">{c.name}</div>
+                              <div className="ob-card-company">{c.company}</div>
+                            </div>
+                          </div>
+                        ))
+                    }
                   </div>
                   {selectedCards.size > 0 && (
                     <div className="ob-selected-tags">
-                      {CARDS.filter(c => selectedCards.has(c.id)).map(c => (
+                      {cards.filter(c => selectedCards.has(c.id)).map(c => (
                         <div key={c.id} className="ob-selected-tag">
                           {c.name}
                           <span className="ob-tag-rm" onClick={e => { e.stopPropagation(); toggleCard(c.id); }}>×</span>

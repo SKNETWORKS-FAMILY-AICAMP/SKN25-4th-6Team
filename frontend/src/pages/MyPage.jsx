@@ -1,18 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getCards } from '../api/client';
 import useUserStore from '../store/userStore';
-
-const CARD_OPTIONS = [
-  { id: 1,  name: '토스 올인원 체크카드',      company: '토스뱅크',    card_id: 'TOSS_ALLINONE_001' },
-  { id: 2,  name: '신한카드 Deep Dream',        company: '신한카드',    card_id: 'SHINHAN_DEEP_DREAM_001' },
-  { id: 3,  name: '삼성 iD SIMPLE 카드',        company: '삼성카드',    card_id: 'SAMSUNG_ID_SIMPLE_001' },
-  { id: 4,  name: 'KB국민 My WE:SH 카드',       company: 'KB국민카드',  card_id: 'KB_MYWESH_001' },
-  { id: 5,  name: '현대카드 ZERO Edition2',     company: '현대카드',    card_id: 'HYUNDAI_ZERO_ED2_001' },
-  { id: 6,  name: '우리카드 카드의정석 COOKIE', company: '우리카드',    card_id: 'WOORI_COOKIE_001' },
-  { id: 7,  name: 'NH올원 Pay 카드',            company: 'NH농협카드',  card_id: 'NH_ALLONE_PAY_001' },
-  { id: 8,  name: '롯데카드 LOCA 365',          company: '롯데카드',    card_id: 'LOTTE_LOCA365_001' },
-  { id: 9,  name: 'IBK 참! 좋은 카드',          company: 'IBK기업은행', card_id: 'IBK_GOOD_001' },
-  { id: 10, name: '하나카드 원큐 페이',         company: '하나카드',    card_id: 'HANA_1Q_PAY_001' },
-];
 
 // 각 필드의 선택지 정의
 const FIELD_OPTIONS = {
@@ -165,18 +153,30 @@ function ProfileCard({ item, value, onSave }) {
   );
 }
 
+const AVATAR_OPTIONS = ['🧑‍💻', '👤', '😊', '😎', '🦸', '🎩', '🐱', '🦊', '🌟', '🧑‍🎤'];
+
 export default function MyPage({ onGoChat }) {
   const { profile, updateProfile } = useUserStore();
   const [cardSearch, setCardSearch] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+  const [cardOptions, setCardOptions] = useState([]);
+  const [showAvatarPicker, setShowAvatarPicker] = useState(false);
+
+  useEffect(() => {
+    getCards()
+      .then(res => setCardOptions(res.data.cards ?? []))
+      .catch(() => setCardOptions([]));
+  }, []);
 
   const ownedCards = profile.owned_cards || [];
 
-  const filteredOptions = CARD_OPTIONS.filter(
-    (c) =>
-      (c.name.includes(cardSearch) || c.company.includes(cardSearch)) &&
+  const filteredOptions = cardOptions.filter((c) => {
+    const q = cardSearch.toLowerCase();
+    return (
+      (c.name.toLowerCase().includes(q) || c.company.toLowerCase().includes(q)) &&
       !ownedCards.some((o) => o.card_id === c.card_id)
-  );
+    );
+  });
 
   const addCard = (card) => {
     updateProfile({ owned_cards: [...ownedCards, { name: card.name, company: card.company, card_id: card.card_id }] });
@@ -230,7 +230,29 @@ export default function MyPage({ onGoChat }) {
             </div>
 
             <div className="flex items-start gap-5">
-              <div className="w-16 h-16 rounded-full bg-[#E5E5E0] flex items-center justify-center text-3xl flex-shrink-0">👤</div>
+              <div className="relative flex-shrink-0">
+                <div
+                  onClick={() => setShowAvatarPicker(v => !v)}
+                  className="w-16 h-16 rounded-full bg-[#E5E5E0] flex items-center justify-center text-3xl cursor-pointer hover:ring-2 hover:ring-[#F5C842] transition-all"
+                >
+                  {profile.avatar || '🧑‍💻'}
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-[#F5C842] rounded-full flex items-center justify-center text-[10px] font-bold text-[#1A1A1A] pointer-events-none">✏️</div>
+                {showAvatarPicker && (
+                  <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg border border-[#E5E5E0] p-2 z-20 grid grid-cols-4 gap-1 w-40">
+                    {AVATAR_OPTIONS.map(emoji => (
+                      <button
+                        key={emoji}
+                        onClick={() => { updateProfile({ avatar: emoji }); setShowAvatarPicker(false); }}
+                        className={`w-9 h-9 rounded-lg text-xl flex items-center justify-center cursor-pointer border-2 transition-all bg-transparent
+                          ${profile.avatar === emoji ? 'border-[#F5C842] bg-[#FFFBEB]' : 'border-transparent hover:bg-[#F5F4F0]'}`}
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
               <div className="flex-1 grid grid-cols-2 gap-3">
                 {PROFILE_ITEMS.map((item) => (
                   <ProfileCard

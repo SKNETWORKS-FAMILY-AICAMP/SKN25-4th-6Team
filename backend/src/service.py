@@ -70,6 +70,7 @@ def chat(
     chat_history: List[Dict[str, str]],
     user_filters: Dict[str, List[str]],
     app_state: AppState,
+    user_profile: Optional[Dict[str, Any]] = None,
     top_k: int = 5,
     model: str = "gpt-4.1-mini",
     temperature: float = 0.2,
@@ -106,10 +107,34 @@ def chat(
         synonyms=app_state.synonyms,
     )
 
+    # 보유 카드 관련 질문 감지
+    OWNED_CARD_KEYWORDS = ["보유한 카드", "내 카드", "내카드", "보유 카드", "갖고 있는 카드", "가진 카드"]
+    is_owned_card_question = any(kw in question for kw in OWNED_CARD_KEYWORDS)
+
+    owned_cards = (user_profile or {}).get("owned_cards", [])
+    if owned_cards:
+        owned_card_ids = {c.get("card_id", "") for c in owned_cards}
+        owned_retrieved = [
+            (1.0, card) for card in app_state.cards
+            if card.get("_file", "").replace(".json", "") in owned_card_ids
+        ]
+        if is_owned_card_question:
+            # 보유 카드 관련 질문이면 owned cards만 컨텍스트에 사용
+            retrieved = owned_retrieved if owned_retrieved else retrieved
+        else:
+            # 일반 질문이면 보유 카드를 앞에 추가하되 중복 제거
+            already_included = {card.get("_file", "") for _, card in retrieved}
+            missing_owned = [
+                (score, card) for score, card in owned_retrieved
+                if card.get("_file", "") not in already_included
+            ]
+            retrieved = missing_owned + list(retrieved)
+
     answer = llm_answer(
         question=question,
         retrieved=retrieved,
         chat_history=chat_history,
+        user_profile=user_profile or {},
         model=model,
         temperature=temperature,
     )
