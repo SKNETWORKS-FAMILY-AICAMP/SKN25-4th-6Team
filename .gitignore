@@ -3,6 +3,7 @@
 .venv/
 venv/
 env/
+.claude
 
 # IDE
 .vscode/
