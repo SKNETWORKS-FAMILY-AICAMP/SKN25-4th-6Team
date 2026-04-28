@@ -110,28 +110,6 @@ def _classify_intent(question: str) -> str:
     return "general"
 
 
-def _render_system_prompt(user_profile: Dict[str, Any]) -> str:
-    try:
-        from jinja2 import Environment, FileSystemLoader
-        env = Environment(loader=FileSystemLoader(str(PROMPTS_DIR)))
-        tmpl = env.get_template("system_prompt.j2")
-        owned = user_profile.get("owned_cards", [])
-        normalized_owned = [
-            c if isinstance(c, dict) else {"name": c, "company": ""}
-            for c in owned
-        ]
-        return tmpl.render(
-            age_group=user_profile.get("age_group") or "미확인",
-            has_car=bool(user_profile.get("has_car")),
-            annual_fee_range=user_profile.get("annual_fee_range") or "미확인",
-            lifestyles=user_profile.get("lifestyles") or [],
-            monthly_spend=user_profile.get("monthly_spend") or "미확인",
-            owned_cards=normalized_owned,
-            preferred_benefits=user_profile.get("preferred_benefits") or [],
-        )
-    except Exception:
-        return _FALLBACK_SYSTEM_PROMPT
-
 
 def fallback_answer(question: str, retrieved: List[Tuple[float, Dict[str, Any]]]) -> str:
     if not retrieved:
@@ -230,7 +208,7 @@ def llm_answer(
             except NotFoundError as exc:
                 last_error = exc
                 continue
-git add backend/src/llm.py
+
         if resp is None:
             if last_error:
                 raise last_error
