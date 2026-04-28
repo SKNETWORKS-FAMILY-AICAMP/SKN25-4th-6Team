@@ -74,6 +74,7 @@ def chat(
     top_k: int = 5,
     model: str = "gpt-4.1-mini",
     temperature: float = 0.2,
+    prev_card_ids: Optional[List[str]] = None,
 ) -> Dict[str, Any]:
     """
     단일 대화 턴 처리.
@@ -94,18 +95,38 @@ def chat(
     merged_categories = sorted(set(user_filters.get("categories", []) + inferred["categories"]))
     merged_fee_bands = sorted(set(user_filters.get("fee_bands", []) + inferred["fee_bands"]))
 
-    retrieved = retrieve_cards_hybrid(
-        cards=app_state.cards,
-        query=question,
-        top_k=top_k,
-        banks=merged_banks,
-        categories=merged_categories,
-        fee_bands=merged_fee_bands,
-        vector_store=app_state.vector_store,
-        embedding_model=app_state.rag_settings["embedding_model"],
-        similarity_threshold=app_state.rag_settings["similarity_threshold"],
-        synonyms=app_state.synonyms,
-    )
+    # 이전 추천 카드 ID가 있으면 해당 카드를 우선 컨텍스트로 사용
+    if prev_card_ids:
+        prev_id_set = set(prev_card_ids)
+        prev_retrieved = [
+            (1.0, card) for card in app_state.cards
+            if card.get("_file", "").replace(".json", "") in prev_id_set
+        ]
+        retrieved = prev_retrieved if prev_retrieved else retrieve_cards_hybrid(
+            cards=app_state.cards,
+            query=question,
+            top_k=top_k,
+            banks=merged_banks,
+            categories=merged_categories,
+            fee_bands=merged_fee_bands,
+            vector_store=app_state.vector_store,
+            embedding_model=app_state.rag_settings["embedding_model"],
+            similarity_threshold=app_state.rag_settings["similarity_threshold"],
+            synonyms=app_state.synonyms,
+        )
+    else:
+        retrieved = retrieve_cards_hybrid(
+            cards=app_state.cards,
+            query=question,
+            top_k=top_k,
+            banks=merged_banks,
+            categories=merged_categories,
+            fee_bands=merged_fee_bands,
+            vector_store=app_state.vector_store,
+            embedding_model=app_state.rag_settings["embedding_model"],
+            similarity_threshold=app_state.rag_settings["similarity_threshold"],
+            synonyms=app_state.synonyms,
+        )
 
     # 보유 카드 관련 질문 감지
     OWNED_CARD_KEYWORDS = ["보유한 카드", "내 카드", "내카드", "보유 카드", "갖고 있는 카드", "가진 카드"]

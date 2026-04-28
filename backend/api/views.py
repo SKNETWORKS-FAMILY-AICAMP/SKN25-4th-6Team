@@ -72,6 +72,27 @@ def _normalize_company(company: str) -> str:
     return COMPANY_KR_MAP.get(company.strip().lower(), company)
 
 
+_FOLLOWUP_KEYWORDS = [
+    "그 중에서", "그중에서", "그 중", "그중",
+    "거기서", "그 카드들", "아까", "방금",
+    "앞에서", "위에서", "그것들",
+    "이 카드", "그 카드", "해당 카드", "방금 추천",
+]
+
+_RECOMMENDATION_KEYWORDS = [
+    "추천", "추천해", "추천해줘", "추천해주세요",
+    "좋은 카드", "어떤 카드", "뭐가 좋", "어느 카드",
+    "찾아줘", "찾아주세요",
+    "적합한 카드", "맞는 카드", "맞춤 카드",
+]
+
+def _is_recommendation_query(question: str, inferred_filters: dict) -> bool:
+    has_keyword = any(kw in question for kw in _RECOMMENDATION_KEYWORDS)
+    has_categories = len(inferred_filters.get("categories", [])) > 0
+    has_fee_bands = len(inferred_filters.get("fee_bands", [])) > 0
+    return has_keyword or has_categories or has_fee_bands
+
+
 def _serialize_card(card: dict) -> dict:
     try:
         from src.cards import annual_fee_display
@@ -160,6 +181,7 @@ def chat_view(request):
 
     history = body.get("history", [])
     profile = body.get("profile", {})
+    prev_card_ids = body.get("prev_card_ids", [])
 
     user_filters = {
         "banks": [],
@@ -171,20 +193,45 @@ def chat_view(request):
         from src.service import chat
         app_state = _get_app_state()
 
+        is_followup = bool(prev_card_ids) and (
+            any(kw in question for kw in _FOLLOWUP_KEYWORDS)
+            or any(kw in question for kw in ["가장 좋은", "제일 좋은", "최고의"])
+            or (
+                len(prev_card_ids) == 1
+                and not any(kw in question for kw in _RECOMMENDATION_KEYWORDS)
+                and not any(kw in question for kw in ["다른 카드", "다른 거", "새로운", "말고", "제외"])
+            )
+        )
+
         result = chat(
             question=question,
             chat_history=history,
             user_filters=user_filters,
             user_profile=profile,
             app_state=app_state,
+            prev_card_ids=prev_card_ids if is_followup else None,
         )
 
-        cards_data = [_serialize_card(card) for _, card in result.get("retrieved", [])[:5]]
+        import re as _re
+        _single_keywords = ["가장 좋은", "제일 좋은", "최고의", "최고로 좋은", "하나만", "한 개만", "한개만", "1개만", "딱 하나", "딱 1개"]
+        _num_match = _re.search(r'([1-5])\s*개', question)
+        if any(kw in question for kw in _single_keywords):
+            _top_k = 1
+        elif _num_match:
+            _top_k = int(_num_match.group(1))
+        else:
+            _top_k = 5
+
+        cards_data = [_serialize_card(card) for _, card in result.get("retrieved", [])[:_top_k]]
         cards_data = [c for c in cards_data if c.get("name")]
+
+        inferred = result.get("inferred_filters", {})
+        is_recommendation = _is_recommendation_query(question, inferred) and len(cards_data) >= 1
 
         return JsonResponse({
             "answer": result["answer"],
             "cards": cards_data,
+            "is_recommendation": is_recommendation,
             "inferred_filters": result.get("inferred_filters", {}),
         })
 

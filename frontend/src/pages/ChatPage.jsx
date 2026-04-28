@@ -1,4 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import useUserStore from '../store/userStore';
 import { addMessage, createSession, deleteSession, getSessionDetail, getSessions, sendMessage } from '../api/client';
 import raichuImg from '../assets/raichu.png';
@@ -16,7 +18,7 @@ const INITIAL_MSG = {
   text: `안녕하세요! 저는 RAIchU예요 ⚡\n맞춤 카드 추천과 혜택 질문을 도와드릴게요.\n무엇이 궁금하신가요?`,
 };
 
-function CardBlocks({ cards }) {
+function CardBlocks({ cards, onDetail }) {
   const [openId, setOpenId] = useState(null);
 
   return (
@@ -79,6 +81,15 @@ function CardBlocks({ cards }) {
                 ) : (
                   <div className="text-xs text-[#999] mt-3">혜택 상세 정보가 없어요.</div>
                 )}
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onDetail(card.card_id, card.name);
+                  }}
+                  className="mt-3 w-full py-2 text-xs font-medium text-[#8A6E00] bg-[#F5C842]/10 hover:bg-[#F5C842]/25 rounded-lg border border-[#F5C842]/30 cursor-pointer transition-all duration-150"
+                >
+                  자세히 보기 →
+                </button>
               </div>
             )}
           </div>
@@ -95,6 +106,7 @@ export default function ChatPage({ onGoMyPage }) {
   const [sessions, setSessions] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [prevCardIds, setPrevCardIds] = useState([]);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -107,7 +119,7 @@ export default function ChatPage({ onGoMyPage }) {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const sendChat = async (text) => {
+  const sendChat = async (text, forcePrevCardIds = null) => {
     if (!text.trim() || isLoading) return;
 
     const userMsg = { id: Date.now(), role: 'user', text };
@@ -115,6 +127,9 @@ export default function ChatPage({ onGoMyPage }) {
     setMessages(newMessages);
     setInput('');
     setIsLoading(true);
+
+    const effectivePrevCardIds = forcePrevCardIds ?? prevCardIds;
+    if (forcePrevCardIds) setPrevCardIds(forcePrevCardIds);
 
     let sessionId = currentSessionId;
 
@@ -133,6 +148,7 @@ export default function ChatPage({ onGoMyPage }) {
       const response = await sendMessage({
         message: text,
         history,
+        prev_card_ids: effectivePrevCardIds,
         profile: {
           age_group: profile.age_group || '',
           has_car: profile.has_car ?? null,
@@ -146,8 +162,12 @@ export default function ChatPage({ onGoMyPage }) {
 
       const answerText = response.data.answer;
       const cards = response.data.cards || [];
+      const isRecommendation = response.data.is_recommendation ?? false;
+      if (isRecommendation && cards.length > 0) {
+        setPrevCardIds(cards.map((c) => c.card_id));
+      }
       await addMessage(sessionId, 'assistant', answerText);
-      setMessages([...newMessages, { id: Date.now() + 1, role: 'assistant', text: answerText, cards }]);
+      setMessages([...newMessages, { id: Date.now() + 1, role: 'assistant', text: answerText, cards, isRecommendation }]);
     } catch {
       setMessages([
         ...newMessages,
@@ -203,6 +223,7 @@ export default function ChatPage({ onGoMyPage }) {
             onClick={() => {
               setCurrentSessionId(null);
               setMessages([INITIAL_MSG]);
+              setPrevCardIds([]);
             }}
             className="w-full py-2.5 border-2 border-white/20 rounded-xl text-sm font-medium text-white hover:border-[#F5C842] hover:text-[#F5C842] transition-all duration-200 mb-5 cursor-pointer bg-transparent"
           >
@@ -282,7 +303,7 @@ export default function ChatPage({ onGoMyPage }) {
         <div className="flex-1 overflow-y-auto px-12 py-8">
           <div className="max-w-[700px] mx-auto flex flex-col gap-5">
             {messages.map((msg) => {
-              const hasCards = msg.role === 'assistant' && msg.cards?.length >= 2;
+              const hasCards = msg.role === 'assistant' && msg.isRecommendation && msg.cards?.length >= 1;
               return (
                 <div
                   key={msg.id}
@@ -302,16 +323,69 @@ export default function ChatPage({ onGoMyPage }) {
                       <div className="px-5 py-3.5 rounded-2xl rounded-tl-sm bg-white shadow-sm text-sm text-[#1A1A1A] mb-2 leading-relaxed">
                         맞춤 카드를 찾았어요! 🎯
                       </div>
-                      <CardBlocks cards={msg.cards} />
+                      <CardBlocks
+                          cards={msg.cards}
+                          onDetail={(cardId, cardName) =>
+                            sendChat(`${cardName} 카드에 대해 자세히 설명해줘`, [cardId])
+                          }
+                        />
                     </div>
                   ) : (
-                    <div className={`max-w-[75%] px-5 py-3.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap
+                    <div className={`max-w-[75%] px-5 py-3.5 rounded-2xl text-sm leading-relaxed
                       ${msg.role === 'user'
                         ? 'bg-white text-[#1A1A1A] rounded-tr-sm shadow-sm'
                         : 'bg-white text-[#1A1A1A] rounded-tl-sm shadow-sm'
                       }`}
                     >
-                      {msg.text}
+                      {msg.role === 'user' ? (
+                        <span className="whitespace-pre-wrap">{msg.text}</span>
+                      ) : (
+                        <ReactMarkdown
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            table: ({ node, ...props }) => (
+                              <div className="overflow-x-auto my-2">
+                                <table className="min-w-full text-xs border-collapse" {...props} />
+                              </div>
+                            ),
+                            thead: ({ node, ...props }) => (
+                              <thead className="bg-[#F5C842]/15" {...props} />
+                            ),
+                            th: ({ node, ...props }) => (
+                              <th className="px-3 py-1.5 text-left font-semibold text-[#5A4500] border border-[#E5E0C8]" {...props} />
+                            ),
+                            td: ({ node, ...props }) => (
+                              <td className="px-3 py-1.5 border border-[#E5E0C8] text-[#333]" {...props} />
+                            ),
+                            tr: ({ node, ...props }) => (
+                              <tr className="even:bg-[#FAFAF5]" {...props} />
+                            ),
+                            strong: ({ node, ...props }) => (
+                              <strong className="font-semibold text-[#1A1A1A]" {...props} />
+                            ),
+                            ul: ({ node, ...props }) => (
+                              <ul className="list-disc pl-4 my-1 space-y-0.5" {...props} />
+                            ),
+                            ol: ({ node, ...props }) => (
+                              <ol className="list-decimal pl-4 my-1 space-y-0.5" {...props} />
+                            ),
+                            li: ({ node, ...props }) => (
+                              <li className="leading-relaxed" {...props} />
+                            ),
+                            p: ({ node, ...props }) => (
+                              <p className="my-1 leading-relaxed" {...props} />
+                            ),
+                            h3: ({ node, ...props }) => (
+                              <h3 className="font-bold text-[#1A1A1A] mt-2 mb-1" {...props} />
+                            ),
+                            code: ({ node, ...props }) => (
+                              <code className="bg-[#F0EFE9] px-1 py-0.5 rounded text-[11px] font-mono" {...props} />
+                            ),
+                          }}
+                        >
+                          {msg.text}
+                        </ReactMarkdown>
+                      )}
                     </div>
                   )}
                 </div>
