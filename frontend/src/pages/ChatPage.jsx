@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import useUserStore from '../store/userStore';
-import { addMessage, createSession, getSessionDetail, getSessions, sendMessage } from '../api/client';
+import { addMessage, createSession, deleteSession, getSessionDetail, getSessions, sendMessage } from '../api/client';
+import raichuImg from '../assets/raichu.png';
 
 const QUICK_SEARCHES = [
   '해외여행자용 카드',
@@ -88,6 +89,18 @@ export default function ChatPage({ onGoMyPage }) {
     }
   };
 
+  const removeSession = async (e, sessionId) => {
+    e.stopPropagation();
+    try {
+      await deleteSession(sessionId);
+      setSessions((prev) => prev.filter((s) => s.id !== sessionId));
+      if (currentSessionId === sessionId) {
+        setCurrentSessionId(null);
+        setMessages([INITIAL_MSG]);
+      }
+    } catch {}
+  };
+
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
@@ -149,25 +162,33 @@ export default function ChatPage({ onGoMyPage }) {
                 <div className="px-3 py-2 text-xs text-white/25">대화 내역이 없어요</div>
               )}
               {sessions.map((s) => (
-                <button
+                <div
                   key={s.id}
-                  onClick={async () => {
-                    setCurrentSessionId(s.id);
-                    try {
-                      const res = await getSessionDetail(s.id);
-                      setMessages([INITIAL_MSG, ...res.data.messages]);
-                    } catch {
-                      setMessages([INITIAL_MSG]);
-                    }
-                  }}
-                  className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all duration-200 cursor-pointer bg-transparent border-none truncate
-                    ${s.id === currentSessionId
-                      ? 'text-white bg-white/[0.12]'
-                      : 'text-white/50 hover:text-white hover:bg-white/[0.07]'
-                    }`}
+                  className={`group relative flex items-center rounded-lg transition-all duration-200
+                    ${s.id === currentSessionId ? 'bg-white/[0.12]' : 'hover:bg-white/[0.07]'}`}
                 >
-                  {s.title}
-                </button>
+                  <button
+                    onClick={async () => {
+                      setCurrentSessionId(s.id);
+                      try {
+                        const res = await getSessionDetail(s.id);
+                        setMessages([INITIAL_MSG, ...res.data.messages]);
+                      } catch {
+                        setMessages([INITIAL_MSG]);
+                      }
+                    }}
+                    className={`flex-1 text-left px-3 py-2 text-xs cursor-pointer bg-transparent border-none truncate pr-7
+                      ${s.id === currentSessionId ? 'text-white' : 'text-white/50 group-hover:text-white'}`}
+                  >
+                    {s.title}
+                  </button>
+                  <button
+                    onClick={(e) => removeSession(e, s.id)}
+                    className="absolute right-1.5 opacity-0 group-hover:opacity-100 w-5 h-5 flex items-center justify-center text-white/40 hover:text-red-400 cursor-pointer bg-transparent border-none transition-all duration-150 text-xs rounded"
+                  >
+                    ×
+                  </button>
+                </div>
               ))}
             </div>
           </div>
@@ -192,10 +213,13 @@ export default function ChatPage({ onGoMyPage }) {
                 key={msg.id}
                 className={`flex items-start gap-3 ${msg.role === 'user' ? 'flex-row-reverse' : ''}`}
               >
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 text-lg
-                  ${msg.role === 'user' ? 'bg-[#E5E5E0]' : 'bg-[#F5C842]'}`}
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden
+                  ${msg.role === 'user' ? 'bg-[#E5E5E0] text-xl' : 'bg-[#F5C842]'}`}
                 >
-                  {msg.role === 'user' ? '👤' : '⚡'}
+                  {msg.role === 'user'
+                    ? (profile.avatar || '👤')
+                    : <img src={raichuImg} alt="RAIchU" className="w-full h-full object-cover" />
+                  }
                 </div>
                 <div className={`max-w-[75%] px-5 py-3.5 rounded-2xl text-sm leading-relaxed whitespace-pre-wrap
                   ${msg.role === 'user'
@@ -210,7 +234,9 @@ export default function ChatPage({ onGoMyPage }) {
 
             {isLoading && (
               <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#F5C842] flex items-center justify-center text-lg">⚡</div>
+                <div className="w-10 h-10 rounded-full bg-[#F5C842] flex items-center justify-center overflow-hidden">
+                  <img src={raichuImg} alt="RAIchU" className="w-full h-full object-cover" />
+                </div>
                 <div className="bg-white rounded-2xl rounded-tl-sm px-5 py-3.5 shadow-sm">
                   <div className="flex gap-1.5 items-center h-5">
                     <span className="w-2 h-2 bg-[#F5C842] rounded-full animate-bounce" style={{ animationDelay: '0ms' }} />

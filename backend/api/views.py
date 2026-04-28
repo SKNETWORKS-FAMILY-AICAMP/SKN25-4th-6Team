@@ -155,12 +155,16 @@ def sessions_view(request):
 
 
 @csrf_exempt
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET", "POST", "DELETE"])
 def session_detail_view(request, session_id):
     try:
         session = ChatSession.objects.get(id=session_id)
     except ChatSession.DoesNotExist:
         return JsonResponse({"error": "세션을 찾을 수 없습니다."}, status=404)
+
+    if request.method == "DELETE":
+        session.delete()
+        return JsonResponse({"ok": True})
 
     if request.method == "GET":
         messages = session.messages.all()

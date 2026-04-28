@@ -9,6 +9,7 @@ const useUserStore = create((set) => ({
     monthly_spend: '',
     owned_cards: [],
     preferred_benefits: [],
+    avatar: '👤',
   },
   isOnboarded: false,
   setProfile: (profile) => set({ profile, isOnboarded: true }),
@@ -25,6 +26,7 @@ const useUserStore = create((set) => ({
         monthly_spend: '',
         owned_cards: [],
         preferred_benefits: [],
+        avatar: '👤',
       },
     }),
 }));
