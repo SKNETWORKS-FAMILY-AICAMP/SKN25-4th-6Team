@@ -47,7 +47,11 @@ def build_context(retrieved: List[Tuple[float, Dict[str, Any]]], max_section_cha
                 cat = item.get("category", "")
                 rate = item.get("rate", "")
                 cap = item.get("monthly_cap", 0)
-                label = f"{cat} {rate}(월한도 {cap:,}원)" if cap else f"{cat} {rate}"
+                if cap:
+                    cap_str = f"{cap // 10000}만원" if cap >= 10000 else f"{cap:,}원"
+                    label = f"{cat} {rate}(월한도 {cap_str})"
+                else:
+                    label = f"{cat} {rate}"
                 by_threshold.setdefault(threshold, []).append(label)
 
             for threshold in sorted(by_threshold.keys()):

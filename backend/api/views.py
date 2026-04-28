@@ -86,7 +86,18 @@ _RECOMMENDATION_KEYWORDS = [
     "적합한 카드", "맞는 카드", "맞춤 카드",
 ]
 
+_DETAIL_KEYWORDS = [
+    "설명해줘", "설명해주세요", "설명 해줘",
+    "자세히", "상세히",
+    "혜택 알려줘", "혜택 알려주세요",
+    "어떤 카드야", "어떤 카드인가",
+    "어떻게 돼", "어떻게 되나요",
+]
+
+
 def _is_recommendation_query(question: str, inferred_filters: dict) -> bool:
+    if any(kw in question for kw in _DETAIL_KEYWORDS):
+        return False
     has_keyword = any(kw in question for kw in _RECOMMENDATION_KEYWORDS)
     has_categories = len(inferred_filters.get("categories", [])) > 0
     has_fee_bands = len(inferred_filters.get("fee_bands", [])) > 0
