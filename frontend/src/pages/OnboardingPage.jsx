@@ -21,17 +21,18 @@ const STEPS = [
 ];
 
 export default function OnboardingPage() {
+  const profile = useUserStore((s) => s.profile);
   const setProfile = useUserStore((s) => s.setProfile);
   const [step, setStep] = useState(1);
 
-  const [ageGroup, setAgeGroup]        = useState('');
-  const [hasCar, setHasCar]            = useState(null);
-  const [annualFeeRange, setAnnualFee] = useState('');
-  const [lifestyles, setLifestyles]    = useState([]);
-  const [monthlySpend, setMonthlySpend]= useState('');
+  const [ageGroup, setAgeGroup]        = useState(profile.age_group || '');
+  const [hasCar, setHasCar]            = useState(profile.has_car ?? null);
+  const [annualFeeRange, setAnnualFee] = useState(profile.annual_fee_range || '');
+  const [lifestyles, setLifestyles]    = useState(profile.lifestyles || []);
+  const [monthlySpend, setMonthlySpend]= useState(profile.monthly_spend || '');
   const [cardSearch, setCardSearch]    = useState('');
   const [selectedCards, setSelectedCards] = useState(new Set());
-  const [preferredBenefits, setBenefits]  = useState([]);
+  const [preferredBenefits, setBenefits]  = useState(profile.preferred_benefits || []);
 
   const [cards, setCards]         = useState([]);
   const [cardsLoading, setCardsLoading] = useState(true);
@@ -42,6 +43,20 @@ export default function OnboardingPage() {
       .catch(() => setCards([]))
       .finally(() => setCardsLoading(false));
   }, []);
+
+  useEffect(() => {
+    if (!cards.length) return;
+
+    const savedCardIds = new Set(
+      cards
+        .filter((card) =>
+          (profile.owned_cards || []).some((owned) => owned.card_id === card.card_id)
+        )
+        .map((card) => card.id)
+    );
+
+    setSelectedCards(savedCardIds);
+  }, [cards, profile.owned_cards]);
 
   const toggleLifestyle = (value) => {
     setLifestyles(prev => {
