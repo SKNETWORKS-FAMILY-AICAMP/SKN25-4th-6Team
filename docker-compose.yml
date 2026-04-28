@@ -1,13 +1,13 @@
 services:
   backend:
     build:
-      context: .                      # 프로젝트 루트 (src/, config/ 포함)
-      dockerfile: backend/Dockerfile
+      context: ./backend
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     volumes:
-      - ./data:/project/data          # 카드 데이터 (빌드 제외, 런타임 마운트)
-      - ./vector_store:/project/vector_store  # 벡터 인덱스
+      - ./backend/data:/app/data          # 카드 데이터 (빌드 제외, 런타임 마운트)
+      - ./backend/vector_store:/app/vector_store  # 벡터 인덱스
     env_file:
       - ./backend/.env
     command: >
@@ -17,6 +17,7 @@ services:
   frontend:
     build:
       context: ./frontend
+      dockerfile: Dockerfile
     ports:
       - "3000:3000"
     env_file:
