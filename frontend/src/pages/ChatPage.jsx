@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import useUserStore from '../store/userStore';
-import { sendMessage } from '../api/client';
+import { addMessage, createSession, getSessionDetail, getSessions, sendMessage } from '../api/client';
 
 const QUICK_SEARCHES = [
   '해외여행자용 카드',
@@ -9,24 +9,26 @@ const QUICK_SEARCHES = [
   '연회비 싼 카드',
 ];
 
-const MOCK_HISTORY = [
-  { id: 1, title: '대형마트 카드 추천' },
-  { id: 2, title: '스타벅스 혜택 질문' },
-  { id: 3, title: '주유비 혜택이 좋은 카드' },
-];
+const INITIAL_MSG = {
+  id: 1,
+  role: 'assistant',
+  text: `안녕하세요! 저는 RAIchU예요 ⚡\n맞춤 카드 추천과 혜택 질문을 도와드릴게요.\n무엇이 궁금하신가요?`,
+};
 
 export default function ChatPage({ onGoMyPage }) {
   const profile = useUserStore((s) => s.profile);
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      role: 'assistant',
-      text: `안녕하세요! 저는 RAIchU예요 ⚡\n맞춤 카드 추천과 혜택 질문을 도와드릴게요.\n무엇이 궁금하신가요?`,
-    },
-  ]);
+  const [messages, setMessages] = useState([INITIAL_MSG]);
+  const [currentSessionId, setCurrentSessionId] = useState(null);
+  const [sessions, setSessions] = useState([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
+
+  useEffect(() => {
+    getSessions()
+      .then((res) => setSessions(res.data))
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -36,16 +38,25 @@ export default function ChatPage({ onGoMyPage }) {
     if (!text.trim() || isLoading) return;
 
     const userMsg = { id: Date.now(), role: 'user', text };
-    setMessages((prev) => [...prev, userMsg]);
+    const newMessages = [...messages, userMsg];
+    setMessages(newMessages);
     setInput('');
     setIsLoading(true);
 
-    try {
-      const history = [...messages, userMsg].map((m) => ({
-        role: m.role,
-        content: m.text,
-      }));
+    let sessionId = currentSessionId;
 
+    try {
+      if (!sessionId) {
+        const title = text.length > 22 ? text.slice(0, 22) + '…' : text;
+        const res = await createSession(title);
+        sessionId = res.data.id;
+        setCurrentSessionId(sessionId);
+        setSessions((prev) => [{ id: sessionId, title: res.data.title }, ...prev]);
+      }
+
+      await addMessage(sessionId, 'user', text);
+
+      const history = newMessages.map((m) => ({ role: m.role, content: m.text }));
       const response = await sendMessage({
         message: text,
         history,
@@ -60,13 +71,12 @@ export default function ChatPage({ onGoMyPage }) {
         },
       });
 
-      setMessages((prev) => [
-        ...prev,
-        { id: Date.now() + 1, role: 'assistant', text: response.data.answer },
-      ]);
+      const answerText = response.data.answer;
+      await addMessage(sessionId, 'assistant', answerText);
+      setMessages([...newMessages, { id: Date.now() + 1, role: 'assistant', text: answerText }]);
     } catch {
-      setMessages((prev) => [
-        ...prev,
+      setMessages([
+        ...newMessages,
         {
           id: Date.now() + 1,
           role: 'assistant',
@@ -104,7 +114,10 @@ export default function ChatPage({ onGoMyPage }) {
 
           {/* 새 대화 버튼 */}
           <button
-            onClick={() => setMessages([{ id: 1, role: 'assistant', text: '새 대화를 시작할게요! 무엇이 궁금하신가요? ⚡' }])}
+            onClick={() => {
+              setCurrentSessionId(null);
+              setMessages([INITIAL_MSG]);
+            }}
             className="w-full py-2.5 border-2 border-white/20 rounded-xl text-sm font-medium text-white hover:border-[#F5C842] hover:text-[#F5C842] transition-all duration-200 mb-5 cursor-pointer bg-transparent"
           >
             ✏️ 새 대화
@@ -132,12 +145,28 @@ export default function ChatPage({ onGoMyPage }) {
           <div className="flex-1 overflow-y-auto">
             <div className="text-[10px] text-white/30 tracking-widest mb-2 px-1">대화내역</div>
             <div className="flex flex-col gap-1">
-              {MOCK_HISTORY.map((h) => (
+              {sessions.length === 0 && (
+                <div className="px-3 py-2 text-xs text-white/25">대화 내역이 없어요</div>
+              )}
+              {sessions.map((s) => (
                 <button
-                  key={h.id}
-                  className="w-full text-left px-3 py-2 rounded-lg text-xs text-white/50 hover:text-white hover:bg-white/[0.07] transition-all duration-200 cursor-pointer bg-transparent border-none truncate"
+                  key={s.id}
+                  onClick={async () => {
+                    setCurrentSessionId(s.id);
+                    try {
+                      const res = await getSessionDetail(s.id);
+                      setMessages([INITIAL_MSG, ...res.data.messages]);
+                    } catch {
+                      setMessages([INITIAL_MSG]);
+                    }
+                  }}
+                  className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-all duration-200 cursor-pointer bg-transparent border-none truncate
+                    ${s.id === currentSessionId
+                      ? 'text-white bg-white/[0.12]'
+                      : 'text-white/50 hover:text-white hover:bg-white/[0.07]'
+                    }`}
                 >
-                  {h.title}
+                  {s.title}
                 </button>
               ))}
             </div>

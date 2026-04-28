@@ -6,6 +6,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
+from .models import ChatSession, ChatMessage
+
 logger = logging.getLogger(__name__)
 
 BACKEND_ROOT = Path(__file__).resolve().parent.parent
@@ -78,3 +80,51 @@ def chat_view(request):
     except Exception as e:
         logger.exception("chat_view 처리 중 오류")
         return JsonResponse({"error": f"서버 오류: {str(e)}"}, status=500)
+
+
+@csrf_exempt
+@require_http_methods(["GET", "POST"])
+def sessions_view(request):
+    if request.method == "GET":
+        sessions = ChatSession.objects.all()
+        data = [{"id": s.id, "title": s.title} for s in sessions]
+        return JsonResponse(data, safe=False)
+
+    try:
+        body = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "잘못된 JSON 형식입니다."}, status=400)
+
+    title = body.get("title", "새 대화")
+    session = ChatSession.objects.create(title=title)
+    return JsonResponse({"id": session.id, "title": session.title}, status=201)
+
+
+@csrf_exempt
+@require_http_methods(["GET", "POST"])
+def session_detail_view(request, session_id):
+    try:
+        session = ChatSession.objects.get(id=session_id)
+    except ChatSession.DoesNotExist:
+        return JsonResponse({"error": "세션을 찾을 수 없습니다."}, status=404)
+
+    if request.method == "GET":
+        messages = session.messages.all()
+        return JsonResponse({
+            "id": session.id,
+            "title": session.title,
+            "messages": [{"id": m.id, "role": m.role, "text": m.text} for m in messages],
+        })
+
+    try:
+        body = json.loads(request.body)
+    except json.JSONDecodeError:
+        return JsonResponse({"error": "잘못된 JSON 형식입니다."}, status=400)
+
+    role = body.get("role")
+    text = body.get("text")
+    if role not in ("user", "assistant") or not text:
+        return JsonResponse({"error": "role과 text가 필요합니다."}, status=400)
+
+    msg = ChatMessage.objects.create(session=session, role=role, text=text)
+    return JsonResponse({"id": msg.id, "role": msg.role, "text": msg.text}, status=201)

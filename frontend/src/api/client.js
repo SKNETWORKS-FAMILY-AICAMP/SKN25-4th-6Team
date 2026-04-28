@@ -26,8 +26,17 @@ export default apiClient;
 export const sendMessage = (data) =>
   apiClient.post('/api/chat/', data);
 
-export const getChatHistory = (userId) =>
-  apiClient.get(`/api/chat/history/${userId}/`);
-
 export const getCards = () =>
   apiClient.get('/api/cards/');
+
+export const getSessions = () =>
+  apiClient.get('/api/sessions/');
+
+export const createSession = (title) =>
+  apiClient.post('/api/sessions/', { title });
+
+export const getSessionDetail = (sessionId) =>
+  apiClient.get(`/api/sessions/${sessionId}/`);
+
+export const addMessage = (sessionId, role, text) =>
+  apiClient.post(`/api/sessions/${sessionId}/`, { role, text });
