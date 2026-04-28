@@ -8,7 +8,7 @@ from django.views.decorators.http import require_http_methods
 
 logger = logging.getLogger(__name__)
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+BACKEND_ROOT = Path(__file__).resolve().parent.parent
 
 _app_state = None
 
@@ -21,11 +21,11 @@ def _get_app_state():
     try:
         from src.service import load_app_state
         _app_state = load_app_state(
-            data_dir=PROJECT_ROOT / "data" / "cards",
-            category_config_path=PROJECT_ROOT / "config" / "card_category_rules.json",
-            rag_config_path=PROJECT_ROOT / "config" / "rag_settings.json",
-            synonyms_config_path=PROJECT_ROOT / "config" / "synonyms.json",
-            rag_artifacts_dir=PROJECT_ROOT / "vector_store",
+            data_dir=BACKEND_ROOT / "data" / "cards",
+            category_config_path=BACKEND_ROOT / "config_files" / "card_category_rules.json",
+            rag_config_path=BACKEND_ROOT / "config_files" / "rag_settings.json",
+            synonyms_config_path=BACKEND_ROOT / "config_files" / "synonyms.json",
+            rag_artifacts_dir=BACKEND_ROOT / "vector_store",
         )
         logger.info("AppState 로드 완료: 카드 %d개", len(_app_state.cards))
     except Exception as e:

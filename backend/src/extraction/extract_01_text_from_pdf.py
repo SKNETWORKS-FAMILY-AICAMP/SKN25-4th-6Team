@@ -8,8 +8,8 @@ from pdf2image import convert_from_path
 load_dotenv()
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
-RAW_PDF_DIR = PROJECT_ROOT / "data" / "raw"
-OUTPUT_DIR = PROJECT_ROOT / "data" / "vision"
+RAW_PDF_DIR = PROJECT_ROOT / "data" / "documents" / "raw"
+OUTPUT_DIR = PROJECT_ROOT / "data" / "documents" / "vision"
 
 MODEL = "gpt-5.4-mini-2026-03-17"
 

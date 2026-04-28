@@ -5,3 +5,6 @@ __pycache__
 .git
 .env
 data/db.sqlite3
+data/cards
+data/documents
+vector_store
