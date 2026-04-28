@@ -102,7 +102,7 @@ export default function ChatPage({ onGoMyPage }) {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === 'Enter' && !e.shiftKey && !e.nativeEvent.isComposing) {
       e.preventDefault();
       sendChat(input);
     }
@@ -217,7 +217,7 @@ export default function ChatPage({ onGoMyPage }) {
                   ${msg.role === 'user' ? 'bg-[#E5E5E0] text-xl' : 'bg-[#F5C842]'}`}
                 >
                   {msg.role === 'user'
-                    ? (profile.avatar || '👤')
+                    ? (profile.avatar || '🧑‍💻')
                     : <img src={raichuImg} alt="RAIchU" className="w-full h-full object-cover" />
                   }
                 </div>
