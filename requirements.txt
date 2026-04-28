@@ -16,3 +16,4 @@ pdf2image
 matplotlib
 easyocr
 sqlalchemy
+Jinja2==3.1.4
