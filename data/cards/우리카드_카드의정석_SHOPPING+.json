@@ -1,0 +1,451 @@
+{
+  "metadata": {
+    "카드명": "카드의정석_SHOPPING+",
+    "카드사": "우리카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "우리카드_카드의정석_SHOPPING+.pdf"
+  },
+  "card": {
+    "name": "카드의정석_SHOPPING+",
+    "bank": "우리카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "VISA",
+      "Mastercard",
+      "UnionPay",
+      "국내전용"
+    ],
+    "grade": "미확인",
+    "issuedDate": "2023년 9월 4일",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 5000,
+      "partnership": 7000,
+      "total": 10000,
+      "amount": 10000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 5000,
+          "partnership": 7000,
+          "total": 10000,
+          "amount": 10000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 5000,
+          "partnership": 7000,
+          "total": 10000,
+          "amount": 10000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 12000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 12000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "UnionPay",
+        "amount": 10000
+      },
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 10000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 10000,
+      "max": 12000
+    },
+    "overseas_brand_options": {
+      "count": 3,
+      "brands": [
+        "VISA",
+        "Mastercard",
+        "UnionPay"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "온라인 쇼핑 10% 청구할인(전월 30만원 이상) 오프라인 쇼핑 10% 청구할인(전월 30만원 이상) 4대 PAY 결제 시 5% 추가할인(전월 30만원 이상)"
+    },
+    "benefit_items": [
+      {
+        "category": "온라인쇼핑",
+        "description": "온라인 쇼핑 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "전국 모든 온라인 쇼핑몰",
+        "note": ""
+      },
+      {
+        "category": "오프라인",
+        "description": "오프라인 쇼핑 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "전국 모든 오프라인 매장",
+        "note": ""
+      },
+      {
+        "category": "기타",
+        "description": "4대 PAY 결제 시 5% 추가할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "4대 PAY 가맹점",
+        "note": ""
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "전월실적 30만원 이상 시 할인 제공",
+        "monthly_min_spending": 300000
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 300000,
+        "label": "30만원 이상",
+        "benefits_unlocked": [
+          "온라인 쇼핑 10% 청구할인",
+          "오프라인 쇼핑 10% 청구할인",
+          "4대 PAY 결제 시 5% 추가할인"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "온라인 쇼핑 10% 청구할인 제공",
+      "오프라인 쇼핑 10% 청구할인 제공",
+      "4대 PAY 결제 시 추가 할인 제공"
+    ],
+    "weaknesses": [
+      "전월 실적 30만원 이상 필요",
+      "할인 한도 없음",
+      "가맹점 제한"
+    ],
+    "recommended_scenario": "온라인 및 오프라인 쇼핑을 자주 이용하는 고객",
+    "positioning": "쇼핑 중심의 혜택 제공"
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "상품권",
+      "기프트카드",
+      "선불카드"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "상품 출시일 : 2023년 9월 4일",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "상품",
+        "출시일",
+        "2023년",
+        "9월",
+        "4일"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "기본연회비 5,000원＋제휴연회비 7,000원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "기본연회비",
+        "5",
+        "000원",
+        "제휴연회비",
+        "7",
+        "000원"
+      ],
+      "토큰수": 6
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "온라인 쇼핑 10% 청구할인(전월 30만원 이상), 오프라인 쇼핑 10% 청구할인(전월 30만원 이상), 4대 PAY 결제 시 5% 추가할인(전월 30만원 이상)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "온라인",
+        "쇼핑",
+        "10",
+        "청구할인",
+        "전월",
+        "30만원",
+        "이상",
+        "오프라인",
+        "쇼핑",
+        "10",
+        "청구할인",
+        "전월"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "온라인 및 오프라인 쇼핑을 자주 이용하는 고객",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "온라인",
+        "및",
+        "오프라인",
+        "쇼핑을",
+        "자주",
+        "이용하는",
+        "고객"
+      ],
+      "토큰수": 7
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 온라인 쇼핑 10% 청구할인 제공, 오프라인 쇼핑 10% 청구할인 제공, 4대 PAY 결제 시 추가 할인 제공; 약점: 전월 실적 30만원 이상 필요, 할인 한도 없음, 가맹점 제한",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "온라인",
+        "쇼핑",
+        "10",
+        "청구할인",
+        "제공",
+        "오프라인",
+        "쇼핑",
+        "10",
+        "청구할인",
+        "제공",
+        "4대"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "국세, 지방세, 상품권, 기프트카드, 선불카드 구매 및 충전금액 제외",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국세",
+        "지방세",
+        "상품권",
+        "기프트카드",
+        "선불카드",
+        "구매",
+        "및",
+        "충전금액",
+        "제외"
+      ],
+      "토큰수": 9
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "상품 출시일 : 2023년 9월 4일",
+      "💳 연회비 구조": "기본연회비 5,000원＋제휴연회비 7,000원",
+      "🎁 주요 혜택": "온라인 쇼핑 10% 청구할인(전월 30만원 이상), 오프라인 쇼핑 10% 청구할인(전월 30만원 이상), 4대 PAY 결제 시 5% 추가할인(전월 30만원 이상)",
+      "👥 추천 대상": "온라인 및 오프라인 쇼핑을 자주 이용하는 고객",
+      "💡 카드의 강점 및 약점": "강점: 온라인 쇼핑 10% 청구할인 제공, 오프라인 쇼핑 10% 청구할인 제공, 4대 PAY 결제 시 추가 할인 제공; 약점: 전월 실적 30만원 이상 필요, 할인 한도 없음, 가맹점 제한",
+      "⚠️ 주의사항 및 제외사항": "국세, 지방세, 상품권, 기프트카드, 선불카드 구매 및 충전금액 제외"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 2,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "카드의정석_SHOPPING+",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "우리카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "VISA, Mastercard, UnionPay, 국내전용",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "10000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 839,
+    "총글자수": 308,
+    "총단어수": 79,
+    "키워드": [
+      "상품",
+      "출시일",
+      "2023년",
+      "9월",
+      "4일",
+      "기본연회비",
+      "5",
+      "000원",
+      "제휴연회비",
+      "7",
+      "000원",
+      "온라인",
+      "쇼핑",
+      "10",
+      "청구할인",
+      "전월",
+      "30만원",
+      "이상",
+      "오프라인",
+      "쇼핑"
+    ],
+    "소제목수": 0
+  }
+}

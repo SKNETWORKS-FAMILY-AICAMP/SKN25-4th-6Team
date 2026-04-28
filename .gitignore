@@ -1,12 +1,48 @@
+# 환경
 .env
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Python
 __pycache__/
 *.pyc
-data/vision/_tmp/
-frontend/node_modules/
-frontend/dist/
-backend/data/db.sqlite3
-backend/staticfiles/
-backend/chroma/*
-!backend/chroma/.gitkeep
-frontend/.vite/
-frontend/.env
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# 프로젝트 특화
+.streamlit/cache/
+artifacts/rag/embeddings.jsonl  # 8MB - 재생성 가능하지만 분석용 유지
+.DS_Store
+
+# 로그
+*.log
+batch_extract*.log
+
+# Docker
+.dockerignore
+
+# 데이터
+data/raw/**/*.pdf
+
+# 분석 결과 (재생성 가능)
+analysis/statistics/*.json
+analysis/visualizations/*.png
+analysis/visualizations/*.csv
+data/analyzed/
+data/reports/
+
+# Jupyter
+.ipynb_checkpoints/
+*.py[cod]
+*$py.class

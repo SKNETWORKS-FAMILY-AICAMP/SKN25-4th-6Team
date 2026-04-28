@@ -1,0 +1,454 @@
+{
+  "metadata": {
+    "카드명": "DIGILOCA SKYPASS",
+    "카드사": "롯데카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "롯데카드_DIGILOCA_SKYPASS.pdf"
+  },
+  "card": {
+    "name": "DIGILOCA SKYPASS",
+    "bank": "롯데카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "Mastercard",
+      "American Express"
+    ],
+    "grade": "Members",
+    "issuedDate": "2024-12-30",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 7000,
+      "partnership": 13000,
+      "total": 20000,
+      "amount": 20000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 13000,
+      "total": 13000,
+      "amount": 13000,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 7000,
+          "partnership": 13000,
+          "total": 20000,
+          "amount": 20000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 7000,
+          "partnership": 13000,
+          "total": 20000,
+          "amount": 20000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 13000,
+          "total": 13000,
+          "amount": 13000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 13000,
+          "total": 13000,
+          "amount": 13000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 20000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "MASTER",
+        "amount": 20000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "AMEX",
+        "amount": 20000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 20000,
+      "max": 20000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "Mastercard",
+        "American Express"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "국내 1,000원당 1 마일리지 적립 해외(AMEX) 1,000원당 2 마일리지 적립 해외(MASTER) 1,000원당 2 마일리지 적립, 월 2,000 마일리지 한도"
+    },
+    "benefit_items": [
+      {
+        "category": "항공마일리지",
+        "description": "국내 1,000원당 1 마일리지 적립",
+        "type": "포인트적립",
+        "rate": "1 마일리지",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 1000,
+        "applicable_stores": "롯데카드에 등록된 가맹점 및 업종",
+        "note": "전월 실적 없이 이용금액에 따라 마일리지 적립"
+      },
+      {
+        "category": "항공마일리지",
+        "description": "해외(AMEX) 1,000원당 2 마일리지 적립",
+        "type": "포인트적립",
+        "rate": "2 마일리지",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 1000,
+        "applicable_stores": "롯데카드에 등록된 가맹점 및 업종",
+        "note": "전월 실적 없이 이용금액에 따라 마일리지 적립"
+      },
+      {
+        "category": "항공마일리지",
+        "description": "해외(MASTER) 1,000원당 2 마일리지 적립, 월 2,000 마일리지 한도",
+        "type": "포인트적립",
+        "rate": "2 마일리지",
+        "monthly_min_spending": 0,
+        "monthly_cap": 2000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 1000,
+        "applicable_stores": "롯데카드에 등록된 가맹점 및 업종",
+        "note": "전월 실적 없이 이용금액에 따라 마일리지 적립"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": []
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "국내 1,000원당 1 마일리지 적립",
+      "해외(AMEX) 1,000원당 2 마일리지 적립",
+      "해외(MASTER) 1,000원당 2 마일리지 적립, 월 2,000 마일리지 한도",
+      "가족카드 발급 시 제휴 연회비가 청구됨"
+    ],
+    "weaknesses": [
+      "마일리지 적립 제외 항목이 많음",
+      "해외 이용 시 수수료 발생",
+      "전월 실적 없이 마일리지 적립이 가능하나 한도가 있음"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "건강보험",
+      "국민연금",
+      "고용보험",
+      "산재보험",
+      "초·중·고교 납입금",
+      "대학(대학원)등록금",
+      "정부지원금",
+      "LH·SH 공사 공공임대료",
+      "월세",
+      "부동산 임대료",
+      "장애인 고용부담금",
+      "도시가스요금",
+      "전기요금",
+      "수도요금",
+      "공과금",
+      "아파트관리비",
+      "TV 수신료",
+      "기프트·선불카드 충전 및 구매",
+      "상품권 구매",
+      "택시",
+      "고속버스",
+      "고속도로 통행요금",
+      "대중교통",
+      "관세납부",
+      "벌금",
+      "과태료",
+      "민원 발급 수수료",
+      "단기카드대출",
+      "장기카드대출",
+      "연회비",
+      "이자 및 각종 수수료"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "DIGILOCA SKYPASS",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "DIGILOCA",
+        "SKYPASS"
+      ],
+      "토큰수": 2
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 20,000원 (기본연회비 7,000원+제휴연회비 13,000원), 해외겸용 20,000원 (기본연회비 7,000원+제휴연회비 13,000원)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "20",
+        "000원",
+        "기본연회비",
+        "7",
+        "000원",
+        "제휴연회비",
+        "13",
+        "000원",
+        "해외겸용",
+        "20",
+        "000원"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "국내 1,000원당 1 마일리지 적립, 해외(AMEX) 1,000원당 2 마일리지 적립, 해외(MASTER) 1,000원당 2 마일리지 적립, 월 2,000 마일리지 한도",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내",
+        "1",
+        "000원당",
+        "1",
+        "마일리지",
+        "적립",
+        "해외",
+        "AMEX",
+        "1",
+        "000원당",
+        "2",
+        "마일리지"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 국내 1,000원당 1 마일리지 적립, 해외(AMEX) 1,000원당 2 마일리지 적립, 해외(MASTER) 1,000원당 2 마일리지 적립, 가족카드 발급 시 제휴 연회비가 청구됨; 약점: 마일리지 적립 제외 항목이 많음, 해외 이용 시 수수료 발생, 전월 실적 없이 마일리지 적립이 가능하나 한도가 있음",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "국내",
+        "1",
+        "000원당",
+        "1",
+        "마일리지",
+        "적립",
+        "해외",
+        "AMEX",
+        "1",
+        "000원당",
+        "2"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "마일리지 적립 제외 항목이 많음",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "마일리지",
+        "적립",
+        "제외",
+        "항목이",
+        "많음"
+      ],
+      "토큰수": 5
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "DIGILOCA SKYPASS",
+      "💳 연회비 구조": "국내전용 20,000원 (기본연회비 7,000원+제휴연회비 13,000원), 해외겸용 20,000원 (기본연회비 7,000원+제휴연회비 13,000원)",
+      "🎁 주요 혜택": "국내 1,000원당 1 마일리지 적립, 해외(AMEX) 1,000원당 2 마일리지 적립, 해외(MASTER) 1,000원당 2 마일리지 적립, 월 2,000 마일리지 한도",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 국내 1,000원당 1 마일리지 적립, 해외(AMEX) 1,000원당 2 마일리지 적립, 해외(MASTER) 1,000원당 2 마일리지 적립, 가족카드 발급 시 제휴 연회비가 청구됨; 약점: 마일리지 적립 제외 항목이 많음, 해외 이용 시 수수료 발생, 전월 실적 없이 마일리지 적립이 가능하나 한도가 있음",
+      "⚠️ 주의사항 및 제외사항": "마일리지 적립 제외 항목이 많음"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 12,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "DIGILOCA SKYPASS",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "롯데카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, Mastercard, American Express",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "20000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 943,
+    "총글자수": 392,
+    "총단어수": 96,
+    "키워드": [
+      "DIGILOCA",
+      "SKYPASS",
+      "국내전용",
+      "20",
+      "000원",
+      "기본연회비",
+      "7",
+      "000원",
+      "제휴연회비",
+      "13",
+      "000원",
+      "해외겸용",
+      "20",
+      "000원",
+      "기본연회비",
+      "7",
+      "000원",
+      "제휴연회비",
+      "13",
+      "000원"
+    ],
+    "소제목수": 0
+  }
+}

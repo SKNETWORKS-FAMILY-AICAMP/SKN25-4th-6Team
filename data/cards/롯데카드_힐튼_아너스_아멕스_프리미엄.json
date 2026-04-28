@@ -1,0 +1,438 @@
+{
+  "metadata": {
+    "카드명": "힐튼 아너스 아멕스 프리미엄",
+    "카드사": "롯데카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "롯데카드_힐튼_아너스_아멕스_프리미엄.pdf"
+  },
+  "card": {
+    "name": "힐튼 아너스 아멕스 프리미엄",
+    "bank": "롯데카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "VISA"
+    ],
+    "grade": "Members",
+    "issuedDate": "2024-05-14",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 7000,
+      "partnership": 490000,
+      "total": 497000,
+      "amount": 497000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 100000,
+      "total": 100000,
+      "amount": 100000,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 7000,
+          "partnership": 490000,
+          "total": 497000,
+          "amount": 497000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 7000,
+          "partnership": 490000,
+          "total": 497000,
+          "amount": 497000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 100000,
+          "total": 100000,
+          "amount": 100000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 100000,
+          "total": 100000,
+          "amount": 100000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 497000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 500000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 497000,
+      "max": 500000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "VISA"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "국내 모든 가맹점 2 포인트 적립 해외 모든 이용금액 8 포인트 적립 전세계 힐튼 호텔 주말 무료 숙박권 2매 제공(연 1회) 국내·해외 공항라운지 1인 무료 이용(연4회)"
+    },
+    "benefit_items": [
+      {
+        "category": "포인트적립",
+        "description": "국내 모든 가맹점에서 카드 이용 시 2 포인트 적립",
+        "type": "포인트적립",
+        "rate": "2 포인트",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "국내 모든 가맹점",
+        "note": ""
+      },
+      {
+        "category": "포인트적립",
+        "description": "해외 모든 이용금액에서 카드 이용 시 8 포인트 적립",
+        "type": "포인트적립",
+        "rate": "8 포인트",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "해외 모든 가맹점",
+        "note": ""
+      },
+      {
+        "category": "기타",
+        "description": "전세계 힐튼 호텔 주말 무료 숙박권 2매 제공(연 1회)",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "",
+        "note": "지난해 연회비 주기 국내/해외 일시불 및 할부 이용실적 2,400만원 이상 시 제공"
+      },
+      {
+        "category": "기타",
+        "description": "국내·해외 공항라운지 1인 무료 이용(연4회)",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "국내·해외 공항",
+        "note": "이용일 기준 지난달 이용금액 50만원 이상 시 제공"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "기본 연회비 및 제휴 연회비 적용",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": []
+        }
+      }
+    },
+    "spending_thresholds": []
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "국내 모든 가맹점에서 2 포인트 적립",
+      "해외 모든 이용금액에서 8 포인트 적립",
+      "연 1회 주말 무료 숙박권 제공",
+      "국내·해외 공항라운지 무료 이용 서비스"
+    ],
+    "weaknesses": [
+      "연회비가 상대적으로 높음",
+      "가족카드 이용 실적은 본인카드 실적에 합산됨",
+      "해외 이용 시 수수료 발생"
+    ],
+    "recommended_scenario": "해외 여행 및 힐튼 호텔 이용이 잦은 고객에게 추천",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "힐튼 아너스 아멕스 프리미엄, 카드출시일: 2024년 05월 14일",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "힐튼",
+        "아너스",
+        "아멕스",
+        "프리미엄",
+        "카드출시일",
+        "2024년",
+        "05월",
+        "14일"
+      ],
+      "토큰수": 8
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 497,000원, 해외겸용(AMEX) 500,000원, 가족카드 100,000원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "497",
+        "000원",
+        "해외겸용",
+        "AMEX",
+        "500",
+        "000원",
+        "가족카드",
+        "100",
+        "000원"
+      ],
+      "토큰수": 10
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "국내 모든 가맹점 2 포인트 적립, 해외 모든 이용금액 8 포인트 적립, 전세계 힐튼 호텔 주말 무료 숙박권 2매 제공(연 1회), 국내·해외 공항라운지 1인 무료 이용(연4회)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내",
+        "모든",
+        "가맹점",
+        "2",
+        "포인트",
+        "적립",
+        "해외",
+        "모든",
+        "이용금액",
+        "8",
+        "포인트",
+        "적립"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "해외 여행 및 힐튼 호텔 이용이 잦은 고객",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "해외",
+        "여행",
+        "및",
+        "힐튼",
+        "호텔",
+        "이용이",
+        "잦은",
+        "고객"
+      ],
+      "토큰수": 8
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 국내 모든 가맹점에서 2 포인트 적립, 해외 모든 이용금액에서 8 포인트 적립, 연 1회 주말 무료 숙박권 제공, 국내·해외 공항라운지 무료 이용 서비스. 약점: 연회비가 상대적으로 높음, 가족카드 이용 실적은 본인카드 실적에 합산됨, 해외 이용 시 수수료 발생.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "국내",
+        "모든",
+        "가맹점에서",
+        "2",
+        "포인트",
+        "적립",
+        "해외",
+        "모든",
+        "이용금액에서",
+        "8",
+        "포인트"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "혜택 제외 업종: 국세, 지방세, 건강보험, 국민연금, 고용보험, 산재보험, 초·중·고교 납입금, 대학(대학원)등록금, 정부지원금, LH·SH 공사 공공임대료, 월세, 부동산 임대료, 장애인 고용부담금, 도시가스요금, 전기요금, 수도요금, 공과금, 아파트관리비, TV 수신료, 오토·스마트 캐시백 신청 이용금액, 기프트·선불카드 충전 및 구매, 포인트 충전, 상품권 구매, 택시, 고속버스, 고속도로 통행요금, 대중교통, 무승인전표, 관세납부, 벌금, 과태료, 민원 발급 수수료, 인지세, 송달료, 단기카드대출, 장기카드대출, 연회비, 이자 및 각종 수수료.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "혜택",
+        "제외",
+        "업종",
+        "국세",
+        "지방세",
+        "건강보험",
+        "국민연금",
+        "고용보험",
+        "산재보험",
+        "초",
+        "중",
+        "고교"
+      ],
+      "토큰수": 12
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "힐튼 아너스 아멕스 프리미엄, 카드출시일: 2024년 05월 14일",
+      "💳 연회비 구조": "국내전용 497,000원, 해외겸용(AMEX) 500,000원, 가족카드 100,000원",
+      "🎁 주요 혜택": "국내 모든 가맹점 2 포인트 적립, 해외 모든 이용금액 8 포인트 적립, 전세계 힐튼 호텔 주말 무료 숙박권 2매 제공(연 1회), 국내·해외 공항라운지 1인 무료 이용(연4회)",
+      "👥 추천 대상": "해외 여행 및 힐튼 호텔 이용이 잦은 고객",
+      "💡 카드의 강점 및 약점": "강점: 국내 모든 가맹점에서 2 포인트 적립, 해외 모든 이용금액에서 8 포인트 적립, 연 1회 주말 무료 숙박권 제공, 국내·해외 공항라운지 무료 이용 서비스. 약점: 연회비가 상대적으로 높음, 가족카드 이용 실적은 본인카드 실적에 합산됨, 해외 이용 시 수수료 발생.",
+      "⚠️ 주의사항 및 제외사항": "혜택 제외 업종: 국세, 지방세, 건강보험, 국민연금, 고용보험, 산재보험, 초·중·고교 납입금, 대학(대학원)등록금, 정부지원금, LH·SH 공사 공공임대료, 월세, 부동산 임대료, 장애인 고용부담금, 도시가스요금, 전기요금, 수도요금, 공과금, 아파트관리비, TV 수신료, 오토·스마트 캐시백 신청 이용금액, 기프트·선불카드 충전 및 구매, 포인트 충전, 상품권 구매, 택시, 고속버스, 고속도로 통행요금, 대중교통, 무승인전표, 관세납부, 벌금, 과태료, 민원 발급 수수료, 인지세, 송달료, 단기카드대출, 장기카드대출, 연회비, 이자 및 각종 수수료."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 3,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "힐튼 아너스 아멕스 프리미엄",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "롯데카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, VISA",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "497000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 1698,
+    "총글자수": 676,
+    "총단어수": 163,
+    "키워드": [
+      "힐튼",
+      "아너스",
+      "아멕스",
+      "프리미엄",
+      "카드출시일",
+      "2024년",
+      "05월",
+      "14일",
+      "국내전용",
+      "497",
+      "000원",
+      "해외겸용",
+      "AMEX",
+      "500",
+      "000원",
+      "가족카드",
+      "100",
+      "000원",
+      "국내",
+      "모든"
+    ],
+    "소제목수": 0
+  }
+}

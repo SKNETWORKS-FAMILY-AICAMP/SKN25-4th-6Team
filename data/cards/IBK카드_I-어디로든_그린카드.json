@@ -1,0 +1,439 @@
+{
+  "metadata": {
+    "카드명": "I-어디로든 그린카드",
+    "카드사": "IBK기업은행",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "IBK카드_I-어디로든_그린카드.pdf"
+  },
+  "card": {
+    "name": "I-어디로든 그린카드",
+    "bank": "IBK기업은행",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용"
+    ],
+    "grade": "미확인",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "국내전용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 4000,
+      "partnership": 11000,
+      "total": 15000,
+      "amount": 15000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 4000,
+          "partnership": 11000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 4000,
+          "partnership": 11000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "유효기간이 도래하기 전 카드 해지 시 연회비 반환",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 15000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 15000,
+      "max": 15000
+    },
+    "overseas_brand_options": {
+      "count": 0,
+      "brands": []
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "전기차, 수소차 충전 최대 40% 적립 공유 모빌리티 10% 적립 대중교통 10% 적립 커피전문점 10% 적립"
+    },
+    "benefit_items": [
+      {
+        "category": "기타",
+        "description": "전기차, 수소차 충전",
+        "type": "포인트적립",
+        "rate": "최대 40%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 20000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "그린카드 홈페이지 또는 앱에서 확인",
+        "note": "충전소 멤버십 가입 후 결제카드 등록 필요"
+      },
+      {
+        "category": "기타",
+        "description": "공유 모빌리티",
+        "type": "포인트적립",
+        "rate": "10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 5000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "쏘카, 투루카, 카카오T바이크 등",
+        "note": "현장결제와 공식앱 또는 홈페이지를 통한 결제에 한함"
+      },
+      {
+        "category": "교통",
+        "description": "대중교통",
+        "type": "포인트적립",
+        "rate": "10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 5000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "버스, 지하철",
+        "note": "공항리무진, 공항버스, 고속버스, 시외버스 및 통행료 제외"
+      },
+      {
+        "category": "식음료",
+        "description": "커피전문점",
+        "type": "포인트적립",
+        "rate": "10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 5000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "스타벅스, 폴바셋, 이디야",
+        "note": "현장결제와 각 커피 브랜드 공식앱을 통한 온라인 결제에 한함"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": []
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 300000,
+        "label": "30만원 이상",
+        "benefits_unlocked": [
+          "전기차, 수소차 충전 20% 적립"
+        ]
+      },
+      {
+        "amount": 600000,
+        "label": "60만원 이상",
+        "benefits_unlocked": [
+          "전기차, 수소차 충전 40% 적립"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [],
+    "weaknesses": [],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": "모든 적립 서비스는 비씨카드에 등록된 가맹점 업종 기준으로 제공 전월 이용실적 제외 항목 및 무이자할부는 적립되지 않음"
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "I-어디로든 그린카드는 친환경 소비를 장려하는 카드로, 다양한 포인트 적립 혜택을 제공합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "I",
+        "어디로든",
+        "그린카드는",
+        "친환경",
+        "소비를",
+        "장려하는",
+        "카드로",
+        "다양한",
+        "포인트",
+        "적립",
+        "혜택을",
+        "제공합니다"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "기본 연회비는 15,000원이며, 유효기간 전 해지 시 연회비 반환 가능합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "기본",
+        "연회비는",
+        "15",
+        "000원이며",
+        "유효기간",
+        "전",
+        "해지",
+        "시",
+        "연회비",
+        "반환",
+        "가능합니다"
+      ],
+      "토큰수": 11
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "전기차, 수소차 충전 시 최대 40% 포인트 적립, 공유 모빌리티 10% 적립, 대중교통 10% 적립, 커피전문점 10% 적립 등 다양한 혜택을 제공합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전기차",
+        "수소차",
+        "충전",
+        "시",
+        "최대",
+        "40",
+        "포인트",
+        "적립",
+        "공유",
+        "모빌리티",
+        "10",
+        "적립"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "친환경 소비를 지향하는 고객에게 적합합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "친환경",
+        "소비를",
+        "지향하는",
+        "고객에게",
+        "적합합니다"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 다양한 포인트 적립 혜택, 친환경 소비 장려. 약점: 해외 사용 불가, 특정 업종 제외.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "다양한",
+        "포인트",
+        "적립",
+        "혜택",
+        "친환경",
+        "소비",
+        "장려",
+        "약점",
+        "해외",
+        "사용",
+        "불가"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "국세, 지방세, 아파트관리비, 상품권 등은 적립 제외 항목입니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국세",
+        "지방세",
+        "아파트관리비",
+        "상품권",
+        "등은",
+        "적립",
+        "제외",
+        "항목입니다"
+      ],
+      "토큰수": 8
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "I-어디로든 그린카드는 친환경 소비를 장려하는 카드로, 다양한 포인트 적립 혜택을 제공합니다.",
+      "💳 연회비 구조": "기본 연회비는 15,000원이며, 유효기간 전 해지 시 연회비 반환 가능합니다.",
+      "🎁 주요 혜택": "전기차, 수소차 충전 시 최대 40% 포인트 적립, 공유 모빌리티 10% 적립, 대중교통 10% 적립, 커피전문점 10% 적립 등 다양한 혜택을 제공합니다.",
+      "👥 추천 대상": "친환경 소비를 지향하는 고객에게 적합합니다.",
+      "💡 카드의 강점 및 약점": "강점: 다양한 포인트 적립 혜택, 친환경 소비 장려. 약점: 해외 사용 불가, 특정 업종 제외.",
+      "⚠️ 주의사항 및 제외사항": "국세, 지방세, 아파트관리비, 상품권 등은 적립 제외 항목입니다."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 1,
+      "date_value_count": 0,
+      "bullet_count": 1,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "I-어디로든 그린카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "IBK기업은행",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "15000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 876,
+    "총글자수": 301,
+    "총단어수": 73,
+    "키워드": [
+      "I",
+      "어디로든",
+      "그린카드는",
+      "친환경",
+      "소비를",
+      "장려하는",
+      "카드로",
+      "다양한",
+      "포인트",
+      "적립",
+      "혜택을",
+      "제공합니다",
+      "기본",
+      "연회비는",
+      "15",
+      "000원이며",
+      "유효기간",
+      "전",
+      "해지",
+      "시"
+    ],
+    "소제목수": 0
+  }
+}

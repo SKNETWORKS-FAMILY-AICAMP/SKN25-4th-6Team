@@ -1,0 +1,440 @@
+{
+  "metadata": {
+    "카드명": "IBK포인트(신용)",
+    "카드사": "IBK기업은행",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "IBK카드_IBK포인트(신용).pdf"
+  },
+  "card": {
+    "name": "IBK포인트(신용)",
+    "bank": "IBK기업은행",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "VISA",
+      "Mastercard",
+      "국내전용"
+    ],
+    "grade": "미확인",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 4000,
+      "partnership": 18000,
+      "total": 21000,
+      "amount": 21000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 4000,
+      "partnership": 16000,
+      "total": 19000,
+      "amount": 19000,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 4000,
+          "partnership": 18000,
+          "total": 21000,
+          "amount": 21000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 4000,
+          "partnership": 18000,
+          "total": 21000,
+          "amount": 21000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 4000,
+          "partnership": 16000,
+          "total": 19000,
+          "amount": 19000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 4000,
+          "partnership": 16000,
+          "total": 19000,
+          "amount": 19000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "연회비는 카드 발급시점을 기준으로 매년 청구됩니다.",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 21000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 22000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 22000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 21000,
+      "max": 22000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "VISA",
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "국내·외 가맹점 적립 최대 3.3% 통합 월 적립한도 5만 포인트"
+    },
+    "benefit_items": [
+      {
+        "category": "포인트적립",
+        "description": "국내·외 가맹점 적립",
+        "type": "포인트적립",
+        "rate": "0.6%~3.3%",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 50000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "국내·외 모든 가맹점",
+        "note": "전월 이용실적 50만원 이상 시 제공"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": []
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 100000,
+        "label": "10만원 이상",
+        "benefits_unlocked": [
+          "적립률 0.8%"
+        ]
+      },
+      {
+        "amount": 300000,
+        "label": "30만원 이상",
+        "benefits_unlocked": [
+          "적립률 1.1%"
+        ]
+      },
+      {
+        "amount": 700000,
+        "label": "70만원 이상",
+        "benefits_unlocked": [
+          "적립률 2.2%"
+        ]
+      },
+      {
+        "amount": 1000000,
+        "label": "100만원 이상",
+        "benefits_unlocked": [
+          "적립률 3.3%"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "높은 포인트 적립률",
+      "국내외 가맹점에서 적립 가능",
+      "통합 월 적립한도 5만 포인트"
+    ],
+    "weaknesses": [
+      "전월 실적 조건 필요",
+      "연회비가 다소 높음",
+      "가족카드 발급 제한"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": "연회비는 카드 발급시점을 기준으로 매년 청구됩니다. 무이자 할부 이용 시 적립 불가 전월 이용실적 및 적립 제외 대상에 대한 상세 내용은 상품설명서 참조"
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "IBK포인트(신용) 카드는 국내외 가맹점에서 포인트 적립이 가능한 카드입니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "IBK포인트",
+        "신용",
+        "카드는",
+        "국내외",
+        "가맹점에서",
+        "포인트",
+        "적립이",
+        "가능한",
+        "카드입니다"
+      ],
+      "토큰수": 9
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 21,000원, 해외겸용(VISA, Mastercard) 22,000원. 연회비는 카드 발급시점을 기준으로 매년 청구됩니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "21",
+        "000원",
+        "해외겸용",
+        "VISA",
+        "Mastercard",
+        "22",
+        "000원",
+        "연회비는",
+        "카드",
+        "발급시점을",
+        "기준으로"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "국내·외 가맹점에서 최대 3.3% 포인트 적립. 전월 이용실적 50만원 이상 시 제공. 통합 월 적립한도 5만 포인트.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내",
+        "외",
+        "가맹점에서",
+        "최대",
+        "3",
+        "3",
+        "포인트",
+        "적립",
+        "전월",
+        "이용실적",
+        "50만원",
+        "이상"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "국내외 가맹점에서 높은 적립률을 원하는 고객",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내외",
+        "가맹점에서",
+        "높은",
+        "적립률을",
+        "원하는",
+        "고객"
+      ],
+      "토큰수": 6
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 높은 포인트 적립률, 국내외 가맹점 적립 가능. 약점: 전월 실적 조건 필요, 연회비가 다소 높음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "높은",
+        "포인트",
+        "적립률",
+        "국내외",
+        "가맹점",
+        "적립",
+        "가능",
+        "약점",
+        "전월",
+        "실적",
+        "조건"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "전월 이용실적 및 적립 제외 대상에 대한 상세 내용은 상품설명서 참조. 무이자 할부 이용 시 적립 불가.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전월",
+        "이용실적",
+        "및",
+        "적립",
+        "제외",
+        "대상에",
+        "대한",
+        "상세",
+        "내용은",
+        "상품설명서",
+        "참조",
+        "무이자"
+      ],
+      "토큰수": 12
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "IBK포인트(신용) 카드는 국내외 가맹점에서 포인트 적립이 가능한 카드입니다.",
+      "💳 연회비 구조": "국내전용 21,000원, 해외겸용(VISA, Mastercard) 22,000원. 연회비는 카드 발급시점을 기준으로 매년 청구됩니다.",
+      "🎁 주요 혜택": "국내·외 가맹점에서 최대 3.3% 포인트 적립. 전월 이용실적 50만원 이상 시 제공. 통합 월 적립한도 5만 포인트.",
+      "👥 추천 대상": "국내외 가맹점에서 높은 적립률을 원하는 고객",
+      "💡 카드의 강점 및 약점": "강점: 높은 포인트 적립률, 국내외 가맹점 적립 가능. 약점: 전월 실적 조건 필요, 연회비가 다소 높음.",
+      "⚠️ 주의사항 및 제외사항": "전월 이용실적 및 적립 제외 대상에 대한 상세 내용은 상품설명서 참조. 무이자 할부 이용 시 적립 불가."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 2,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "IBK포인트(신용)",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "IBK기업은행",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "VISA, Mastercard, 국내전용",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "21000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 919,
+    "총글자수": 329,
+    "총단어수": 81,
+    "키워드": [
+      "IBK포인트",
+      "신용",
+      "카드는",
+      "국내외",
+      "가맹점에서",
+      "포인트",
+      "적립이",
+      "가능한",
+      "카드입니다",
+      "국내전용",
+      "21",
+      "000원",
+      "해외겸용",
+      "VISA",
+      "Mastercard",
+      "22",
+      "000원",
+      "연회비는",
+      "카드",
+      "발급시점을"
+    ],
+    "소제목수": 0
+  }
+}

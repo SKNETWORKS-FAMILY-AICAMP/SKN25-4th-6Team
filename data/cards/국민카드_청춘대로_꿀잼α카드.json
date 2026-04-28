@@ -1,0 +1,457 @@
+{
+  "metadata": {
+    "카드명": "청춘대로 꿀잼α카드",
+    "카드사": "KB국민카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "국민카드_청춘대로_꿀잼α카드.pdf"
+  },
+  "card": {
+    "name": "청춘대로 꿀잼α카드",
+    "bank": "KB국민카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "Mastercard"
+    ],
+    "grade": "미확인",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 1000,
+      "partnership": 14000,
+      "total": 15000,
+      "amount": 15000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 1000,
+          "partnership": 14000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 1000,
+          "partnership": 14000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "초회/차기년도 연회비 면제조건은 없습니다.",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 15000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 15000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 15000,
+      "max": 15000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "전월 이용실적 40만원 이상 시 제공되는 할인 서비스 놀이 50% 청구할인, 스포츠/레저 20% 청구할인, 공연/음악 청구할인"
+    },
+    "benefit_items": [
+      {
+        "category": "기타",
+        "description": "놀이: 비디오방/게임방, 노래방, 비디오 및 도서대여점",
+        "type": "청구할인",
+        "rate": "50%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "비디오방, 게임방, 노래방",
+        "note": "일 할인한도 5천원"
+      },
+      {
+        "category": "스포츠",
+        "description": "스포츠/레저: 종합스포츠센터, 스포츠용품점, 골프장 등",
+        "type": "청구할인",
+        "rate": "20%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 20000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "종합스포츠센터, 스포츠용품점, 골프장 등",
+        "note": "일 할인한도 1만원"
+      },
+      {
+        "category": "기타",
+        "description": "공연/음악: 인터파크, 티켓링크, 멜론, 지니뮤직",
+        "type": "청구할인",
+        "rate": "건당 4천원",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "monthly_occurrence_limit": 2,
+        "annual_occurrence_limit": 8,
+        "per_transaction_min": 7000,
+        "applicable_stores": "CGV, 메가박스, 롯데시네마",
+        "note": "월 2회, 연 8회"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "전월 이용실적 40만원 이상 시 할인 서비스 제공",
+        "monthly_min_spending": 400000
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 400000,
+        "label": "40만원 이상",
+        "benefits_unlocked": [
+          "놀이 50% 청구할인",
+          "스포츠/레저 20% 청구할인",
+          "공연/음악 청구할인"
+        ]
+      },
+      {
+        "amount": 800000,
+        "label": "80만원 이상",
+        "benefits_unlocked": [
+          "놀이 50% 청구할인",
+          "스포츠/레저 20% 청구할인",
+          "공연/음악 청구할인"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "전월 실적 40만원 이상 시 다양한 할인 혜택 제공",
+      "모바일 단독카드로 편리한 사용",
+      "청구할인 혜택이 다양한 업종에 적용"
+    ],
+    "weaknesses": [
+      "가족카드 발급 불가",
+      "초회/차기년도 연회비 면제조건 없음",
+      "전월 실적 미충족 시 혜택 없음"
+    ],
+    "recommended_scenario": "온라인 쇼핑 및 다양한 할인 혜택을 원하는 사용자에게 추천",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "무이자할부 이용금액",
+      "상품권 및 선불카드 구입·충전금액",
+      "각종 세금 및 공과금"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "청춘대로 꿀잼α카드는 실물 없는 모바일 단독카드로 KB Pay에 카드 정보를 등록하여 모바일로 이용 가능.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "청춘대로",
+        "꿀잼",
+        "카드는",
+        "실물",
+        "없는",
+        "모바일",
+        "단독카드로",
+        "KB",
+        "Pay에",
+        "카드",
+        "정보를",
+        "등록하여"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "연회비는 1만 5천원(기본연회비 1천원 + 제휴연회비 1만 4천원). 초회/차기년도 연회비 면제조건은 없음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "연회비는",
+        "1만",
+        "5천원",
+        "기본연회비",
+        "1천원",
+        "제휴연회비",
+        "1만",
+        "4천원",
+        "초회",
+        "차기년도",
+        "연회비",
+        "면제조건은"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "전월 이용실적 40만원 이상 시 제공되는 할인 서비스. 놀이 50% 청구할인, 스포츠/레저 20% 청구할인, 공연/음악 청구할인.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전월",
+        "이용실적",
+        "40만원",
+        "이상",
+        "시",
+        "제공되는",
+        "할인",
+        "서비스",
+        "놀이",
+        "50",
+        "청구할인",
+        "스포츠"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "온라인 쇼핑 및 다양한 할인 혜택을 원하는 사용자.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "온라인",
+        "쇼핑",
+        "및",
+        "다양한",
+        "할인",
+        "혜택을",
+        "원하는",
+        "사용자"
+      ],
+      "토큰수": 8
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 다양한 할인 혜택, 모바일 사용 편리성. 약점: 가족카드 발급 불가, 연회비 면제조건 없음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "다양한",
+        "할인",
+        "혜택",
+        "모바일",
+        "사용",
+        "편리성",
+        "약점",
+        "가족카드",
+        "발급",
+        "불가",
+        "연회비"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "무이자할부 이용금액, 상품권 및 선불카드 구입·충전금액 제외.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "무이자할부",
+        "이용금액",
+        "상품권",
+        "및",
+        "선불카드",
+        "구입",
+        "충전금액",
+        "제외"
+      ],
+      "토큰수": 8
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "청춘대로 꿀잼α카드는 실물 없는 모바일 단독카드로 KB Pay에 카드 정보를 등록하여 모바일로 이용 가능.",
+      "💳 연회비 구조": "연회비는 1만 5천원(기본연회비 1천원 + 제휴연회비 1만 4천원). 초회/차기년도 연회비 면제조건은 없음.",
+      "🎁 주요 혜택": "전월 이용실적 40만원 이상 시 제공되는 할인 서비스. 놀이 50% 청구할인, 스포츠/레저 20% 청구할인, 공연/음악 청구할인.",
+      "👥 추천 대상": "온라인 쇼핑 및 다양한 할인 혜택을 원하는 사용자.",
+      "💡 카드의 강점 및 약점": "강점: 다양한 할인 혜택, 모바일 사용 편리성. 약점: 가족카드 발급 불가, 연회비 면제조건 없음.",
+      "⚠️ 주의사항 및 제외사항": "무이자할부 이용금액, 상품권 및 선불카드 구입·충전금액 제외."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 0,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "청춘대로 꿀잼α카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "KB국민카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, Mastercard",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "15000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 910,
+    "총글자수": 313,
+    "총단어수": 76,
+    "키워드": [
+      "청춘대로",
+      "꿀잼",
+      "카드는",
+      "실물",
+      "없는",
+      "모바일",
+      "단독카드로",
+      "KB",
+      "Pay에",
+      "카드",
+      "정보를",
+      "등록하여",
+      "모바일로",
+      "이용",
+      "가능",
+      "연회비는",
+      "1만",
+      "5천원",
+      "기본연회비",
+      "1천원"
+    ],
+    "소제목수": 0
+  }
+}

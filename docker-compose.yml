@@ -1,25 +1,12 @@
 services:
-  backend:
-    build:
-      context: ./backend
+  app:
+    build: .
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app
+      - ./data/vision:/app/data/vision
+      - ./data/processed:/app/data/processed
+      - ./src:/app/src
     env_file:
-      - ./backend/.env
-    command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
-
-  frontend:
-    build:
-      context: ./frontend
-    ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
-    env_file:
-      - ./frontend/.env
-    depends_on:
-      - backend
-
+      - .env
+    command: tail -f /dev/null

@@ -1,0 +1,453 @@
+{
+  "metadata": {
+    "카드명": "KB국민 굿데이카드",
+    "카드사": "KB국민카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "국민카드_굿데이카드.pdf"
+  },
+  "card": {
+    "name": "KB국민 굿데이카드",
+    "bank": "KB국민카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "VISA",
+      "Mastercard"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "2010.08.26",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 5000,
+      "partnership": 0,
+      "total": 5000,
+      "amount": 5000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 5000,
+          "partnership": 0,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 5000,
+          "partnership": 0,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "초회년도 연회비는 면제되지 않습니다. 고객님께서 굿데이카드로 연간 100만원 이상 사용 하시면 차기년도 기본연회비를 전액 면제 해 드립니다.",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 5000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 10000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 10000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 5000,
+      "max": 10000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "VISA",
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "주유소 60원/ℓ 청구할인(전월 30만원 이상) 대중교통 10% 청구할인(전월 30만원 이상) 통신 10% 청구할인(전월 30만원 이상) 음식/커피/편의점/약국 10% 청구할인(전월 30만원 이상) 학원/피트니스 10% 청구할인(전월 30만원 이상)"
+    },
+    "benefit_items": [
+      {
+        "category": "주유",
+        "description": "주유소/충전소 이용시 60원/ℓ 청구할인",
+        "type": "청구할인",
+        "rate": "",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 20000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "주유소, 충전소",
+        "note": "휘발유 가격은 GS칼텍스 고시 휘발유가 기준"
+      },
+      {
+        "category": "대중교통",
+        "description": "대중교통 이용시 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 50000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "버스, 지하철, 택시",
+        "note": "시외버스, 고속버스 제외"
+      },
+      {
+        "category": "통신",
+        "description": "통신업종 이용시 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 30000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "휴대폰, 유선전화, 인터넷전화",
+        "note": ""
+      },
+      {
+        "category": "음식",
+        "description": "음식점, 커피전문점, 편의점, 약국 이용시 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 50000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "일반음식점, 커피전문점, 편의점, 약국",
+        "note": "제과/아이스크림, 패스트푸드, 유흥주점 업종 제외"
+      },
+      {
+        "category": "학원",
+        "description": "학원/피트니스센터 이용시 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 300000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "외국어학원, 예체능학원, 자동차학원, 문화센터 등",
+        "note": "PG(인터넷) 학원, 유아교육기관, 학습자재 업종 제외"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "최초 카드 사용등록일로부터 90일동안은 직전월 결제회수실적 조건 미달시에도 1구간 할인서비스 제공",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": []
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 300000,
+        "label": "30만원 이상",
+        "benefits_unlocked": [
+          "주유소 60원/ℓ 청구할인",
+          "대중교통 10% 청구할인",
+          "통신 10% 청구할인",
+          "음식/커피/편의점/약국 10% 청구할인",
+          "학원/피트니스 10% 청구할인"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "다양한 업종에서 10% 청구할인 제공",
+      "주유소 할인 혜택",
+      "연간 100만원 이상 사용 시 차기년도 기본연회비 면제"
+    ],
+    "weaknesses": [
+      "초회년도 연회비 면제되지 않음",
+      "특정 업종 제외",
+      "모바일 단독카드와 실물카드 동시 보유 시 실물카드 연회비 청구"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "KB국민 굿데이카드",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "KB국민",
+        "굿데이카드"
+      ],
+      "토큰수": 2
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 5,000원, 해외겸용 10,000원. 초회년도 연회비 면제되지 않음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "5",
+        "000원",
+        "해외겸용",
+        "10",
+        "000원",
+        "초회년도",
+        "연회비",
+        "면제되지",
+        "않음"
+      ],
+      "토큰수": 10
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "주유소 60원/ℓ 청구할인(전월 30만원 이상), 대중교통 10% 청구할인(전월 30만원 이상), 통신 10% 청구할인(전월 30만원 이상), 음식/커피/편의점/약국 10% 청구할인(전월 30만원 이상), 학원/피트니스 10% 청구할인(전월 30만원 이상)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "주유소",
+        "60원",
+        "청구할인",
+        "전월",
+        "30만원",
+        "이상",
+        "대중교통",
+        "10",
+        "청구할인",
+        "전월",
+        "30만원",
+        "이상"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 다양한 업종에서 10% 청구할인 제공, 주유소 할인 혜택, 연간 100만원 이상 사용 시 차기년도 기본연회비 면제. 약점: 초회년도 연회비 면제되지 않음, 특정 업종 제외, 모바일 단독카드와 실물카드 동시 보유 시 실물카드 연회비 청구.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "다양한",
+        "업종에서",
+        "10",
+        "청구할인",
+        "제공",
+        "주유소",
+        "할인",
+        "혜택",
+        "연간",
+        "100만원",
+        "이상"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "혜택 제외 업종: 국세, 지방세, 아파트관리비, 상품권",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "혜택",
+        "제외",
+        "업종",
+        "국세",
+        "지방세",
+        "아파트관리비",
+        "상품권"
+      ],
+      "토큰수": 7
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "KB국민 굿데이카드",
+      "💳 연회비 구조": "국내전용 5,000원, 해외겸용 10,000원. 초회년도 연회비 면제되지 않음.",
+      "🎁 주요 혜택": "주유소 60원/ℓ 청구할인(전월 30만원 이상), 대중교통 10% 청구할인(전월 30만원 이상), 통신 10% 청구할인(전월 30만원 이상), 음식/커피/편의점/약국 10% 청구할인(전월 30만원 이상), 학원/피트니스 10% 청구할인(전월 30만원 이상)",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 다양한 업종에서 10% 청구할인 제공, 주유소 할인 혜택, 연간 100만원 이상 사용 시 차기년도 기본연회비 면제. 약점: 초회년도 연회비 면제되지 않음, 특정 업종 제외, 모바일 단독카드와 실물카드 동시 보유 시 실물카드 연회비 청구.",
+      "⚠️ 주의사항 및 제외사항": "혜택 제외 업종: 국세, 지방세, 아파트관리비, 상품권"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 3,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "KB국민 굿데이카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "KB국민카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "VISA, Mastercard",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "5000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 991,
+    "총글자수": 368,
+    "총단어수": 87,
+    "키워드": [
+      "KB국민",
+      "굿데이카드",
+      "국내전용",
+      "5",
+      "000원",
+      "해외겸용",
+      "10",
+      "000원",
+      "초회년도",
+      "연회비",
+      "면제되지",
+      "않음",
+      "주유소",
+      "60원",
+      "청구할인",
+      "전월",
+      "30만원",
+      "이상",
+      "대중교통",
+      "10"
+    ],
+    "소제목수": 0
+  }
+}

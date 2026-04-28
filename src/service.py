@@ -1,0 +1,126 @@
+"""
+서비스 레이어 — 비즈니스 로직의 단일 진입점
+
+현재: app.py(Streamlit)가 호출
+추후: Django view가 동일한 인터페이스로 호출
+"""
+
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Set, Tuple
+
+from .cards import load_cards, load_category_rules
+from .llm import llm_answer
+from .retrieval import (
+    infer_filters_from_question,
+    load_rag_settings,
+    load_vector_store,
+    retrieve_cards_hybrid,
+)
+from .utils import FEE_BANDS_ORDERED, load_synonyms, safe_get
+
+
+@dataclass
+class AppState:
+    cards: List[Dict[str, Any]]
+    vector_store: Optional[Dict[str, Any]]
+    rag_settings: Dict[str, Any]
+    synonyms: Dict[str, Set[str]]
+    banks: List[str]
+    all_categories: List[str]
+    fee_bands: List[str]
+
+
+def load_app_state(
+    data_dir: Path,
+    category_config_path: Path,
+    rag_config_path: Path,
+    synonyms_config_path: Path,
+    rag_artifacts_dir: Path,
+) -> AppState:
+    category_rules = load_category_rules(category_config_path)
+    rag_settings = load_rag_settings(rag_config_path)
+    synonyms = load_synonyms(str(synonyms_config_path))
+    cards = load_cards(data_dir, category_rules)
+    vector_store = load_vector_store(rag_artifacts_dir)
+
+    banks = sorted({safe_get(c, ["card", "bank"], "미분류") for c in cards})
+    all_categories = sorted({
+        cat
+        for c in cards
+        for cat in (safe_get(c, ["_derived", "categories"], []) or [])
+        if isinstance(safe_get(c, ["_derived", "categories"], []), list)
+    })
+    present_bands = {safe_get(c, ["_derived", "fee_band"], "") for c in cards}
+    fee_bands = [b for b in reversed(FEE_BANDS_ORDERED) if b in present_bands]
+
+    return AppState(
+        cards=cards,
+        vector_store=vector_store,
+        rag_settings=rag_settings,
+        synonyms=synonyms,
+        banks=banks,
+        all_categories=all_categories,
+        fee_bands=fee_bands,
+    )
+
+
+def chat(
+    question: str,
+    chat_history: List[Dict[str, str]],
+    user_filters: Dict[str, List[str]],
+    app_state: AppState,
+    top_k: int = 5,
+    model: str = "gpt-4.1-mini",
+    temperature: float = 0.2,
+) -> Dict[str, Any]:
+    """
+    단일 대화 턴 처리.
+
+    Returns:
+        answer: LLM 또는 규칙 기반 답변 텍스트
+        retrieved: 검색된 카드 목록 [(score, card), ...]
+        filters_applied: 실제 적용된 필터 (사용자 선택 + 자동 추론 합산)
+        inferred_filters: 질문에서 자동 추론된 필터
+    """
+    inferred = infer_filters_from_question(
+        question,
+        app_state.banks,
+        app_state.all_categories,
+        app_state.fee_bands,
+    )
+    merged_banks = sorted(set(user_filters.get("banks", []) + inferred["banks"]))
+    merged_categories = sorted(set(user_filters.get("categories", []) + inferred["categories"]))
+    merged_fee_bands = sorted(set(user_filters.get("fee_bands", []) + inferred["fee_bands"]))
+
+    retrieved = retrieve_cards_hybrid(
+        cards=app_state.cards,
+        query=question,
+        top_k=top_k,
+        banks=merged_banks,
+        categories=merged_categories,
+        fee_bands=merged_fee_bands,
+        vector_store=app_state.vector_store,
+        embedding_model=app_state.rag_settings["embedding_model"],
+        similarity_threshold=app_state.rag_settings["similarity_threshold"],
+        synonyms=app_state.synonyms,
+    )
+
+    answer = llm_answer(
+        question=question,
+        retrieved=retrieved,
+        chat_history=chat_history,
+        model=model,
+        temperature=temperature,
+    )
+
+    return {
+        "answer": answer,
+        "retrieved": retrieved,
+        "filters_applied": {
+            "banks": merged_banks,
+            "categories": merged_categories,
+            "fee_bands": merged_fee_bands,
+        },
+        "inferred_filters": inferred,
+    }
