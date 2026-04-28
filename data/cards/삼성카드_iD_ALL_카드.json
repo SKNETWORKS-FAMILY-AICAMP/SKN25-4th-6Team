@@ -1,0 +1,411 @@
+{
+  "metadata": {
+    "카드명": "삼성 iD ALL 카드",
+    "카드사": "삼성카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "삼성카드_iD_ALL_카드.pdf"
+  },
+  "card": {
+    "name": "삼성 iD ALL 카드",
+    "bank": "삼성카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "VISA",
+      "Mastercard",
+      "국내전용"
+    ],
+    "grade": "미확인",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 20000,
+      "partnership": 13000,
+      "total": 20000,
+      "amount": 20000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 13000,
+      "total": 13000,
+      "amount": 13000,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 7000,
+          "partnership": 13000,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 7000,
+          "partnership": 13000,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 13000,
+          "total": 13000,
+          "amount": 13000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 13000,
+          "total": 13000,
+          "amount": 13000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "연회비는 카드 발급일 기준으로 매년 청구",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 20000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 20000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 20000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 20000,
+      "max": 20000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "VISA",
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "많이 쓰는 영역 5% 자동 맞춤 할인 주유·이동통신·아파트 관리비 2.5% 할인 국내외 가맹점 0.5% 할인"
+    },
+    "benefit_items": [
+      {
+        "category": "기타",
+        "description": "백화점·할인점·슈퍼마켓 영역 중 월 이용금액이 가장 큰 1개 영역에 대해 5% 결제일할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "신세계/롯데/현대/갤러리아 백화점, 이마트, 롯데마트 등",
+        "note": "결제일할인금액은 다음 달 15일 이후 결제대금에서 차감"
+      },
+      {
+        "category": "주유",
+        "description": "주유소, LPG충전소, 전기차충전소 2.5% 결제일할인",
+        "type": "청구할인",
+        "rate": "2.5%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "주유소, LPG충전소, 전기차충전소",
+        "note": "월 할인한도 초과 시 다음 결제건부터 0.5% 할인 적용"
+      },
+      {
+        "category": "기타",
+        "description": "국내외 가맹점 0.5% 결제일할인",
+        "type": "청구할인",
+        "rate": "0.5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "국내외 가맹점",
+        "note": "해외는 해외겸용카드에 한해 제공"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 0,
+        "label": "",
+        "benefits_unlocked": []
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "많이 쓰는 영역 5% 자동 맞춤 할인 제공",
+      "주유·이동통신·아파트 관리비 2.5% 할인",
+      "국내외 가맹점 0.5% 할인"
+    ],
+    "weaknesses": [
+      "가족카드에는 제공되지 않음",
+      "할인 제외 업종이 많음",
+      "전월 이용금액 기준이 필요함"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "본인 해외겸용 2만원, 기본 연회비 7천원, 제휴 연회비 1만 3천원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "본인",
+        "해외겸용",
+        "2만원",
+        "기본",
+        "연회비",
+        "7천원",
+        "제휴",
+        "연회비",
+        "1만",
+        "3천원"
+      ],
+      "토큰수": 10
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "많이 쓰는 영역 5% 자동 맞춤 할인, 주유·이동통신·아파트 관리비 2.5% 할인, 국내외 가맹점 0.5% 할인",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "많이",
+        "쓰는",
+        "영역",
+        "5",
+        "자동",
+        "맞춤",
+        "할인",
+        "주유",
+        "이동통신",
+        "아파트",
+        "관리비",
+        "2"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "할인 제외 업종이 많음",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "할인",
+        "제외",
+        "업종이",
+        "많음"
+      ],
+      "토큰수": 4
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "",
+      "💳 연회비 구조": "본인 해외겸용 2만원, 기본 연회비 7천원, 제휴 연회비 1만 3천원",
+      "🎁 주요 혜택": "많이 쓰는 영역 5% 자동 맞춤 할인, 주유·이동통신·아파트 관리비 2.5% 할인, 국내외 가맹점 0.5% 할인",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "",
+      "⚠️ 주의사항 및 제외사항": "할인 제외 업종이 많음"
+    },
+    "coverage": {
+      "기본정보": false,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": false,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 0,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "삼성 iD ALL 카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "삼성카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "VISA, Mastercard, 국내전용",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "0 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 3,
+    "총바이트": 444,
+    "총글자수": 117,
+    "총단어수": 33,
+    "키워드": [
+      "본인",
+      "해외겸용",
+      "2만원",
+      "기본",
+      "연회비",
+      "7천원",
+      "제휴",
+      "연회비",
+      "1만",
+      "3천원",
+      "많이",
+      "쓰는",
+      "영역",
+      "5",
+      "자동",
+      "맞춤",
+      "할인",
+      "주유",
+      "이동통신",
+      "아파트"
+    ],
+    "소제목수": 0
+  }
+}

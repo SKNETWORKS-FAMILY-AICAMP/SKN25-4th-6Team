@@ -1,0 +1,469 @@
+{
+  "metadata": {
+    "카드명": "BC 바로 클리어 플러스",
+    "카드사": "BC카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "BC카드_바로_클리어_플러스.pdf"
+  },
+  "card": {
+    "name": "BC 바로 클리어 플러스",
+    "bank": "BC카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "Mastercard",
+      "VISA"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 5000,
+      "partnership": 5000,
+      "total": 5000,
+      "amount": 5000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 5000,
+          "partnership": 5000,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 5000,
+          "partnership": 5000,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 5000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "MasterCard",
+        "amount": 5000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 5000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 5000,
+      "max": 5000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "Mastercard",
+        "VISA"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "전국 모든 식당 점심 식사 7% 청구할인(전월 15만원, 월한도 2,500원) 전국 모든 배달앱 10% 청구할인(전월 30만원, 월한도 5,000원) 전국 모든 편의점 10% 청구할인(전월 15만원, 월한도 2,500원) 전국 모든 대중교통 10% 청구할인(전월 15만원, 월한도 2,500원) 전국 모든 온라인 쇼핑 10% 청구할인(전월 15만원, 월한도 2,500원)"
+    },
+    "benefit_items": [
+      {
+        "category": "식음료",
+        "description": "전국 모든 식당 점심 식사 7% 청구할인",
+        "type": "청구할인",
+        "rate": "7%",
+        "monthly_min_spending": 150000,
+        "monthly_cap": 2500,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 10000,
+        "applicable_stores": "전국 모든 식당 (오전 11시~오후 2시)",
+        "note": "일반 음식 업종(식당 및 레스토랑)에 한하며, 호프, 주점 등 주류 업종 제외"
+      },
+      {
+        "category": "배달",
+        "description": "전국 모든 배달앱 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 300000,
+        "monthly_cap": 5000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 50000,
+        "applicable_stores": "배달의 민족, 쿠팡이츠, 요기요",
+        "note": "공식 앱 및 홈페이지를 통한 결제건에 한하며, 가맹점 직접 결제 및 상품권 구매 건 제외"
+      },
+      {
+        "category": "편의점",
+        "description": "전국 모든 편의점 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 150000,
+        "monthly_cap": 2500,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "CU, GS25, 이마트24, 세븐일레븐",
+        "note": "현장 결제건에 한함 (온라인 결제건 제외)"
+      },
+      {
+        "category": "대중교통",
+        "description": "전국 모든 대중교통 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 150000,
+        "monthly_cap": 2500,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "시내버스, 지하철",
+        "note": ""
+      },
+      {
+        "category": "온라인쇼핑",
+        "description": "전국 모든 온라인 쇼핑 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 150000,
+        "monthly_cap": 2500,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "쿠팡, 티몬, 위메프, G마켓, 옥션, 11번가, SSG.COM",
+        "note": "공식 앱 및 홈페이지를 통해 직접 신청한 이용 건에 한하며, 구글플레이, 앱스토어, 1회성 일반 구매 결제, 앱마켓 결제 등 제외"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 0,
+        "label": "",
+        "benefits_unlocked": []
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "전국 모든 식당 점심 식사 7% 청구할인 제공",
+      "전국 모든 배달앱 10% 청구할인 제공",
+      "전국 모든 편의점 10% 청구할인 제공",
+      "전국 모든 대중교통 10% 청구할인 제공",
+      "전국 모든 온라인 쇼핑 10% 청구할인 제공"
+    ],
+    "weaknesses": [
+      "해외겸용 카드지만 일부 서비스 제한",
+      "연회비가 낮아 혜택이 제한적일 수 있음",
+      "가맹점 제한이 있음",
+      "일부 업종에서 청구할인 제외"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "BC 바로 클리어 플러스 카드입니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "BC",
+        "바로",
+        "클리어",
+        "플러스",
+        "카드입니다"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "연회비는 기본연회비 5천원이며, 가족카드는 별도의 연회비가 없습니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "연회비는",
+        "기본연회비",
+        "5천원이며",
+        "가족카드는",
+        "별도의",
+        "연회비가",
+        "없습니다"
+      ],
+      "토큰수": 7
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "전국 모든 식당 점심 식사 7% 청구할인(전월 15만원, 월한도 2,500원), 전국 모든 배달앱 10% 청구할인(전월 30만원, 월한도 5,000원), 전국 모든 편의점 10% 청구할인(전월 15만원, 월한도 2,500원), 전국 모든 대중교통 10% 청구할인(전월 15만원, 월한도 2,500원), 전국 모든 온라인 쇼핑 10% 청구할인(전월 15만원, 월한도 2,500원)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전국",
+        "모든",
+        "식당",
+        "점심",
+        "식사",
+        "7",
+        "청구할인",
+        "전월",
+        "15만원",
+        "월한도",
+        "2",
+        "500원"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "식사, 배달, 편의점, 대중교통, 온라인 쇼핑을 자주 이용하는 고객에게 추천합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "식사",
+        "배달",
+        "편의점",
+        "대중교통",
+        "온라인",
+        "쇼핑을",
+        "자주",
+        "이용하는",
+        "고객에게",
+        "추천합니다"
+      ],
+      "토큰수": 10
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 다양한 할인 혜택 제공, 연회비가 저렴함, 가족카드 발급 가능. 약점: 해외 서비스 제한, 일부 업종에서 청구할인 제외.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "다양한",
+        "할인",
+        "혜택",
+        "제공",
+        "연회비가",
+        "저렴함",
+        "가족카드",
+        "발급",
+        "가능",
+        "약점",
+        "해외"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "국세, 지방세, 아파트관리비 등은 청구할인에서 제외됩니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국세",
+        "지방세",
+        "아파트관리비",
+        "등은",
+        "청구할인에서",
+        "제외됩니다"
+      ],
+      "토큰수": 6
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "BC 바로 클리어 플러스 카드입니다.",
+      "💳 연회비 구조": "연회비는 기본연회비 5천원이며, 가족카드는 별도의 연회비가 없습니다.",
+      "🎁 주요 혜택": "전국 모든 식당 점심 식사 7% 청구할인(전월 15만원, 월한도 2,500원), 전국 모든 배달앱 10% 청구할인(전월 30만원, 월한도 5,000원), 전국 모든 편의점 10% 청구할인(전월 15만원, 월한도 2,500원), 전국 모든 대중교통 10% 청구할인(전월 15만원, 월한도 2,500원), 전국 모든 온라인 쇼핑 10% 청구할인(전월 15만원, 월한도 2,500원)",
+      "👥 추천 대상": "식사, 배달, 편의점, 대중교통, 온라인 쇼핑을 자주 이용하는 고객에게 추천합니다.",
+      "💡 카드의 강점 및 약점": "강점: 다양한 할인 혜택 제공, 연회비가 저렴함, 가족카드 발급 가능. 약점: 해외 서비스 제한, 일부 업종에서 청구할인 제외.",
+      "⚠️ 주의사항 및 제외사항": "국세, 지방세, 아파트관리비 등은 청구할인에서 제외됩니다."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 5,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "BC 바로 클리어 플러스",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "BC",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, Mastercard, VISA",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "5000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 1.0
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 1108,
+    "총글자수": 423,
+    "총단어수": 99,
+    "키워드": [
+      "BC",
+      "바로",
+      "클리어",
+      "플러스",
+      "카드입니다",
+      "연회비는",
+      "기본연회비",
+      "5천원이며",
+      "가족카드는",
+      "별도의",
+      "연회비가",
+      "없습니다",
+      "전국",
+      "모든",
+      "식당",
+      "점심",
+      "식사",
+      "7",
+      "청구할인",
+      "전월"
+    ],
+    "소제목수": 0
+  }
+}

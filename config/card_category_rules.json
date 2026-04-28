@@ -1,0 +1,48 @@
+{
+  "rules": [
+    {
+      "category": "여행",
+      "keywords": ["여행", "트래블", "travel", "라운지", "공항", "호텔", "숙박", "resort", "resorts", "hoshino", "haru", "marriott", "bonvoy", "메리어트", "본보이"]
+    },
+    {
+      "category": "항공",
+      "keywords": ["항공", "스카이패스", "마일", "mileage", "skypass", "air one", "대한항공", "air"]
+    },
+    {
+      "category": "쇼핑",
+      "keywords": ["쇼핑", "shopping", "백화점", "온라인", "mall", "쿠팡", "네이버", "이커머스", "원스토어", "onestore", "store"]
+    },
+    {
+      "category": "생활",
+      "keywords": ["편의점", "통신", "배달", "공과금", "마트", "생활", "구독", "mr.life", "on&off", "청소년", "교통", "교육비", "스스로"]
+    },
+    {
+      "category": "포인트",
+      "keywords": ["포인트", "point", "적립", "리워드"]
+    },
+    {
+      "category": "할인",
+      "keywords": ["할인", "discount", "% 할인", "청구할인", "클리어", "clear"]
+    },
+    {
+      "category": "주유",
+      "keywords": ["주유", "oil", "충전", "정유"]
+    },
+    {
+      "category": "비즈니스",
+      "keywords": ["소호", "soho", "비즈", "business", "법인", "사업자"]
+    },
+    {
+      "category": "금융",
+      "keywords": ["보험", "finance", "투자", "금융", "자산", "케이뱅크", "kbank", "토스", "toss"]
+    },
+    {
+      "category": "환경",
+      "keywords": ["green", "그린", "지구", "친환경", "지속가능"]
+    },
+    {
+      "category": "프리미엄",
+      "keywords": ["platinum", "signature", "premium", "prestige", "플래티넘", "플래티늄", "시그니처", "the best", "the classic", "더넥스트", "next", "members", "voucher"]
+    }
+  ]
+}

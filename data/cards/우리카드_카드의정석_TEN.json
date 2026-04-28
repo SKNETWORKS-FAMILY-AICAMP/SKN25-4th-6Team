@@ -1,0 +1,431 @@
+{
+  "metadata": {
+    "카드명": "카드의정석 TEN",
+    "카드사": "우리카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "우리카드_카드의정석_TEN.pdf"
+  },
+  "card": {
+    "name": "카드의정석 TEN",
+    "bank": "우리카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "Mastercard",
+      "국내전용"
+    ],
+    "grade": "미확인",
+    "issuedDate": "2024년 5월 30일",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 7000,
+      "partnership": 5000,
+      "total": 12000,
+      "amount": 12000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 7000,
+          "partnership": 5000,
+          "total": 12000,
+          "amount": 12000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 7000,
+          "partnership": 5000,
+          "total": 12000,
+          "amount": 12000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 12000
+      },
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 12000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 12000,
+      "max": 12000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "5대 일상영역 10% 청구할인(전월 40만원 이상, 월한도 5천원) 음식점 / 주점 및 온라인 간편결제 1% 청구할인(전월 40만원 이상, 월한도 1만원)"
+    },
+    "benefit_items": [
+      {
+        "category": "식음료",
+        "description": "5대 일상영역 10% 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 5000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "커피, 편의점 등",
+        "note": ""
+      },
+      {
+        "category": "식음료",
+        "description": "음식점 / 주점 및 온라인 간편결제 1% 청구할인",
+        "type": "청구할인",
+        "rate": "1%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 10000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "음식점, 주점, 온라인 간편결제",
+        "note": ""
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 400000,
+        "label": "40만원 이상",
+        "benefits_unlocked": [
+          "5대 일상영역 10% 청구할인",
+          "음식점 / 주점 및 온라인 간편결제 1% 청구할인"
+        ]
+      },
+      {
+        "amount": 800000,
+        "label": "80만원 이상",
+        "benefits_unlocked": [
+          "5대 일상영역 10% 청구할인",
+          "음식점 / 주점 및 온라인 간편결제 1% 청구할인"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "5대 일상영역에서 10% 청구할인 제공",
+      "음식점 및 온라인 간편결제에서 1% 청구할인 제공",
+      "가족카드 연회비 무료"
+    ],
+    "weaknesses": [
+      "해외 이용 시 수수료 발생",
+      "전월 실적 미충족 시 기본 적립으로 전환",
+      "일부 업종 할인 제외"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "상품 출시일 : 2024년 5월 30일",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "상품",
+        "출시일",
+        "2024년",
+        "5월",
+        "30일"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "본인카드 12,000원 (기본 연회비 7,000원 + 제휴 연회비 5,000원), 가족카드 연회비는 청구하지 않습니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "본인카드",
+        "12",
+        "000원",
+        "기본",
+        "연회비",
+        "7",
+        "000원",
+        "제휴",
+        "연회비",
+        "5",
+        "000원",
+        "가족카드"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "5대 일상영역 10% 청구할인(전월 40만원 이상, 월한도 5천원), 음식점 / 주점 및 온라인 간편결제 1% 청구할인(전월 40만원 이상, 월한도 1만원)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "5대",
+        "일상영역",
+        "10",
+        "청구할인",
+        "전월",
+        "40만원",
+        "이상",
+        "월한도",
+        "5천원",
+        "음식점",
+        "주점",
+        "및"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 5대 일상영역에서 10% 청구할인 제공, 음식점 및 온라인 간편결제에서 1% 청구할인 제공, 가족카드 연회비 무료. 약점: 해외 이용 시 수수료 발생, 전월 실적 미충족 시 기본 적립으로 전환, 일부 업종 할인 제외.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "5대",
+        "일상영역에서",
+        "10",
+        "청구할인",
+        "제공",
+        "음식점",
+        "및",
+        "온라인",
+        "간편결제에서",
+        "1",
+        "청구할인"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "할인 제외: 무이자할부금액, 정부지원금, 대학 등록금, 국세·지방세·공공요금, 상품권·기프트카드·선불카드 구매 및 충전금액.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "할인",
+        "제외",
+        "무이자할부금액",
+        "정부지원금",
+        "대학",
+        "등록금",
+        "국세",
+        "지방세",
+        "공공요금",
+        "상품권",
+        "기프트카드",
+        "선불카드"
+      ],
+      "토큰수": 12
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "상품 출시일 : 2024년 5월 30일",
+      "💳 연회비 구조": "본인카드 12,000원 (기본 연회비 7,000원 + 제휴 연회비 5,000원), 가족카드 연회비는 청구하지 않습니다.",
+      "🎁 주요 혜택": "5대 일상영역 10% 청구할인(전월 40만원 이상, 월한도 5천원), 음식점 / 주점 및 온라인 간편결제 1% 청구할인(전월 40만원 이상, 월한도 1만원)",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 5대 일상영역에서 10% 청구할인 제공, 음식점 및 온라인 간편결제에서 1% 청구할인 제공, 가족카드 연회비 무료. 약점: 해외 이용 시 수수료 발생, 전월 실적 미충족 시 기본 적립으로 전환, 일부 업종 할인 제외.",
+      "⚠️ 주의사항 및 제외사항": "할인 제외: 무이자할부금액, 정부지원금, 대학 등록금, 국세·지방세·공공요금, 상품권·기프트카드·선불카드 구매 및 충전금액."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 3,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "카드의정석 TEN",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "우리카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "Mastercard, 국내전용",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "12000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 1004,
+    "총글자수": 373,
+    "총단어수": 89,
+    "키워드": [
+      "상품",
+      "출시일",
+      "2024년",
+      "5월",
+      "30일",
+      "본인카드",
+      "12",
+      "000원",
+      "기본",
+      "연회비",
+      "7",
+      "000원",
+      "제휴",
+      "연회비",
+      "5",
+      "000원",
+      "가족카드",
+      "연회비는",
+      "청구하지",
+      "않습니다"
+    ],
+    "소제목수": 0
+  }
+}

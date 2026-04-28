@@ -1,0 +1,442 @@
+{
+  "metadata": {
+    "카드명": "NH 올원더풀",
+    "카드사": "NH농협카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "농협카드_NH_올원더풀.pdf"
+  },
+  "card": {
+    "name": "NH 올원더풀",
+    "bank": "NH농협카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "Mastercard",
+      "UnionPay"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 6000,
+      "partnership": 24000,
+      "total": 28000,
+      "amount": 28000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 22000,
+      "total": 22000,
+      "amount": 22000,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 6000,
+          "partnership": 24000,
+          "total": 28000,
+          "amount": 28000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 6000,
+          "partnership": 24000,
+          "total": 28000,
+          "amount": 28000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 22000,
+          "total": 22000,
+          "amount": 22000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 22000,
+          "total": 22000,
+          "amount": 22000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 28000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 30000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "UnionPay",
+        "amount": 30000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 28000,
+      "max": 30000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "Mastercard",
+        "UnionPay"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "생활소비 5% 청구할인(전월 40만원 이상) 교통 15% 청구할인(전월 40만원 이상) 여가 10% 청구할인(전월 40만원 이상)"
+    },
+    "benefit_items": [
+      {
+        "category": "기타",
+        "description": "생활소비 영역별 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 80000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "백화점, 대형마트, 홈쇼핑, 주유소 등",
+        "note": ""
+      },
+      {
+        "category": "교통",
+        "description": "교통 영역별 청구할인",
+        "type": "청구할인",
+        "rate": "15%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "버스, 지하철, KTX, SRT 등",
+        "note": ""
+      },
+      {
+        "category": "여가",
+        "description": "여가 영역별 청구할인",
+        "type": "청구할인",
+        "rate": "10%",
+        "monthly_min_spending": 400000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "영화관, 카페, 디지털구독 등",
+        "note": ""
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "전월실적 40만원 이상 시 혜택 제공",
+        "monthly_min_spending": 400000
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 400000,
+        "label": "40만원 이상",
+        "benefits_unlocked": [
+          "생활소비 5% 청구할인",
+          "교통 15% 청구할인",
+          "여가 10% 청구할인"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "다양한 할인 혜택 제공",
+      "가족카드 발급 가능",
+      "해외겸용 카드"
+    ],
+    "weaknesses": [
+      "전월실적 조건 필요",
+      "일부 업종 제외",
+      "해외 이용 시 추가 수수료 발생"
+    ],
+    "recommended_scenario": "생활비와 교통비를 많이 사용하는 고객에게 적합",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "발급대상: 개인(신용), 교통구분: 교통(후불), 비교통",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "발급대상",
+        "개인",
+        "신용",
+        "교통구분",
+        "교통",
+        "후불",
+        "비교통"
+      ],
+      "토큰수": 7
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "본인카드: 국내전용 28,000원, 해외겸용 30,000원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "본인카드",
+        "국내전용",
+        "28",
+        "000원",
+        "해외겸용",
+        "30",
+        "000원"
+      ],
+      "토큰수": 7
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "생활소비 5% 청구할인(전월 40만원 이상), 교통 15% 청구할인(전월 40만원 이상), 여가 10% 청구할인(전월 40만원 이상)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "생활소비",
+        "5",
+        "청구할인",
+        "전월",
+        "40만원",
+        "이상",
+        "교통",
+        "15",
+        "청구할인",
+        "전월",
+        "40만원",
+        "이상"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "생활비와 교통비를 많이 사용하는 고객",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "생활비와",
+        "교통비를",
+        "많이",
+        "사용하는",
+        "고객"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 다양한 할인 혜택 제공, 가족카드 발급 가능, 해외겸용 카드 / 약점: 전월실적 조건 필요, 일부 업종 제외, 해외 이용 시 추가 수수료 발생",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "다양한",
+        "할인",
+        "혜택",
+        "제공",
+        "가족카드",
+        "발급",
+        "가능",
+        "해외겸용",
+        "카드",
+        "약점",
+        "전월실적"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "전월실적 제외 대상: 대학등록금, 세금, 아파트관리비 등",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전월실적",
+        "제외",
+        "대상",
+        "대학등록금",
+        "세금",
+        "아파트관리비",
+        "등"
+      ],
+      "토큰수": 7
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "발급대상: 개인(신용), 교통구분: 교통(후불), 비교통",
+      "💳 연회비 구조": "본인카드: 국내전용 28,000원, 해외겸용 30,000원",
+      "🎁 주요 혜택": "생활소비 5% 청구할인(전월 40만원 이상), 교통 15% 청구할인(전월 40만원 이상), 여가 10% 청구할인(전월 40만원 이상)",
+      "👥 추천 대상": "생활비와 교통비를 많이 사용하는 고객",
+      "💡 카드의 강점 및 약점": "강점: 다양한 할인 혜택 제공, 가족카드 발급 가능, 해외겸용 카드 / 약점: 전월실적 조건 필요, 일부 업종 제외, 해외 이용 시 추가 수수료 발생",
+      "⚠️ 주의사항 및 제외사항": "전월실적 제외 대상: 대학등록금, 세금, 아파트관리비 등"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 2,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "NH 올원더풀",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "NH농협카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, Mastercard, UnionPay",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "28000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 793,
+    "총글자수": 276,
+    "총단어수": 67,
+    "키워드": [
+      "발급대상",
+      "개인",
+      "신용",
+      "교통구분",
+      "교통",
+      "후불",
+      "비교통",
+      "본인카드",
+      "국내전용",
+      "28",
+      "000원",
+      "해외겸용",
+      "30",
+      "000원",
+      "생활소비",
+      "5",
+      "청구할인",
+      "전월",
+      "40만원",
+      "이상"
+    ],
+    "소제목수": 0
+  }
+}

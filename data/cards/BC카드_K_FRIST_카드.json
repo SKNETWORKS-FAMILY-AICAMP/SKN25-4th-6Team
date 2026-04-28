@@ -1,0 +1,426 @@
+{
+  "metadata": {
+    "카드명": "BC K FIRST CARD",
+    "카드사": "BC카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "BC카드_K_FRIST_카드.pdf"
+  },
+  "card": {
+    "name": "BC K FIRST CARD",
+    "bank": "BC카드",
+    "id": "",
+    "nameEnglish": "BC K FIRST CARD",
+    "brandType": [
+      "VISA",
+      "Mastercard",
+      "UnionPay",
+      "국내전용"
+    ],
+    "grade": "First",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 5000,
+      "partnership": 0,
+      "total": 5000,
+      "amount": 5000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 5000,
+          "partnership": 0,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 5000,
+          "partnership": 0,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "개인신용등급 및 개인신용정보에 따라 카드 발급이 달라질 수 있습니다.",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 5000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 10000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 10000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "UnionPay",
+        "amount": 5000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 5000,
+      "max": 10000
+    },
+    "overseas_brand_options": {
+      "count": 3,
+      "brands": [
+        "VISA",
+        "Mastercard",
+        "UnionPay"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "전 가맹점 1% 할인 생활 편의 업종 0.5% 추가 할인 KT 알파요금제 5% 청구할인 비씨 투어패스 서비스 무료"
+    },
+    "benefit_items": [
+      {
+        "category": "쇼핑",
+        "description": "전 가맹점 1% 할인",
+        "type": "청구할인",
+        "rate": "1%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "전 가맹점",
+        "note": ""
+      },
+      {
+        "category": "기타",
+        "description": "생활 편의 업종 0.5% 추가 할인",
+        "type": "청구할인",
+        "rate": "0.5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "운송업종, 편의점 업종, 커피, 대중교통, 대중교통(버스/지하철)",
+        "note": ""
+      },
+      {
+        "category": "통신",
+        "description": "KT 알파요금제 5% 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "KT 알파요금제",
+        "note": ""
+      },
+      {
+        "category": "여행",
+        "description": "비씨 투어패스 서비스 무료",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "국내/해외여행, 호텔, 항공권",
+        "note": ""
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": []
+        }
+      }
+    },
+    "spending_thresholds": []
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [],
+    "weaknesses": [],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "BC K FIRST CARD는 BC카드에서 발급하는 카드로, 국내외 가맹점에서 사용 가능합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "BC",
+        "K",
+        "FIRST",
+        "CARD는",
+        "BC카드에서",
+        "발급하는",
+        "카드로",
+        "국내외",
+        "가맹점에서",
+        "사용",
+        "가능합니다"
+      ],
+      "토큰수": 11
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 5,000원, VISA 10,000원, Mastercard 10,000원, UnionPay 5,000원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "5",
+        "000원",
+        "VISA",
+        "10",
+        "000원",
+        "Mastercard",
+        "10",
+        "000원",
+        "UnionPay",
+        "5",
+        "000원"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "전 가맹점 1% 할인, 생활 편의 업종 0.5% 추가 할인, KT 알파요금제 5% 청구할인, 비씨 투어패스 서비스 무료 제공",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전",
+        "가맹점",
+        "1",
+        "할인",
+        "생활",
+        "편의",
+        "업종",
+        "0",
+        "5",
+        "추가",
+        "할인",
+        "KT"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "개인신용등급에 따라 발급이 제한될 수 있으며, 카드 이용대금에 대해 연체 시 모든 수수료는 지정된 대금 결제일에 청구됩니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "개인신용등급에",
+        "따라",
+        "발급이",
+        "제한될",
+        "수",
+        "있으며",
+        "카드",
+        "이용대금에",
+        "대해",
+        "연체",
+        "시",
+        "모든"
+      ],
+      "토큰수": 12
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "BC K FIRST CARD는 BC카드에서 발급하는 카드로, 국내외 가맹점에서 사용 가능합니다.",
+      "💳 연회비 구조": "국내전용 5,000원, VISA 10,000원, Mastercard 10,000원, UnionPay 5,000원",
+      "🎁 주요 혜택": "전 가맹점 1% 할인, 생활 편의 업종 0.5% 추가 할인, KT 알파요금제 5% 청구할인, 비씨 투어패스 서비스 무료 제공",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "",
+      "⚠️ 주의사항 및 제외사항": "개인신용등급에 따라 발급이 제한될 수 있으며, 카드 이용대금에 대해 연체 시 모든 수수료는 지정된 대금 결제일에 청구됩니다."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": false,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 4,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "BC K FIRST CARD",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "BC카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "VISA, Mastercard, UnionPay, 국내전용",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "5000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 4,
+    "총바이트": 699,
+    "총글자수": 258,
+    "총단어수": 60,
+    "키워드": [
+      "BC",
+      "K",
+      "FIRST",
+      "CARD는",
+      "BC카드에서",
+      "발급하는",
+      "카드로",
+      "국내외",
+      "가맹점에서",
+      "사용",
+      "가능합니다",
+      "국내전용",
+      "5",
+      "000원",
+      "VISA",
+      "10",
+      "000원",
+      "Mastercard",
+      "10",
+      "000원"
+    ],
+    "소제목수": 0
+  }
+}
