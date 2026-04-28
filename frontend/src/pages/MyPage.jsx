@@ -153,11 +153,14 @@ function ProfileCard({ item, value, onSave }) {
   );
 }
 
+const AVATAR_OPTIONS = ['🧑‍💻', '👤', '😊', '😎', '🦸', '🎩', '🐱', '🦊', '🌟', '🧑‍🎤'];
+
 export default function MyPage({ onGoChat }) {
   const { profile, updateProfile } = useUserStore();
   const [cardSearch, setCardSearch] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const [cardOptions, setCardOptions] = useState([]);
+  const [showAvatarPicker, setShowAvatarPicker] = useState(false);
 
   useEffect(() => {
     getCards()
@@ -227,7 +230,29 @@ export default function MyPage({ onGoChat }) {
             </div>
 
             <div className="flex items-start gap-5">
-              <div className="w-16 h-16 rounded-full bg-[#E5E5E0] flex items-center justify-center text-3xl flex-shrink-0">👤</div>
+              <div className="relative flex-shrink-0">
+                <div
+                  onClick={() => setShowAvatarPicker(v => !v)}
+                  className="w-16 h-16 rounded-full bg-[#E5E5E0] flex items-center justify-center text-3xl cursor-pointer hover:ring-2 hover:ring-[#F5C842] transition-all"
+                >
+                  {profile.avatar || '🧑‍💻'}
+                </div>
+                <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-[#F5C842] rounded-full flex items-center justify-center text-[10px] font-bold text-[#1A1A1A] pointer-events-none">✏️</div>
+                {showAvatarPicker && (
+                  <div className="absolute top-full left-0 mt-2 bg-white rounded-xl shadow-lg border border-[#E5E5E0] p-2 z-20 grid grid-cols-4 gap-1 w-40">
+                    {AVATAR_OPTIONS.map(emoji => (
+                      <button
+                        key={emoji}
+                        onClick={() => { updateProfile({ avatar: emoji }); setShowAvatarPicker(false); }}
+                        className={`w-9 h-9 rounded-lg text-xl flex items-center justify-center cursor-pointer border-2 transition-all bg-transparent
+                          ${profile.avatar === emoji ? 'border-[#F5C842] bg-[#FFFBEB]' : 'border-transparent hover:bg-[#F5F4F0]'}`}
+                      >
+                        {emoji}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
               <div className="flex-1 grid grid-cols-2 gap-3">
                 {PROFILE_ITEMS.map((item) => (
                   <ProfileCard
