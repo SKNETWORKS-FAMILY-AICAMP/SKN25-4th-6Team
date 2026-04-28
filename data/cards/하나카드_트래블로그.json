@@ -1,0 +1,438 @@
+{
+  "metadata": {
+    "카드명": "트래블로그",
+    "카드사": "하나카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "하나카드_트래블로그.pdf"
+  },
+  "card": {
+    "name": "트래블로그",
+    "bank": "하나카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "Mastercard"
+    ],
+    "grade": "미확인",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 20000,
+      "partnership": 0,
+      "total": 20000,
+      "amount": 20000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 20000,
+          "partnership": 0,
+          "total": 20000,
+          "amount": 20000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 20000,
+          "partnership": 0,
+          "total": 20000,
+          "amount": 20000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 20000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 20000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 20000,
+      "max": 20000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "전가맹점 1.0% 적립 해외 가맹점 3% 적립 항공사 및 여행 관련 가맹점 3% 적립 하나페이 결제 시 1.3% 적립"
+    },
+    "benefit_items": [
+      {
+        "category": "기타",
+        "description": "전가맹점에서 1.0% 적립",
+        "type": "포인트적립",
+        "rate": "1.0%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "전국 모든 가맹점",
+        "note": ""
+      },
+      {
+        "category": "여행",
+        "description": "해외 가맹점에서 3% 적립",
+        "type": "포인트적립",
+        "rate": "3%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "해외 가맹점",
+        "note": ""
+      },
+      {
+        "category": "항공",
+        "description": "항공사 및 여행 관련 가맹점에서 3% 적립",
+        "type": "포인트적립",
+        "rate": "3%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "항공사 및 여행 관련 가맹점",
+        "note": ""
+      },
+      {
+        "category": "기타",
+        "description": "하나페이 결제 시 1.3% 적립",
+        "type": "포인트적립",
+        "rate": "1.3%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "하나페이 가맹점",
+        "note": ""
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 0,
+        "label": "",
+        "benefits_unlocked": []
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "해외 가맹점에서 3% 적립",
+      "하나페이 결제 시 1.3% 적립",
+      "전가맹점 1.0% 적립"
+    ],
+    "weaknesses": [
+      "국내전용 카드로 발급 시 외화 하나머니 결제 불가",
+      "해외결제 시 수수료 발생",
+      "적립 제외 항목이 많음"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "공과금",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "발급대상 : 내국인",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "발급대상",
+        "내국인"
+      ],
+      "토큰수": 2
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "연회비 : 국내전용/ 국내외겸용(Mastercard) 20,000원 (기본 연회비 20,000원, 제휴 연회비0원)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "연회비",
+        "국내전용",
+        "국내외겸용",
+        "Mastercard",
+        "20",
+        "000원",
+        "기본",
+        "연회비",
+        "20",
+        "000원",
+        "제휴",
+        "연회비0원"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "전가맹점 1.0% 적립, 해외 가맹점 3% 적립, 항공사 및 여행 관련 가맹점 3% 적립, 하나페이 결제 시 1.3% 적립",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전가맹점",
+        "1",
+        "0",
+        "적립",
+        "해외",
+        "가맹점",
+        "3",
+        "적립",
+        "항공사",
+        "및",
+        "여행",
+        "관련"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 해외 가맹점에서 3% 적립, 하나페이 결제 시 1.3% 적립, 전가맹점 1.0% 적립; 약점: 국내전용 카드로 발급 시 외화 하나머니 결제 불가, 해외결제 시 수수료 발생, 적립 제외 항목이 많음",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "해외",
+        "가맹점에서",
+        "3",
+        "적립",
+        "하나페이",
+        "결제",
+        "시",
+        "1",
+        "3",
+        "적립",
+        "전가맹점"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "적립 제외 항목: 국세, 지방세, 공과금, 상품권",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "적립",
+        "제외",
+        "항목",
+        "국세",
+        "지방세",
+        "공과금",
+        "상품권"
+      ],
+      "토큰수": 7
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "발급대상 : 내국인",
+      "💳 연회비 구조": "연회비 : 국내전용/ 국내외겸용(Mastercard) 20,000원 (기본 연회비 20,000원, 제휴 연회비0원)",
+      "🎁 주요 혜택": "전가맹점 1.0% 적립, 해외 가맹점 3% 적립, 항공사 및 여행 관련 가맹점 3% 적립, 하나페이 결제 시 1.3% 적립",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 해외 가맹점에서 3% 적립, 하나페이 결제 시 1.3% 적립, 전가맹점 1.0% 적립; 약점: 국내전용 카드로 발급 시 외화 하나머니 결제 불가, 해외결제 시 수수료 발생, 적립 제외 항목이 많음",
+      "⚠️ 주의사항 및 제외사항": "적립 제외 항목: 국세, 지방세, 공과금, 상품권"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 3,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "트래블로그",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "하나카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, Mastercard",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "20000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 782,
+    "총글자수": 287,
+    "총단어수": 74,
+    "키워드": [
+      "발급대상",
+      "내국인",
+      "연회비",
+      "국내전용",
+      "국내외겸용",
+      "Mastercard",
+      "20",
+      "000원",
+      "기본",
+      "연회비",
+      "20",
+      "000원",
+      "제휴",
+      "연회비0원",
+      "전가맹점",
+      "1",
+      "0",
+      "적립",
+      "해외",
+      "가맹점"
+    ],
+    "소제목수": 0
+  }
+}

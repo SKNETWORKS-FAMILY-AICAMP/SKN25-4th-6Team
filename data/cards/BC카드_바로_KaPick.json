@@ -1,0 +1,433 @@
+{
+  "metadata": {
+    "카드명": "BC 바로 KaPick",
+    "카드사": "BC카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "BC카드_바로_KaPick.pdf"
+  },
+  "card": {
+    "name": "BC 바로 KaPick",
+    "bank": "BC카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "Mastercard"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "2024-05-01",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 7000,
+      "partnership": 8000,
+      "total": 15000,
+      "amount": 15000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 7000,
+          "partnership": 8000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 7000,
+          "partnership": 8000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 15000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "MasterCard",
+        "amount": 15000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 15000,
+      "max": 15000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "전월 실적 15만원 이상 시 바로카드 Pick! 7% 적립 서비스 제공 전월 실적 15만원 미만인 경우 바로카드 Pick! 7% 적립 서비스는 제공되지 않음"
+    },
+    "benefit_items": [
+      {
+        "category": "쇼핑",
+        "description": "바로카드 Pick! 7% 적립",
+        "type": "포인트적립",
+        "rate": "7%",
+        "monthly_min_spending": 150000,
+        "monthly_cap": 15000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "쿠팡, G마켓, 올리브영, 오늘의집",
+        "note": "전월 실적 15만원 이상 시 제공"
+      },
+      {
+        "category": "기타",
+        "description": "국내 카카오페이 결제 1% 적립",
+        "type": "포인트적립",
+        "rate": "1%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "",
+        "note": "전월 실적과 관계없이 제공"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "전월 실적 15만원 이상 시 바로카드 Pick! 7% 적립 서비스 제공",
+        "monthly_min_spending": 150000
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 150000,
+        "label": "15만원 이상",
+        "benefits_unlocked": [
+          "바로카드 Pick! 7% 적립 서비스 제공"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "전월 실적 15만원 이상 시 7% 적립",
+      "다양한 가맹점에서 적립 가능",
+      "카카오페이와 연계된 혜택"
+    ],
+    "weaknesses": [
+      "가족카드 발급 불가",
+      "전월 실적 미충족 시 혜택 없음",
+      "해외 결제 시 수수료 발생"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "무이자할부 이용금액",
+      "국세",
+      "지방세",
+      "아파트관리비"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "BC 바로 KaPick은 2024년 5월 1일에 출시된 카드로, 해외겸용 기능을 갖추고 있습니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "BC",
+        "바로",
+        "KaPick은",
+        "2024년",
+        "5월",
+        "1일에",
+        "출시된",
+        "카드로",
+        "해외겸용",
+        "기능을",
+        "갖추고",
+        "있습니다"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "총연회비 15,000원, 기본연회비 7,000원, 제휴연회비 8,000원입니다. 가족카드 발급은 불가합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "총연회비",
+        "15",
+        "000원",
+        "기본연회비",
+        "7",
+        "000원",
+        "제휴연회비",
+        "8",
+        "000원입니다",
+        "가족카드",
+        "발급은",
+        "불가합니다"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "전월 실적 15만원 이상 시 바로카드 Pick! 7% 적립 서비스 제공. 전월 실적 미달 시 혜택 없음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전월",
+        "실적",
+        "15만원",
+        "이상",
+        "시",
+        "바로카드",
+        "Pick",
+        "7",
+        "적립",
+        "서비스",
+        "제공",
+        "전월"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "쇼핑을 자주 하는 소비자에게 추천합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "쇼핑을",
+        "자주",
+        "하는",
+        "소비자에게",
+        "추천합니다"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 7% 적립, 다양한 가맹점, 카카오페이 연계. 약점: 가족카드 발급 불가, 전월 실적 미충족 시 혜택 없음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "7",
+        "적립",
+        "다양한",
+        "가맹점",
+        "카카오페이",
+        "연계",
+        "약점",
+        "가족카드",
+        "발급",
+        "불가",
+        "전월"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "무이자할부 이용금액은 적립되지 않으며, 국세, 지방세, 아파트 관리비 등은 제외됩니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "무이자할부",
+        "이용금액은",
+        "적립되지",
+        "않으며",
+        "국세",
+        "지방세",
+        "아파트",
+        "관리비",
+        "등은",
+        "제외됩니다"
+      ],
+      "토큰수": 10
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "BC 바로 KaPick은 2024년 5월 1일에 출시된 카드로, 해외겸용 기능을 갖추고 있습니다.",
+      "💳 연회비 구조": "총연회비 15,000원, 기본연회비 7,000원, 제휴연회비 8,000원입니다. 가족카드 발급은 불가합니다.",
+      "🎁 주요 혜택": "전월 실적 15만원 이상 시 바로카드 Pick! 7% 적립 서비스 제공. 전월 실적 미달 시 혜택 없음.",
+      "👥 추천 대상": "쇼핑을 자주 하는 소비자에게 추천합니다.",
+      "💡 카드의 강점 및 약점": "강점: 7% 적립, 다양한 가맹점, 카카오페이 연계. 약점: 가족카드 발급 불가, 전월 실적 미충족 시 혜택 없음.",
+      "⚠️ 주의사항 및 제외사항": "무이자할부 이용금액은 적립되지 않으며, 국세, 지방세, 아파트 관리비 등은 제외됩니다."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 3,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "BC 바로 KaPick",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "BC",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, Mastercard",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "15000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 866,
+    "총글자수": 311,
+    "총단어수": 73,
+    "키워드": [
+      "BC",
+      "바로",
+      "KaPick은",
+      "2024년",
+      "5월",
+      "1일에",
+      "출시된",
+      "카드로",
+      "해외겸용",
+      "기능을",
+      "갖추고",
+      "있습니다",
+      "총연회비",
+      "15",
+      "000원",
+      "기본연회비",
+      "7",
+      "000원",
+      "제휴연회비",
+      "8"
+    ],
+    "소제목수": 0
+  }
+}

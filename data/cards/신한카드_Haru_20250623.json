@@ -1,0 +1,431 @@
+{
+  "metadata": {
+    "카드명": "신한카드 Haru(Hoshino Resorts)",
+    "카드사": "신한카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "신한카드_Haru_20250623.pdf"
+  },
+  "card": {
+    "name": "신한카드 Haru(Hoshino Resorts)",
+    "bank": "신한카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "VISA",
+      "JCB",
+      "국내전용"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "2025-03-13",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 7000,
+      "partnership": 23000,
+      "total": 30000,
+      "amount": 30000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 7000,
+          "partnership": 23000,
+          "total": 30000,
+          "amount": 30000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 7000,
+          "partnership": 23000,
+          "total": 30000,
+          "amount": 30000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 30000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 30000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "JCB",
+        "amount": 30000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 30000,
+      "max": 30000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "VISA",
+        "JCB"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "해외 2% 마이신한포인트 적립(30만원 이상) 일본 1.5% 마이신한포인트 추가 적립(30만원 이상) 국내 1% 마이신한포인트 적립(30만원 이상) 호시노리조트 계열 숙박시설 최대 30% 할인"
+    },
+    "benefit_items": [
+      {
+        "category": "여행",
+        "description": "호시노야 2박 또는 3박 이상 예약 시 최대 10% 할인",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "호시노리조트",
+        "note": ""
+      },
+      {
+        "category": "여행",
+        "description": "카이 조식/석식 포함 최대 30% 할인",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "호시노리조트",
+        "note": ""
+      },
+      {
+        "category": "여행",
+        "description": "리조나레 일본 및 괌 지역 최대 30% 할인",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "호시노리조트",
+        "note": ""
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 300000,
+        "label": "30만원 이상",
+        "benefits_unlocked": [
+          "해외 2% 마이신한포인트 적립",
+          "일본 1.5% 마이신한포인트 추가 적립",
+          "국내 1% 마이신한포인트 적립"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "해외 이용 시 2% 포인트 적립",
+      "일본 이용 시 추가 1.5% 포인트 적립",
+      "호시노리조트 최대 30% 할인"
+    ],
+    "weaknesses": [
+      "해외 현금인출 이용금액은 적립되지 않음",
+      "일부 가맹점에서 IC칩 비밀번호 요구",
+      "해외 단기 카드 대출 이용금액은 적립되지 않음"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "신한카드 Haru(Hoshino Resorts) 카드",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "신한카드",
+        "Haru",
+        "Hoshino",
+        "Resorts",
+        "카드"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 3만원, 해외겸용 3만원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "3만원",
+        "해외겸용",
+        "3만원"
+      ],
+      "토큰수": 4
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "해외 2% 마이신한포인트 적립(30만원 이상), 일본 1.5% 마이신한포인트 추가 적립(30만원 이상), 국내 1% 마이신한포인트 적립(30만원 이상), 호시노리조트 계열 숙박시설 최대 30% 할인",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "해외",
+        "2",
+        "마이신한포인트",
+        "적립",
+        "30만원",
+        "이상",
+        "일본",
+        "1",
+        "5",
+        "마이신한포인트",
+        "추가",
+        "적립"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 해외 이용 시 2% 포인트 적립, 일본 이용 시 추가 1.5% 포인트 적립, 호시노리조트 최대 30% 할인. 약점: 해외 현금인출 이용금액은 적립되지 않음, 일부 가맹점에서 IC칩 비밀번호 요구, 해외 단기 카드 대출 이용금액은 적립되지 않음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "해외",
+        "이용",
+        "시",
+        "2",
+        "포인트",
+        "적립",
+        "일본",
+        "이용",
+        "시",
+        "추가",
+        "1"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "국세, 지방세, 아파트관리비, 상품권 등은 적립 불가.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국세",
+        "지방세",
+        "아파트관리비",
+        "상품권",
+        "등은",
+        "적립",
+        "불가"
+      ],
+      "토큰수": 7
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "신한카드 Haru(Hoshino Resorts) 카드",
+      "💳 연회비 구조": "국내전용 3만원, 해외겸용 3만원",
+      "🎁 주요 혜택": "해외 2% 마이신한포인트 적립(30만원 이상), 일본 1.5% 마이신한포인트 추가 적립(30만원 이상), 국내 1% 마이신한포인트 적립(30만원 이상), 호시노리조트 계열 숙박시설 최대 30% 할인",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 해외 이용 시 2% 포인트 적립, 일본 이용 시 추가 1.5% 포인트 적립, 호시노리조트 최대 30% 할인. 약점: 해외 현금인출 이용금액은 적립되지 않음, 일부 가맹점에서 IC칩 비밀번호 요구, 해외 단기 카드 대출 이용금액은 적립되지 않음.",
+      "⚠️ 주의사항 및 제외사항": "국세, 지방세, 아파트관리비, 상품권 등은 적립 불가."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 0,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "신한카드 Haru(Hoshino Resorts)",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "신한카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "VISA, JCB, 국내전용",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "30000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 899,
+    "총글자수": 332,
+    "총단어수": 79,
+    "키워드": [
+      "신한카드",
+      "Haru",
+      "Hoshino",
+      "Resorts",
+      "카드",
+      "국내전용",
+      "3만원",
+      "해외겸용",
+      "3만원",
+      "해외",
+      "2",
+      "마이신한포인트",
+      "적립",
+      "30만원",
+      "이상",
+      "일본",
+      "1",
+      "5",
+      "마이신한포인트",
+      "추가"
+    ],
+    "소제목수": 0
+  }
+}

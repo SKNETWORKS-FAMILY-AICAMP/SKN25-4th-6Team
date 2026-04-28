@@ -1,0 +1,457 @@
+{
+  "metadata": {
+    "카드명": "삼성카드 5 V4",
+    "카드사": "삼성카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "삼성카드_5_V4.pdf"
+  },
+  "card": {
+    "name": "삼성카드 5 V4",
+    "bank": "삼성카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "Mastercard"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 39000,
+      "partnership": 7000,
+      "total": 39000,
+      "amount": 39000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 39000,
+          "partnership": 7000,
+          "total": 39000,
+          "amount": 39000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 39000,
+          "partnership": 7000,
+          "total": 39000,
+          "amount": 39000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 39000
+      },
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 39000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 39000,
+      "max": 39000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "Mastercard"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "교육 5% 할인 생활 필수 영역 2% 할인 영화 10,000원 할인 놀이공원 50%·워터파크 30% 할인 생활요금 자동납부 서비스포인트 적립"
+    },
+    "benefit_items": [
+      {
+        "category": "교육",
+        "description": "학원·학습지·인터넷강의·서점 5% 결제일할인(청구할인)",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 7000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "입시/보습·외국어·예체능계 학원, 씽크빅, 교원, 대교, 한솔교육, 이투스, 메가스터디(엠베스트), 대성마이맥, 스카이에듀, 오프라인서점, 온라인서점(YES24, 인터파크 도서, 알라딘, 교보문고)",
+        "note": ""
+      },
+      {
+        "category": "생활",
+        "description": "생활 필수 영역 2% 할인",
+        "type": "청구할인",
+        "rate": "2%",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 15000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "이마트, 이마트 트레이더스, 롯데마트, 홈플러스, 삼성카드 쇼핑, G마켓, 옥션, 11번가, 인터파크, 쿠팡, 티몬, 위메프, SSG.COM",
+        "note": ""
+      },
+      {
+        "category": "영화",
+        "description": "영화 티켓 15,000원 이상 결제 시 10,000원 결제일할인(청구할인)",
+        "type": "청구할인",
+        "rate": "10,000원",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 1,
+        "annual_occurrence_limit": 4,
+        "per_transaction_min": 15000,
+        "applicable_stores": "CGV, 롯데시네마",
+        "note": "통합 월 1회, 연 4회 제공"
+      },
+      {
+        "category": "놀이공원",
+        "description": "놀이공원 자유이용권 50%·워터파크 입장권 30% 현장할인",
+        "type": "청구할인",
+        "rate": "50%·30%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 1,
+        "annual_occurrence_limit": 4,
+        "per_transaction_min": 0,
+        "applicable_stores": "에버랜드, 롯데월드, 서울랜드, 통도환타지아, 대전오월드, 경주월드, 캐리비안 베이, 아쿠아 환타지아, 캘리포니아비치",
+        "note": "통합 월 1회, 연 4회 제공"
+      },
+      {
+        "category": "기타",
+        "description": "생활요금 자동납부 연결 시 자동납부 총 금액 10만원당 1,000 서비스포인트 적립",
+        "type": "포인트적립",
+        "rate": "1,000원당 1포인트",
+        "monthly_min_spending": 0,
+        "monthly_cap": 20000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "아파트 관리비, 도시가스요금, 건강보험, 국민연금, 고용보험, 산재보험, 전기요금, SKT, SK브로드밴드, KT, LG U+ 이동통신/인터넷/유선전화요금, 넷플릭스, 웨이브, 티빙, 왓챠, 멜론, FLO, 코웨이, SK매직",
+        "note": ""
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 500000,
+        "label": "50만원 이상",
+        "benefits_unlocked": []
+      },
+      {
+        "amount": 1000000,
+        "label": "100만원 이상",
+        "benefits_unlocked": []
+      },
+      {
+        "amount": 1500000,
+        "label": "150만원 이상",
+        "benefits_unlocked": []
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "다양한 생활 필수 영역에서 할인 제공",
+      "영화 할인 혜택",
+      "놀이공원 및 워터파크 할인",
+      "자동납부 서비스포인트 적립"
+    ],
+    "weaknesses": [
+      "해외 이용 시 수수료 발생",
+      "전월 실적 미충족 시 혜택 축소",
+      "일부 업종 제외"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "해외겸용 39,000원, 국내전용 39,000원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "해외겸용",
+        "39",
+        "000원",
+        "국내전용",
+        "39",
+        "000원"
+      ],
+      "토큰수": 6
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "교육 5% 할인, 생활 필수 영역 2% 할인, 영화 10,000원 할인, 놀이공원 50%·워터파크 30% 할인, 생활요금 자동납부 서비스포인트 적립",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "교육",
+        "5",
+        "할인",
+        "생활",
+        "필수",
+        "영역",
+        "2",
+        "할인",
+        "영화",
+        "10",
+        "000원",
+        "할인"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 다양한 생활 필수 영역에서 할인 제공, 영화 할인 혜택, 놀이공원 및 워터파크 할인, 자동납부 서비스포인트 적립. 약점: 해외 이용 시 수수료 발생, 전월 실적 미충족 시 혜택 축소, 일부 업종 제외.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "다양한",
+        "생활",
+        "필수",
+        "영역에서",
+        "할인",
+        "제공",
+        "영화",
+        "할인",
+        "혜택",
+        "놀이공원",
+        "및"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "해외 이용 시 수수료 발생, 전월 실적 미충족 시 혜택 축소, 일부 업종 제외.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "해외",
+        "이용",
+        "시",
+        "수수료",
+        "발생",
+        "전월",
+        "실적",
+        "미충족",
+        "시",
+        "혜택",
+        "축소",
+        "일부"
+      ],
+      "토큰수": 12
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "",
+      "💳 연회비 구조": "해외겸용 39,000원, 국내전용 39,000원",
+      "🎁 주요 혜택": "교육 5% 할인, 생활 필수 영역 2% 할인, 영화 10,000원 할인, 놀이공원 50%·워터파크 30% 할인, 생활요금 자동납부 서비스포인트 적립",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 다양한 생활 필수 영역에서 할인 제공, 영화 할인 혜택, 놀이공원 및 워터파크 할인, 자동납부 서비스포인트 적립. 약점: 해외 이용 시 수수료 발생, 전월 실적 미충족 시 혜택 축소, 일부 업종 제외.",
+      "⚠️ 주의사항 및 제외사항": "해외 이용 시 수수료 발생, 전월 실적 미충족 시 혜택 축소, 일부 업종 제외."
+    },
+    "coverage": {
+      "기본정보": false,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 3,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "삼성카드 5 V4",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "삼성카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "Mastercard",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "39000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 4,
+    "총바이트": 781,
+    "총글자수": 273,
+    "총단어수": 73,
+    "키워드": [
+      "해외겸용",
+      "39",
+      "000원",
+      "국내전용",
+      "39",
+      "000원",
+      "교육",
+      "5",
+      "할인",
+      "생활",
+      "필수",
+      "영역",
+      "2",
+      "할인",
+      "영화",
+      "10",
+      "000원",
+      "할인",
+      "놀이공원",
+      "50"
+    ],
+    "소제목수": 0
+  }
+}

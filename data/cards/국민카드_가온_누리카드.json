@@ -1,0 +1,459 @@
+{
+  "metadata": {
+    "카드명": "KB국민 가온·누리카드",
+    "카드사": "KB국민카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "국민카드_가온_누리카드.pdf"
+  },
+  "card": {
+    "name": "KB국민 가온·누리카드",
+    "bank": "KB국민카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "VISA"
+    ],
+    "grade": "Platinum",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 5000,
+      "partnership": 0,
+      "total": 5000,
+      "amount": 5000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 5000,
+          "partnership": 0,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 5000,
+          "partnership": 0,
+          "total": 5000,
+          "amount": 5000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 5000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 10000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 5000,
+      "max": 10000
+    },
+    "overseas_brand_options": {
+      "count": 1,
+      "brands": [
+        "VISA"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "모든 가맹점 0.5% 포인트리 기본 적립 주말/공휴일 모든 가맹점 0.3% 포인트리 추가 적립 모든 가맹점 1% 청구할인 (전월 실적 50만원 이상) 주말/공휴일 모든 가맹점 0.3% 추가 청구할인 해외이용금액 1% 할인 캐시백 (월 100만원 이용금액까지)"
+    },
+    "benefit_items": [
+      {
+        "category": "포인트적립",
+        "description": "모든 가맹점 0.5% 포인트리 기본 적립",
+        "type": "포인트적립",
+        "rate": "0.5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "모든 가맹점",
+        "note": ""
+      },
+      {
+        "category": "포인트적립",
+        "description": "주말/공휴일 모든 가맹점 0.3% 포인트리 추가 적립",
+        "type": "포인트적립",
+        "rate": "0.3%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "주말/공휴일 모든 가맹점",
+        "note": "대중교통(버스/지하철), 이동통신요금 자동납부, 해외이용금액은 추가적립 제외"
+      },
+      {
+        "category": "청구할인",
+        "description": "모든 가맹점 1% 청구할인 (전월 실적 50만원 이상)",
+        "type": "청구할인",
+        "rate": "1%",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "모든 가맹점",
+        "note": "해외이용금액은 해외이용 할인 캐시백 서비스 제공"
+      },
+      {
+        "category": "청구할인",
+        "description": "주말/공휴일 모든 가맹점 0.3% 추가 청구할인",
+        "type": "청구할인",
+        "rate": "0.3%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "주말/공휴일 모든 가맹점",
+        "note": "대중교통(버스/지하철), 이동통신요금 자동납부, 해외이용금액은 추가 할인 제외"
+      },
+      {
+        "category": "캐시백",
+        "description": "해외이용금액 1% 할인 캐시백 (월 100만원 이용금액까지)",
+        "type": "캐시백",
+        "rate": "1%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 1000000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "해외이용",
+        "note": "전월 이용실적 충족 시 당월 해외이용금액을 합산하여 할인 캐시백 금액을 산정"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 500000,
+        "label": "50만원 이상",
+        "benefits_unlocked": [
+          "모든 가맹점 1% 청구할인"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "모든 가맹점 0.5% 포인트리 기본 적립",
+      "주말/공휴일 0.3% 추가 적립",
+      "해외이용금액 1% 할인 캐시백 제공",
+      "전월 실적 50만원 이상 시 1% 청구할인"
+    ],
+    "weaknesses": [
+      "해외이용금액은 추가적립 제외",
+      "대중교통 자동납부는 추가적립 제외",
+      "연회비 면제 조건 없음"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "현금서비스",
+      "카드론",
+      "지방세",
+      "정부지원금",
+      "대학(대학원)등록금",
+      "각종 수수료 및 이자",
+      "연체료",
+      "연회비",
+      "상품권 및 선불카드 구입"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "KB국민 가온·누리카드는 가족과 함께합니다.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "KB국민",
+        "가온",
+        "누리카드는",
+        "가족과",
+        "함께합니다"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 5천원, 해외겸용 1만원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "5천원",
+        "해외겸용",
+        "1만원"
+      ],
+      "토큰수": 4
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "모든 가맹점 0.5% 포인트리 기본 적립, 주말/공휴일 모든 가맹점 0.3% 포인트리 추가 적립, 모든 가맹점 1% 청구할인 (전월 실적 50만원 이상), 주말/공휴일 모든 가맹점 0.3% 추가 청구할인, 해외이용금액 1% 할인 캐시백 (월 100만원 이용금액까지)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "모든",
+        "가맹점",
+        "0",
+        "5",
+        "포인트리",
+        "기본",
+        "적립",
+        "주말",
+        "공휴일",
+        "모든",
+        "가맹점",
+        "0"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 모든 가맹점 0.5% 포인트리 기본 적립, 주말/공휴일 0.3% 추가 적립, 해외이용금액 1% 할인 캐시백 제공, 전월 실적 50만원 이상 시 1% 청구할인. 약점: 해외이용금액은 추가적립 제외, 대중교통 자동납부는 추가적립 제외, 연회비 면제 조건 없음.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "모든",
+        "가맹점",
+        "0",
+        "5",
+        "포인트리",
+        "기본",
+        "적립",
+        "주말",
+        "공휴일",
+        "0",
+        "3"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "혜택 제외 업종: 현금서비스, 카드론, 지방세, 정부지원금, 대학(대학원)등록금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드 구입.",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "혜택",
+        "제외",
+        "업종",
+        "현금서비스",
+        "카드론",
+        "지방세",
+        "정부지원금",
+        "대학",
+        "대학원",
+        "등록금",
+        "각종",
+        "수수료"
+      ],
+      "토큰수": 12
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "KB국민 가온·누리카드는 가족과 함께합니다.",
+      "💳 연회비 구조": "국내전용 5천원, 해외겸용 1만원",
+      "🎁 주요 혜택": "모든 가맹점 0.5% 포인트리 기본 적립, 주말/공휴일 모든 가맹점 0.3% 포인트리 추가 적립, 모든 가맹점 1% 청구할인 (전월 실적 50만원 이상), 주말/공휴일 모든 가맹점 0.3% 추가 청구할인, 해외이용금액 1% 할인 캐시백 (월 100만원 이용금액까지)",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 모든 가맹점 0.5% 포인트리 기본 적립, 주말/공휴일 0.3% 추가 적립, 해외이용금액 1% 할인 캐시백 제공, 전월 실적 50만원 이상 시 1% 청구할인. 약점: 해외이용금액은 추가적립 제외, 대중교통 자동납부는 추가적립 제외, 연회비 면제 조건 없음.",
+      "⚠️ 주의사항 및 제외사항": "혜택 제외 업종: 현금서비스, 카드론, 지방세, 정부지원금, 대학(대학원)등록금, 각종 수수료 및 이자, 연체료, 연회비, 상품권 및 선불카드 구입."
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 0,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "KB국민 가온·누리카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "KB국민카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, VISA",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "5000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 1131,
+    "총글자수": 425,
+    "총단어수": 106,
+    "키워드": [
+      "KB국민",
+      "가온",
+      "누리카드는",
+      "가족과",
+      "함께합니다",
+      "국내전용",
+      "5천원",
+      "해외겸용",
+      "1만원",
+      "모든",
+      "가맹점",
+      "0",
+      "5",
+      "포인트리",
+      "기본",
+      "적립",
+      "주말",
+      "공휴일",
+      "모든",
+      "가맹점"
+    ],
+    "소제목수": 0
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "metadata": {
+    "카드명": "디지로카 Edu",
+    "카드사": "롯데카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "롯데카드_디지로카_Edu.pdf"
+  },
+  "card": {
+    "name": "디지로카 Edu",
+    "bank": "롯데카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "VISA",
+      "Mastercard",
+      "American Express"
+    ],
+    "grade": "Members",
+    "issuedDate": "2024-06-14",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 7000,
+      "partnership": 23000,
+      "total": 30000,
+      "amount": 30000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 23000,
+      "amount": 23000,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": true
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 7000,
+          "partnership": 23000,
+          "total": 30000,
+          "amount": 30000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 7000,
+          "partnership": 23000,
+          "total": 30000,
+          "amount": 30000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 23000,
+          "amount": 23000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 23000,
+          "amount": 23000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 30000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "VISA",
+        "amount": 30000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "Mastercard",
+        "amount": 30000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "American Express",
+        "amount": 30000
+      }
+    ],
+    "has_brand_fee_difference": false,
+    "fee_range": {
+      "min": 30000,
+      "max": 30000
+    },
+    "overseas_brand_options": {
+      "count": 3,
+      "brands": [
+        "VISA",
+        "Mastercard",
+        "American Express"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "학원, 유치원 50만원 이상 3% 캐시백(월한도 3만원) 학원, 유치원 100만원 이상 7% 캐시백(월한도 5만원) 국내 가맹점 5만원 이상 2~3개월 무이자 할부"
+    },
+    "benefit_items": [
+      {
+        "category": "기타",
+        "description": "학원, 유치원 캐시백 혜택",
+        "type": "캐시백",
+        "rate": "3% (50만원 이상 ~ 100만원 미만), 7% (100만원 이상)",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 30000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "학원, 유치원",
+        "note": ""
+      },
+      {
+        "category": "기타",
+        "description": "국내 가맹점 2~3개월 무이자 할부",
+        "type": "서비스제공",
+        "rate": "",
+        "monthly_min_spending": 50000,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "국내 가맹점",
+        "note": "지난달 실적 조건 없이 제공"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "50만원 이상 이용 시 캐시백 제공",
+        "monthly_min_spending": 500000
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 500000,
+        "label": "50만원 이상",
+        "benefits_unlocked": [
+          "3% 캐시백 (월한도 3만원)"
+        ]
+      },
+      {
+        "amount": 1000000,
+        "label": "100만원 이상",
+        "benefits_unlocked": [
+          "7% 캐시백 (월한도 5만원)"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "학원, 유치원 이용 시 높은 캐시백 제공",
+      "국내 가맹점에서 무이자 할부 혜택 제공",
+      "가족카드 발급 무제한 가능"
+    ],
+    "weaknesses": [
+      "해외 이용 시 수수료 발생",
+      "캐시백 지급 전 실적 취소 시 혜택 변경 가능성",
+      "일부 업종 제외"
+    ],
+    "recommended_scenario": "학원, 유치원 이용이 많은 가정에 적합",
+    "positioning": "교육비 지출이 많은 고객을 위한 카드"
+  },
+  "exclusions": {
+    "excluded_items": [
+      "국세",
+      "지방세",
+      "아파트관리비",
+      "상품권"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "디지로카 Edu 카드, 출시일: 2024년 06월 14일",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "디지로카",
+        "Edu",
+        "카드",
+        "출시일",
+        "2024년",
+        "06월",
+        "14일"
+      ],
+      "토큰수": 7
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 30,000원, 해외겸용 30,000원 (가족카드 국내전용 23,000원, 해외겸용 23,000원)",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "30",
+        "000원",
+        "해외겸용",
+        "30",
+        "000원",
+        "가족카드",
+        "국내전용",
+        "23",
+        "000원",
+        "해외겸용",
+        "23"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "학원, 유치원 50만원 이상 3% 캐시백(월한도 3만원), 100만원 이상 7% 캐시백(월한도 5만원), 국내 가맹점 5만원 이상 2~3개월 무이자 할부",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "학원",
+        "유치원",
+        "50만원",
+        "이상",
+        "3",
+        "캐시백",
+        "월한도",
+        "3만원",
+        "100만원",
+        "이상",
+        "7",
+        "캐시백"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "학원, 유치원 이용이 많은 가정",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "학원",
+        "유치원",
+        "이용이",
+        "많은",
+        "가정"
+      ],
+      "토큰수": 5
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 학원, 유치원 캐시백, 무이자 할부, 가족카드 무제한 발급; 약점: 해외 수수료, 혜택 변경 가능성, 일부 업종 제외",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "학원",
+        "유치원",
+        "캐시백",
+        "무이자",
+        "할부",
+        "가족카드",
+        "무제한",
+        "발급",
+        "약점",
+        "해외",
+        "수수료"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "국세, 지방세, 아파트관리비 등 제외",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국세",
+        "지방세",
+        "아파트관리비",
+        "등",
+        "제외"
+      ],
+      "토큰수": 5
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "디지로카 Edu 카드, 출시일: 2024년 06월 14일",
+      "💳 연회비 구조": "국내전용 30,000원, 해외겸용 30,000원 (가족카드 국내전용 23,000원, 해외겸용 23,000원)",
+      "🎁 주요 혜택": "학원, 유치원 50만원 이상 3% 캐시백(월한도 3만원), 100만원 이상 7% 캐시백(월한도 5만원), 국내 가맹점 5만원 이상 2~3개월 무이자 할부",
+      "👥 추천 대상": "학원, 유치원 이용이 많은 가정",
+      "💡 카드의 강점 및 약점": "강점: 학원, 유치원 캐시백, 무이자 할부, 가족카드 무제한 발급; 약점: 해외 수수료, 혜택 변경 가능성, 일부 업종 제외",
+      "⚠️ 주의사항 및 제외사항": "국세, 지방세, 아파트관리비 등 제외"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": true,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 4,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "디지로카 Edu",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "롯데카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, VISA, Mastercard, American Express",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "30000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 6,
+    "총바이트": 782,
+    "총글자수": 287,
+    "총단어수": 70,
+    "키워드": [
+      "디지로카",
+      "Edu",
+      "카드",
+      "출시일",
+      "2024년",
+      "06월",
+      "14일",
+      "국내전용",
+      "30",
+      "000원",
+      "해외겸용",
+      "30",
+      "000원",
+      "가족카드",
+      "국내전용",
+      "23",
+      "000원",
+      "해외겸용",
+      "23",
+      "000원"
+    ],
+    "소제목수": 0
+  }
+}

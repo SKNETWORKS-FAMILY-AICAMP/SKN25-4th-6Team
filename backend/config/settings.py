@@ -1,20 +1,30 @@
 import os
+import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
 
-load_dotenv()
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = BASE_DIR.parent
 
-SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-change-me")
+# 프로젝트 루트를 Python 경로에 추가 (src/ 패키지 임포트용)
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+load_dotenv(PROJECT_ROOT / ".env")
+
+SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key-raichu-change-in-prod")
 DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
-ALLOWED_HOSTS = [host.strip() for host in os.getenv("ALLOWED_HOSTS", "").split(",") if host.strip()]
+ALLOWED_HOSTS = [
+    h.strip()
+    for h in os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+    if h.strip()
+]
 CSRF_TRUSTED_ORIGINS = [
-    origin.strip()
-    for origin in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
-    if origin.strip()
+    o.strip()
+    for o in os.getenv("CSRF_TRUSTED_ORIGINS", "http://localhost:5173").split(",")
+    if o.strip()
 ]
 
 INSTALLED_APPS = [
@@ -83,6 +93,9 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOWED_ORIGINS = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+CORS_ALLOW_ALL_ORIGINS = DEBUG

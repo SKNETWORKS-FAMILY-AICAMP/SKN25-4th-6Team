@@ -1,31 +1,20 @@
-:root {
-  font-family: "Pretendard", "Noto Sans KR", sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color: #132132;
-  background: linear-gradient(180deg, #f5f8ff 0%, #ecf2f7 100%);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #F5C842;
+  --color-primary-dark: #E0AD20;
+  --color-primary-light: #FFF7D6;
+  --color-sidebar: #1A1A1A;
+  --color-surface: #F5F4F0;
+  --font-sans: 'Noto Sans KR', sans-serif;
+  --font-display: 'Outfit', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-button,
-input,
-textarea {
-  font: inherit;
-}
-
-code {
-  font-family: "D2Coding", "Fira Code", monospace;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #F5F4F0;
+  color: #1A1A1A;
 }

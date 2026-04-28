@@ -1,0 +1,478 @@
+{
+  "metadata": {
+    "카드명": "SOHO 다사로이OIL카드",
+    "카드사": "NH농협카드",
+    "분석일": "2026-04-19",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "농협카드_SOHO_다사로이_OIL카드.pdf"
+  },
+  "card": {
+    "name": "SOHO 다사로이OIL카드",
+    "bank": "NH농협카드",
+    "id": "",
+    "nameEnglish": "",
+    "brandType": [
+      "국내전용",
+      "JCB",
+      "UnionPay"
+    ],
+    "grade": "SOHO",
+    "issuedDate": "",
+    "targetCustomer": "",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "basic": 6000,
+      "partnership": 9000,
+      "total": 15000,
+      "amount": 15000,
+      "currency": "KRW",
+      "period": "annual"
+    },
+    "family_card": {
+      "basic": 0,
+      "partnership": 0,
+      "total": 0,
+      "amount": 0,
+      "currency": "KRW",
+      "period": "annual",
+      "can_issue_unlimited": false
+    },
+    "yearly_fee_tiers": {
+      "primary_card": {
+        "year1": {
+          "basic": 6000,
+          "partnership": 9000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 6000,
+          "partnership": 9000,
+          "total": 15000,
+          "amount": 15000,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "family_card": {
+        "year1": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        },
+        "year2_and_beyond": {
+          "basic": 0,
+          "partnership": 0,
+          "total": 0,
+          "amount": 0,
+          "currency": "KRW",
+          "period": "annual"
+        }
+      },
+      "is_different_between_years": {
+        "primary_card": false,
+        "family_card": false
+      },
+      "fee_difference_krw": {
+        "primary_card": 0,
+        "family_card": 0
+      }
+    },
+    "notes": "",
+    "brand_fees": [
+      {
+        "scope": "국내전용",
+        "brand": "국내전용",
+        "amount": 15000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "JCB",
+        "amount": 17000
+      },
+      {
+        "scope": "해외겸용",
+        "brand": "UPI",
+        "amount": 17000
+      }
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 15000,
+      "max": 17000
+    },
+    "overseas_brand_options": {
+      "count": 2,
+      "brands": [
+        "JCB",
+        "UnionPay"
+      ]
+    }
+  },
+  "benefits": {
+    "extraction_notes": {
+      "status": "structured",
+      "message": "전 주유소 및 LPG · 수소차 충전소 5% 청구할인(전월 50만원 이상, 월한도 1만원) 전기차 충전소 5% 청구할인(전월 150만원 이상, 월한도 3만원) 주요 사업경비업종 0.5% 청구할인(전월 50만원 이상, 할인한도 통합 월 5만원) 차량 구매액 1% 청구할인(연 1회 제공)"
+    },
+    "benefit_items": [
+      {
+        "category": "주유",
+        "description": "전 주유소 및 LPG · 수소차 충전소 5% 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 10000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "전국 모든 주유소·LPG충전소",
+        "note": ""
+      },
+      {
+        "category": "주유",
+        "description": "전기차 충전소 5% 청구할인",
+        "type": "청구할인",
+        "rate": "5%",
+        "monthly_min_spending": 1500000,
+        "monthly_cap": 30000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "전국 전기차 충전소",
+        "note": "전월실적 50만원 이상 시, 연 1회 제공"
+      },
+      {
+        "category": "기타",
+        "description": "주요 사업경비업종 0.5% 청구할인",
+        "type": "청구할인",
+        "rate": "0.5%",
+        "monthly_min_spending": 500000,
+        "monthly_cap": 50000,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 0,
+        "per_transaction_min": 0,
+        "applicable_stores": "4대사회보험, 손해보험, 전기요금, 이동통신",
+        "note": ""
+      },
+      {
+        "category": "기타",
+        "description": "차량 구매액 1% 청구할인",
+        "type": "청구할인",
+        "rate": "1%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "monthly_occurrence_limit": 0,
+        "annual_occurrence_limit": 1,
+        "per_transaction_min": 0,
+        "applicable_stores": "국산/수입/중고차 판매 가맹점",
+        "note": "전월실적 조건 및 할인한도 제한없이 연 1회 제공"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "difference_note": "",
+      "year1": {
+        "summary": "",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "",
+        "monthly_min_spending": 0,
+        "prev_year_spending_tiers": {
+          "has_prev_year_condition": false,
+          "description": "",
+          "tiers": [
+            {
+              "year1_min": 0,
+              "year1_max": null,
+              "label": "",
+              "benefit_summary": "",
+              "annual_fee_waiver": false
+            }
+          ]
+        }
+      }
+    },
+    "spending_thresholds": [
+      {
+        "amount": 500000,
+        "label": "50만원 이상",
+        "benefits_unlocked": [
+          "전 주유소 및 LPG · 수소차 충전소 5% 청구할인",
+          "주요 사업경비업종 0.5% 청구할인"
+        ]
+      },
+      {
+        "amount": 1500000,
+        "label": "150만원 이상",
+        "benefits_unlocked": [
+          "전기차 충전소 5% 청구할인"
+        ]
+      }
+    ]
+  },
+  "breakeven_analysis": {},
+  "target_customers": {
+    "primary": [],
+    "secondary": [],
+    "exclusions": []
+  },
+  "characteristics": {
+    "strengths": [
+      "전국 주유소 5% 청구할인 제공",
+      "전기차 충전소 5% 청구할인 제공",
+      "주요 사업경비업종 0.5% 청구할인 제공",
+      "차량 구매액 1% 청구할인 제공"
+    ],
+    "weaknesses": [
+      "가족카드 발급 불가",
+      "전월실적 미달 시 혜택 제한",
+      "할인한도 제한 있음",
+      "일부 가맹점에서 할인 제외"
+    ],
+    "recommended_scenario": "",
+    "positioning": ""
+  },
+  "exclusions": {
+    "excluded_items": [
+      "대학(대학원)등록금",
+      "교육비(학부모부담금)",
+      "임대료",
+      "각종 세금 및 공과금",
+      "상하수도요금",
+      "과태료(범칙금)",
+      "우체국 우편요금",
+      "사회보험(국민건강/국민연금/고용/산재)",
+      "아파트관리비",
+      "도시가스요금",
+      "전기요금",
+      "상품권 및 선불카드류구매(충전 포함)",
+      "가상화폐 거래소 이용금액",
+      "단기카드대출(현금서비스)",
+      "장기카드대출(카드론)",
+      "각종 수수료 및 이자",
+      "연체료",
+      "연회비",
+      "거래취소금액",
+      "포인트(전부/일부) 결제 시 포인트 사용분"
+    ],
+    "notes": ""
+  },
+  "notes": {},
+  "섹션": [
+    {
+      "seq": 1,
+      "제목": "📋 카드 기본 정보",
+      "내용": "SOHO 다사로이OIL카드",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "SOHO",
+        "다사로이OIL카드"
+      ],
+      "토큰수": 2
+    },
+    {
+      "seq": 2,
+      "제목": "💳 연회비 구조",
+      "내용": "국내전용 15,000원, 해외겸용 JCB, UPI 17,000원, 기본연회비 6,000원, 제휴연회비 9,000원",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "국내전용",
+        "15",
+        "000원",
+        "해외겸용",
+        "JCB",
+        "UPI",
+        "17",
+        "000원",
+        "기본연회비",
+        "6",
+        "000원",
+        "제휴연회비"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 3,
+      "제목": "🎁 주요 혜택",
+      "내용": "전 주유소 및 LPG · 수소차 충전소 5% 청구할인, 전기차 충전소 5% 청구할인, 주요 사업경비업종 0.5% 청구할인, 차량 구매액 1% 청구할인",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전",
+        "주유소",
+        "및",
+        "LPG",
+        "수소차",
+        "충전소",
+        "5",
+        "청구할인",
+        "전기차",
+        "충전소",
+        "5",
+        "청구할인"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 4,
+      "제목": "👥 추천 대상",
+      "내용": "",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [],
+      "토큰수": 0
+    },
+    {
+      "seq": 5,
+      "제목": "💡 카드의 강점 및 약점",
+      "내용": "강점: 전국 주유소 5% 청구할인 제공, 전기차 충전소 5% 청구할인 제공, 주요 사업경비업종 0.5% 청구할인 제공, 차량 구매액 1% 청구할인 제공; 약점: 가족카드 발급 불가, 전월실적 미달 시 혜택 제한, 할인한도 제한 있음, 일부 가맹점에서 할인 제외",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "강점",
+        "전국",
+        "주유소",
+        "5",
+        "청구할인",
+        "제공",
+        "전기차",
+        "충전소",
+        "5",
+        "청구할인",
+        "제공",
+        "주요"
+      ],
+      "토큰수": 12
+    },
+    {
+      "seq": 6,
+      "제목": "⚠️ 주의사항 및 제외사항",
+      "내용": "전월실적 제외 대상: 대학(대학원)등록금, 교육비(학부모부담금), 임대료, 각종 세금 및 공과금 등",
+      "소제목수": 0,
+      "소제목목록": [],
+      "키워드": [
+        "전월실적",
+        "제외",
+        "대상",
+        "대학",
+        "대학원",
+        "등록금",
+        "교육비",
+        "학부모부담금",
+        "임대료",
+        "각종",
+        "세금",
+        "및"
+      ],
+      "토큰수": 12
+    }
+  ],
+  "document_understanding": {
+    "section_titles": [
+      "📋 카드 기본 정보",
+      "💳 연회비 구조",
+      "🎁 주요 혜택",
+      "👥 추천 대상",
+      "💡 카드의 강점 및 약점",
+      "⚠️ 주의사항 및 제외사항"
+    ],
+    "section_map": {
+      "📋 카드 기본 정보": "SOHO 다사로이OIL카드",
+      "💳 연회비 구조": "국내전용 15,000원, 해외겸용 JCB, UPI 17,000원, 기본연회비 6,000원, 제휴연회비 9,000원",
+      "🎁 주요 혜택": "전 주유소 및 LPG · 수소차 충전소 5% 청구할인, 전기차 충전소 5% 청구할인, 주요 사업경비업종 0.5% 청구할인, 차량 구매액 1% 청구할인",
+      "👥 추천 대상": "",
+      "💡 카드의 강점 및 약점": "강점: 전국 주유소 5% 청구할인 제공, 전기차 충전소 5% 청구할인 제공, 주요 사업경비업종 0.5% 청구할인 제공, 차량 구매액 1% 청구할인 제공; 약점: 가족카드 발급 불가, 전월실적 미달 시 혜택 제한, 할인한도 제한 있음, 일부 가맹점에서 할인 제외",
+      "⚠️ 주의사항 및 제외사항": "전월실적 제외 대상: 대학(대학원)등록금, 교육비(학부모부담금), 임대료, 각종 세금 및 공과금 등"
+    },
+    "coverage": {
+      "기본정보": true,
+      "연회비": true,
+      "혜택": true,
+      "추천대상": false,
+      "강약점": true,
+      "주의사항": true
+    },
+    "signals": {
+      "money_value_count": 4,
+      "date_value_count": 0,
+      "bullet_count": 0,
+      "table_line_count": 0
+    }
+  },
+  "extraction_provenance": {
+    "card_name": {
+      "evidence_span": "SOHO 다사로이OIL카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "bank_name": {
+      "evidence_span": "NH농협카드",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "brand_types": {
+      "evidence_span": "국내전용, JCB, UnionPay",
+      "source_section": "📋 카드 기본 정보",
+      "source_page": null,
+      "confidence": 0.85
+    },
+    "annual_fee": {
+      "evidence_span": "15000 KRW",
+      "source_section": "💳 연회비 구조",
+      "source_page": null,
+      "confidence": 0.9
+    },
+    "yearly_spending_conditions": {
+      "evidence_span": "",
+      "source_section": "🎁 주요 혜택",
+      "source_page": null,
+      "confidence": 0.3
+    }
+  },
+  "통계": {
+    "총섹션수": 6,
+    "총라인수": 5,
+    "총바이트": 961,
+    "총글자수": 365,
+    "총단어수": 89,
+    "키워드": [
+      "SOHO",
+      "다사로이OIL카드",
+      "국내전용",
+      "15",
+      "000원",
+      "해외겸용",
+      "JCB",
+      "UPI",
+      "17",
+      "000원",
+      "기본연회비",
+      "6",
+      "000원",
+      "제휴연회비",
+      "9",
+      "000원",
+      "전",
+      "주유소",
+      "및",
+      "LPG"
+    ],
+    "소제목수": 0
+  }
+}
