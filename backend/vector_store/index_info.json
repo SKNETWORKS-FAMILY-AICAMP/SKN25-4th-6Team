@@ -1,7 +1,7 @@
 {
-  "num_vectors": 747,
+  "num_vectors": 848,
   "dim": 1536,
   "normalized": true,
-  "index_file": "/Users/khl/workspace/project/카드_추천_시스템/artifacts/rag/vector_index.npz",
-  "meta_file": "/Users/khl/workspace/project/카드_추천_시스템/artifacts/rag/vector_meta.jsonl"
+  "index_file": "/app/vector_store/vector_index.npz",
+  "meta_file": "/app/vector_store/vector_meta.jsonl"
 }

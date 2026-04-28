@@ -63,10 +63,35 @@ def fallback_answer(question: str, retrieved: List[Tuple[float, Dict[str, Any]]]
     return "\n".join(lines) + build_evidence_footer(retrieved)
 
 
+def _build_profile_context(user_profile: Dict[str, Any]) -> str:
+    """사용자 프로필을 LLM에 전달할 텍스트로 변환"""
+    if not user_profile:
+        return ""
+    lines = ["[사용자 프로필]"]
+    owned = user_profile.get("owned_cards", [])
+    if owned:
+        card_names = ", ".join(c.get("name", "") for c in owned if c.get("name"))
+        lines.append(f"- 보유 카드: {card_names}")
+    if user_profile.get("age_group"):
+        lines.append(f"- 나이대: {user_profile['age_group']}")
+    if user_profile.get("monthly_spend"):
+        lines.append(f"- 월 사용액: {user_profile['monthly_spend']}")
+    if user_profile.get("annual_fee_range"):
+        lines.append(f"- 연회비 허용: {user_profile['annual_fee_range']}")
+    lifestyles = user_profile.get("lifestyles", [])
+    if lifestyles:
+        lines.append(f"- 라이프스타일: {', '.join(lifestyles)}")
+    benefits = user_profile.get("preferred_benefits", [])
+    if benefits:
+        lines.append(f"- 선호 혜택: {', '.join(benefits)}")
+    return "\n".join(lines)
+
+
 def llm_answer(
     question: str,
     retrieved: List[Tuple[float, Dict[str, Any]]],
     chat_history: List[Dict[str, str]],
+    user_profile: Dict[str, Any],
     model: str,
     temperature: float,
 ) -> str:
@@ -79,13 +104,16 @@ def llm_answer(
 
         client = OpenAI(api_key=api_key)
         context = build_context(retrieved)
+        profile_ctx = _build_profile_context(user_profile)
 
         messages: List[Dict[str, str]] = [{"role": "system", "content": SYSTEM_PROMPT}]
         for m in chat_history[-8:]:
             messages.append({"role": m["role"], "content": m["content"]})
 
+        profile_section = f"{profile_ctx}\n\n" if profile_ctx else ""
         user_content = (
-            "아래 카드 컨텍스트를 참고해 질문에 답해줘.\n\n"
+            f"아래 카드 컨텍스트를 참고해 질문에 답해줘.\n\n"
+            f"{profile_section}"
             f"[카드 컨텍스트]\n{context}\n\n"
             f"[질문]\n{question}"
         )

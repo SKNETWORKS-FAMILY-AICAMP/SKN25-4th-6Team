@@ -1,0 +1,255 @@
+{
+  "metadata": {
+    "카드명": "일상의 기쁨 신용카드",
+    "카드사": "IBK기업은행",
+    "분석일": "2026-04-28",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "IBK_Everyday_Joy_Credit.txt"
+  },
+  "card": {
+    "name": "일상의 기쁨 신용카드",
+    "bank": "IBK기업은행",
+    "brandType": [
+      "UnionPay",
+      "VISA"
+    ],
+    "grade": "미확인",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "amount": 10000,
+      "total": 10000
+    },
+    "brand_fees": [
+      {
+        "brand": "UnionPay",
+        "amount": 10000
+      },
+      {
+        "brand": "VISA",
+        "amount": 12000
+      }
+    ]
+  },
+  "benefits": {
+    "benefit_items": [
+      {
+        "category": "문화/여가",
+        "description": "CGV, 롯데시네마, 메가박스 현장 및 온라인 예매 시 1만원 할인",
+        "type": "할인",
+        "rate": "1만원",
+        "monthly_min_spending": 0,
+        "monthly_cap": 12000,
+        "applicable_stores": "CGV, 롯데시네마, 메가박스",
+        "note": "통합 월 1회, 연 12회, 건당 1만원 이상 결제 시 제공. 예매 대행 사이트를 통한 예매 시 할인 제외"
+      },
+      {
+        "category": "식음료",
+        "description": "주요 커피전문점 20% 할인",
+        "type": "할인",
+        "rate": "20%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "스타벅스, 커피빈, 카페베네, 탐앤탐스, 엔제리너스, 투썸플레이스, 할리스, 달콤",
+        "note": "통합 1일 1회, 월 2회, 1회 이용금액 2만원 한도. 백화점 및 할인(아울렛)점 입점 매장은 제외"
+      },
+      {
+        "category": "쇼핑",
+        "description": "쿠팡, 티몬, 위메프 20% 할인",
+        "type": "할인",
+        "rate": "20%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "쿠팡, 티몬, 위메프",
+        "note": "통합 1일 1회, 월 2회, 1회 이용금액 2만원 한도"
+      },
+      {
+        "category": "쇼핑",
+        "description": "GS25, CU, 세븐일레븐, 올리브영 10% 할인",
+        "type": "할인",
+        "rate": "10%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "GS25, CU, 세븐일레븐, 올리브영",
+        "note": "통합 1일 1회, 월 2회, 1회 이용금액 1만원 한도"
+      },
+      {
+        "category": "쇼핑",
+        "description": "이마트, 홈플러스, 롯데마트 5% 할인",
+        "type": "할인",
+        "rate": "5%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "이마트, 홈플러스, 롯데마트",
+        "note": "통합 월 1회, 1회 이용금액 10만원 한도. 기업형 슈퍼마켓 및 인터넷(PG업체)을 통해 결제되는 경우 할인 미제공"
+      },
+      {
+        "category": "교통",
+        "description": "버스, 지하철 이용건당 200원 할인",
+        "type": "할인",
+        "rate": "200원",
+        "monthly_min_spending": 0,
+        "monthly_cap": 2000,
+        "applicable_stores": "버스, 지하철",
+        "note": "후불교통카드로 이용한 건에 한함. 매출표 접수일 기준으로 월 최대 2천원 할인. 환승으로 이용된 건은 이용횟수에서 제외"
+      },
+      {
+        "category": "주유",
+        "description": "전 주유소 리터당 60원 할인(LPG포함)",
+        "type": "할인",
+        "rate": "리터당 60원",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "전 주유소",
+        "note": "통합 1일 1회, 월 2회, 회당 주유금액 10만원 한도. 기준유가: 정유사 고시 휘발유가 기준(경유, 등유, LPG는 휘발유가로 환산하여 할인 적용)"
+      },
+      {
+        "category": "여행/레저",
+        "description": "서울랜드, 에버랜드, 롯데월드, 한국민속촌, 이월드 본인 자유이용권 50% 할인",
+        "type": "할인",
+        "rate": "50%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "서울랜드, 에버랜드, 롯데월드, 한국민속촌, 이월드",
+        "note": "현장할인"
+      },
+      {
+        "category": "여행/레저",
+        "description": "통도환타지아 본인 무료입장 또는 본인 자유이용권 50% 할인",
+        "type": "할인",
+        "rate": "50%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "통도환타지아",
+        "note": "현장할인"
+      },
+      {
+        "category": "여행/레저",
+        "description": "경주월드 본인 자유이용권 50% 할인 또는 본인 캘리포니아비치 30% 할인",
+        "type": "할인",
+        "rate": "50% 또는 30%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "경주월드",
+        "note": "현장할인"
+      },
+      {
+        "category": "여행/레저",
+        "description": "전주 동물원 본인 무료입장",
+        "type": "할인",
+        "rate": "무료입장",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "전주 동물원",
+        "note": "현장할인"
+      },
+      {
+        "category": "여행/레저",
+        "description": "패밀리랜드 입장료 6천원 청구할인",
+        "type": "청구할인",
+        "rate": "6000원",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "패밀리랜드",
+        "note": "청구할인"
+      },
+      {
+        "category": "금융",
+        "description": "타행 ATM 출금수수료 면제",
+        "type": "면제",
+        "rate": "월 10회",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "타행 ATM",
+        "note": "금융우대서비스"
+      },
+      {
+        "category": "금융",
+        "description": "당행 전자금융 이체수수료 면제",
+        "type": "면제",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "당행 전자금융",
+        "note": "금융우대서비스"
+      },
+      {
+        "category": "금융",
+        "description": "당행 ATM/CD기를 통한 이체수수료 면제",
+        "type": "면제",
+        "rate": "",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "당행 ATM/CD기",
+        "note": "금융우대서비스"
+      },
+      {
+        "category": "금융",
+        "description": "환전(Cash, T/C) 시 환율 70% 우대",
+        "type": "우대",
+        "rate": "70%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "환전(Cash, T/C)",
+        "note": "대상통화 USD, JPY, EUR"
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "year1": {
+        "summary": "카드 사용등록일로부터 다음월말까지는 카드 이용금액과 관계 없이 통합 할인한도 2만원을 기본으로 제공하며, 금융우대서비스는 결제계좌를 IBK기업은행 입출식 통장으로 이용 시 제공",
+        "monthly_min_spending": 0
+      },
+      "year2_and_beyond": {
+        "summary": "전월 1일부터 말일까지의 국내 가맹점 이용금액이 50만원 이상인 경우 할인서비스 제공. 단, 제세공과금, APT관리비, 대학등록금, 상품권(선불카드 포함) 구입 및 충전, 교통요금은 제외",
+        "monthly_min_spending": 500000
+      }
+    }
+  },
+  "exclusions": {
+    "excluded_items": [
+      "제세공과금(국세/지방세/도시가스/사회보험/공공요금 등)",
+      "APT관리비",
+      "대학등록금",
+      "상품권(선불카드 포함) 구입 및 충전",
+      "교통요금",
+      "무이자할부 이용금액",
+      "예매 대행 사이트를 통한 예매",
+      "백화점 및 할인(아울렛)점 입점 매장",
+      "기업형 슈퍼마켓(이마트 에브리데이, 홈플러스 익스프레스, 롯데슈퍼 등)",
+      "인터넷(PG업체)을 통해 결제되는 경우",
+      "환승으로 이용된 건",
+      "원화거래(CD/ATM)가 아닌 해외 이용 거래"
+    ],
+    "notes": "상품권(선불카드 포함) 구매 및 충전금액, 무이자할부 이용금액에 대해서는 할인 서비스 미제공. 해외 이용 시 원화거래(CD/ATM)가 아닌 경우는 수수료가 부과될 수 있으며 현지통화로 거래합니다. 해외 이용 시 발생하는 수수료는 국제브랜드사의 정책에 따라 추후 변경될 수 있습니다."
+  },
+  "document_understanding": {
+    "section_map": {
+      "📋 카드 기본 정보": "일상의 기쁨 신용카드, IBK기업은행, 개인(본인 및 가족), 연회비 UnionPay 1만원, VISA 1만 2천원, 브랜드 UnionPay/VISA, 후불교통 가능, 해외겸용",
+      "💳 연회비 구조": "UnionPay 1만원, VISA 1만 2천원",
+      "🎁 주요 혜택": "CGV, 롯데시네마, 메가박스 1만원 할인; 주요 커피전문점 20% 할인; 쿠팡, 티몬, 위메프 20% 할인; GS25, CU, 세븐일레븐, 올리브영 10% 할인; 이마트, 홈플러스, 롯데마트 5% 할인; 버스, 지하철 이용건당 200원 할인; 전 주유소 리터당 60원 할인; 놀이공원/레저시설 할인 및 무료입장; 금융우대서비스",
+      "👥 추천 대상": "영화, 커피, 온라인쇼핑, 편의점, 대형마트, 대중교통, 주유, 놀이공원 이용이 잦은 고객",
+      "💡 카드의 강점 및 약점": "강점: 생활밀착형 할인과 금융우대서비스가 다양함. 약점: 전월실적 50만원 조건이 있으며 일부 혜택은 횟수·한도 제한이 큼",
+      "⚠️ 주의사항 및 제외사항": "전월 실적 산정 시 제세공과금, APT관리비, 대학등록금, 상품권 구입 및 충전, 교통요금 제외. 상품권 구매 및 충전금액, 무이자할부 이용금액 할인 미제공. 예매 대행 사이트, 백화점/아울렛 입점 매장, 기업형 슈퍼마켓, 인터넷(PG업체) 결제는 제외"
+    }
+  },
+  "characteristics": {
+    "strengths": [
+      "영화, 커피, 온라인쇼핑, 편의점, 대형마트, 교통, 주유, 놀이공원까지 생활 전반 혜택이 넓음",
+      "금융우대서비스로 수수료 면제 및 환율 우대 제공",
+      "사용등록 다음월말까지는 실적과 관계없이 기본 할인한도 제공"
+    ],
+    "weaknesses": [
+      "전월실적 50만원 조건이 있음",
+      "혜택별 월 횟수 및 한도 제한이 많음",
+      "일부 업종과 결제방식은 할인 제외"
+    ],
+    "recommended_scenario": "영화관, 커피전문점, 편의점, 마트, 대중교통, 주유, 놀이공원을 자주 이용하는 생활형 소비자",
+    "positioning": "일상 소비 전반을 폭넓게 할인하는 생활밀착형 신용카드"
+  }
+}

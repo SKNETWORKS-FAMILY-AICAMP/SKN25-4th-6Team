@@ -1,18 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getCards } from '../api/client';
 import useUserStore from '../store/userStore';
-
-const CARD_OPTIONS = [
-  { id: 1,  name: '토스 올인원 체크카드',      company: '토스뱅크',    card_id: 'TOSS_ALLINONE_001' },
-  { id: 2,  name: '신한카드 Deep Dream',        company: '신한카드',    card_id: 'SHINHAN_DEEP_DREAM_001' },
-  { id: 3,  name: '삼성 iD SIMPLE 카드',        company: '삼성카드',    card_id: 'SAMSUNG_ID_SIMPLE_001' },
-  { id: 4,  name: 'KB국민 My WE:SH 카드',       company: 'KB국민카드',  card_id: 'KB_MYWESH_001' },
-  { id: 5,  name: '현대카드 ZERO Edition2',     company: '현대카드',    card_id: 'HYUNDAI_ZERO_ED2_001' },
-  { id: 6,  name: '우리카드 카드의정석 COOKIE', company: '우리카드',    card_id: 'WOORI_COOKIE_001' },
-  { id: 7,  name: 'NH올원 Pay 카드',            company: 'NH농협카드',  card_id: 'NH_ALLONE_PAY_001' },
-  { id: 8,  name: '롯데카드 LOCA 365',          company: '롯데카드',    card_id: 'LOTTE_LOCA365_001' },
-  { id: 9,  name: 'IBK 참! 좋은 카드',          company: 'IBK기업은행', card_id: 'IBK_GOOD_001' },
-  { id: 10, name: '하나카드 원큐 페이',         company: '하나카드',    card_id: 'HANA_1Q_PAY_001' },
-];
 
 // 각 필드의 선택지 정의
 const FIELD_OPTIONS = {
@@ -169,14 +157,23 @@ export default function MyPage({ onGoChat }) {
   const { profile, updateProfile } = useUserStore();
   const [cardSearch, setCardSearch] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
+  const [cardOptions, setCardOptions] = useState([]);
+
+  useEffect(() => {
+    getCards()
+      .then(res => setCardOptions(res.data.cards ?? []))
+      .catch(() => setCardOptions([]));
+  }, []);
 
   const ownedCards = profile.owned_cards || [];
 
-  const filteredOptions = CARD_OPTIONS.filter(
-    (c) =>
-      (c.name.includes(cardSearch) || c.company.includes(cardSearch)) &&
+  const filteredOptions = cardOptions.filter((c) => {
+    const q = cardSearch.toLowerCase();
+    return (
+      (c.name.toLowerCase().includes(q) || c.company.toLowerCase().includes(q)) &&
       !ownedCards.some((o) => o.card_id === c.card_id)
-  );
+    );
+  });
 
   const addCard = (card) => {
     updateProfile({ owned_cards: [...ownedCards, { name: card.name, company: card.company, card_id: card.card_id }] });

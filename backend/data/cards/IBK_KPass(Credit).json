@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "카드명": "K-패스 (신용)",
+    "카드사": "IBK기업은행",
+    "분석일": "2026-04-28",
+    "스키마버전": "1.0",
+    "언어": "Korean",
+    "소스형식": "PDF",
+    "소스파일": "IBK_KPass(Credit).txt"
+  },
+  "card": {
+    "name": "K-패스 (신용)",
+    "bank": "IBK기업은행",
+    "brandType": [
+      "BC",
+      "MASTER"
+    ],
+    "grade": "미확인",
+    "features": {
+      "usage_scope": "해외겸용"
+    }
+  },
+  "annual_fee": {
+    "primary_card": {
+      "amount": 2000,
+      "total": 2000
+    },
+    "brand_fees": [
+      {
+        "brand": "국내전용(BC)",
+        "amount": 2000
+      },
+      {
+        "brand": "해외겸용(MASTER)",
+        "amount": 4000
+      }
+    ]
+  },
+  "benefits": {
+    "benefit_items": [
+      {
+        "category": "교통",
+        "description": "대중교통 할인",
+        "type": "할인",
+        "rate": "최대 300원",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 10000,
+        "applicable_stores": "버스, 지하철, 기타(유료도로 등)",
+        "note": "1일 3회, 환승요금 제외. 전월실적 20만원 이상 시 평일 1회당 100원/주말(공휴일 포함) 200원 할인, 50만원 이상 시 평일 1회당 200원/주말(공휴일 포함) 300원 할인. 후불교통 거래에 한함."
+      },
+      {
+        "category": "교통",
+        "description": "일반교통 할인",
+        "type": "할인",
+        "rate": "5%",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 5000,
+        "applicable_stores": "철도, 고속버스, 택시",
+        "note": "1일 1회, 월 2회. 앱을 통한 결제는 할인이 제공되지 않음."
+      },
+      {
+        "category": "주유",
+        "description": "GS칼텍스 주유 할인",
+        "type": "할인",
+        "rate": "리터당 40원",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 0,
+        "applicable_stores": "GS칼텍스(LPG 포함)",
+        "note": "1일 1회, 월 4회, 회당 주유금액 10만원 한도. 휘발유, 등유, 경유, LPG는 GS칼텍스 고시 휘발유가 기준으로 환산하여 할인 제공."
+      },
+      {
+        "category": "통신",
+        "description": "휴대폰요금 자동이체 할인",
+        "type": "할인",
+        "rate": "3%",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 1200,
+        "applicable_stores": "SKT, KT, LG U+",
+        "note": "월 1회, 최초 승인건, 해당 통신사 자동이체 필수."
+      },
+      {
+        "category": "식음료",
+        "description": "아웃백, 빕스 할인",
+        "type": "할인",
+        "rate": "10%",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 0,
+        "applicable_stores": "아웃백, 빕스",
+        "note": "통합 월 1회, 1회 이용금액 10만원 한도."
+      },
+      {
+        "category": "여가",
+        "description": "영화 할인",
+        "type": "할인",
+        "rate": "2000원",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 0,
+        "applicable_stores": "메가박스, CGV",
+        "note": "공식 홈페이지 또는 앱을 통한 온라인예매. 통합 월 1회, 연 6회."
+      },
+      {
+        "category": "쇼핑",
+        "description": "백화점, 할인점 업종 무이자 할부",
+        "type": "무이자할부",
+        "rate": "2~3개월",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 0,
+        "applicable_stores": "백화점, 할인점 업종",
+        "note": ""
+      },
+      {
+        "category": "여가",
+        "description": "놀이공원 할인",
+        "type": "할인",
+        "rate": "최대 50%",
+        "monthly_min_spending": 200000,
+        "monthly_cap": 0,
+        "applicable_stores": "주요 놀이공원",
+        "note": "통합 월 1회, 연 4회. 캐리비안베이, 서울랜드/한국민속촌/롯데월드/에버랜드/이월드, 통도환타지아, 경주월드, 전주동물원, 패밀리랜드 등 제공내역 상이."
+      },
+      {
+        "category": "외환",
+        "description": "환전 우대",
+        "type": "우대",
+        "rate": "50%",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "영업점 방문 환전(Cash, T/C)",
+        "note": "대상통화: USD, JPY, EUR. 이용실적에 관계없이 제공."
+      },
+      {
+        "category": "보험",
+        "description": "대중교통 상해보험 무료가입",
+        "type": "무료가입",
+        "rate": "1천만원",
+        "monthly_min_spending": 0,
+        "monthly_cap": 0,
+        "applicable_stores": "제휴보험사: 현대해상보험(주)",
+        "note": "선택 시 가입. 이용실적에 관계없이 제공."
+      }
+    ],
+    "yearly_benefit_tiers": {
+      "is_different_between_years": false,
+      "year1": {
+        "summary": "전월 국내 가맹점 이용금액 20만원 이상 시 교통, 생활, 놀이공원 등 할인 제공. 카드사용 등록일로부터 다음 월말까지는 일부 구간 서비스 제공.",
+        "monthly_min_spending": 200000
+      },
+      "year2_and_beyond": {
+        "summary": "전월 국내 가맹점 이용금액 20만원 이상 시 동일 혜택 제공. 연간 국내가맹점 이용금액 240만원 이상 시 차년도 연회비 면제.",
+        "monthly_min_spending": 200000
+      }
+    }
+  },
+  "exclusions": {
+    "excluded_items": [
+      "교통특화 서비스 이용금액",
+      "APT관리비",
+      "환승요금",
+      "앱을 통한 결제(일반교통 할인)",
+      "간편결제에 따른 일부 결제"
+    ],
+    "notes": "모든 할인 서비스는 청구 할인으로 적용되며, 비씨카드에 등록된 가맹점 업종 기준으로 제공됩니다. 승인취소 금액은 취소매출표 접수월 이용금액에서 차감되며, 할인 제공 매출건 취소 시 할인받은 금액은 반환(청구) 처리됩니다. 각종 간편결제를 통해 결제되는 경우 할인이 제공되지 않을 수 있습니다."
+  },
+  "document_understanding": {
+    "section_map": {
+      "📋 카드 기본 정보": "카드명: K-패스 (신용), 카드사: IBK기업은행, 대상: 개인(본인), 교통구분: 후불교통만 가능, 가족카드 발급 불가",
+      "💳 연회비 구조": "국내전용(BC) 2천원, 해외겸용(MASTER) 4천원, 기본연회비 0원, 제휴연회비 국내전용 2천원/해외겸용 4천원, 연간 국내가맹점 이용금액 240만원 이상 시 차년도 연회비 면제",
+      "🎁 주요 혜택": "대중교통 최대 300원 할인, 일반교통 5% 할인, 주유 리터당 40원 할인, 통신 3% 할인, 외식 10% 할인, 영화 2천원 할인, 백화점/할인점 무이자 할부 2~3개월, 놀이공원 최대 50% 할인, 환전 우대 50%, 대중교통 상해보험 무료가입",
+      "👥 추천 대상": "대중교통과 일반교통 이용이 많고, 주유·통신·외식·영화·놀이공원 혜택을 함께 원하는 고객",
+      "💡 카드의 강점 및 약점": "강점: 교통 중심으로 생활영역까지 폭넓은 할인 제공, 환전 우대와 보험 혜택 포함. 약점: 전월실적 20만원 이상 조건이 필요하고, 일부 혜택은 횟수·한도 제한이 있음.",
+      "⚠️ 주의사항 및 제외사항": "전월실적 산정 시 교통특화 서비스 이용금액과 APT관리비는 제외, 후불교통 거래에 한함, 앱 결제 및 간편결제는 할인 제외 가능, 해외 원화결제(DCC) 시 추가 수수료 부과 가능"
+    }
+  },
+  "characteristics": {
+    "strengths": [
+      "대중교통 할인 한도가 월 1만원으로 큼",
+      "주유, 통신, 외식, 영화, 놀이공원 등 생활 혜택이 다양함",
+      "환전 우대와 대중교통 상해보험 무료가입 제공"
+    ],
+    "weaknesses": [
+      "전월실적 20만원 이상 조건이 필요함",
+      "혜택별 월 횟수와 한도 제한이 있음",
+      "일부 결제수단(간편결제, 앱 결제)에서는 할인 제외 가능"
+    ],
+    "recommended_scenario": "대중교통을 자주 이용하면서 주유·통신·외식·여가 혜택까지 함께 챙기고 싶은 경우",
+    "positioning": "교통 중심의 생활밀착형 할인 카드"
+  }
+}

@@ -41,6 +41,58 @@ def health_check(request):
     return JsonResponse({"status": "ok"})
 
 
+CARDS_DIR = BACKEND_ROOT / "data" / "cards"
+
+COMPANY_KR_MAP = {
+    "hyundai card": "현대카드",
+    "hyundaicard": "현대카드",
+    "samsung card": "삼성카드",
+    "samsungcard": "삼성카드",
+    "shinhan card": "신한카드",
+    "shinhancard": "신한카드",
+    "kb card": "KB국민카드",
+    "kb kookmin card": "KB국민카드",
+    "lotte card": "롯데카드",
+    "lottecard": "롯데카드",
+    "hana card": "하나카드",
+    "hanacard": "하나카드",
+    "woori card": "우리카드",
+    "wooricard": "우리카드",
+    "nh card": "NH농협카드",
+    "nh농협": "NH농협카드",
+    "ibk": "IBK기업은행",
+    "bc card": "BC카드",
+    "bccard": "BC카드",
+}
+
+
+def _normalize_company(company: str) -> str:
+    return COMPANY_KR_MAP.get(company.strip().lower(), company)
+
+
+@require_http_methods(["GET"])
+def cards_list_view(request):
+    """data/cards/ 의 JSON 파일을 읽어 카드 목록 반환"""
+    cards = []
+    for idx, path in enumerate(sorted(CARDS_DIR.glob("*.json")), start=1):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            card_info = data.get("card", {})
+            name = card_info.get("name") or data.get("metadata", {}).get("카드명", path.stem)
+            company_raw = card_info.get("bank") or data.get("metadata", {}).get("카드사", "")
+            company = _normalize_company(company_raw)
+            cards.append({
+                "id": idx,
+                "name": name,
+                "company": company,
+                "card_id": path.stem,
+            })
+        except Exception as e:
+            logger.warning("카드 파일 로드 실패 %s: %s", path.name, e)
+
+    return JsonResponse({"cards": cards})
+
+
 @csrf_exempt
 @require_http_methods(["POST"])
 def chat_view(request):
@@ -54,6 +106,7 @@ def chat_view(request):
         return JsonResponse({"error": "message 필드가 필요합니다."}, status=400)
 
     history = body.get("history", [])
+    profile = body.get("profile", {})
 
     user_filters = {
         "banks": [],
@@ -69,6 +122,7 @@ def chat_view(request):
             question=question,
             chat_history=history,
             user_filters=user_filters,
+            user_profile=profile,
             app_state=app_state,
         )
 
