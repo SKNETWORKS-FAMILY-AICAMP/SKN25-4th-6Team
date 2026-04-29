@@ -31,11 +31,11 @@
 
 <table>
   <tr>
-    <td align="center"><img src="assets/yeonypark.png" width="100" height="100" style="border-radius:50%"/></td>
-    <td align="center"><img src="assets/seohyunkim.png" width="100" height="100" style="border-radius:50%"/></td>
-    <td align="center"><img src="assets/jihyunpark.png" width="100" height="100" style="border-radius:50%"/></td>
-    <td align="center"><img src="assets/moonsusin.png" width="100" height="100" style="border-radius:50%"/></td>
-    <td align="center"><img src="assets/geunhyuklee.png" width="100" height="100" style="border-radius:50%"/></td>
+    <td align="center"><img src="assets/yeonypark.png" width="100"/></td>
+    <td align="center"><img src="assets/seohyunkim.png" width="100"/></td>
+    <td align="center"><img src="assets/jihyunpark.png" width="100"/></td>
+    <td align="center"><img src="assets/moonsusin.png" width="100"/></td>
+    <td align="center"><img src="assets/geunhyuklee.png" width="100"/></td>
   </tr>
   <tr>
     <td align="center"><b>박연정</b><br>팀장</td>
@@ -52,8 +52,6 @@
     <td align="center"><a href="https://github.com/keunlee726">@keunlee726</a></td>
   </tr>
 </table>
-
-<br>
 
 ## 3차 대비 주요 변경사항
 
