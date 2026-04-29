@@ -293,8 +293,19 @@ export default function MyPage({ onGoChat }) {
                   {filteredOptions.map((c) => (
                     <div key={c.id} onClick={() => addCard(c)}
                       className="px-4 py-3 hover:bg-[#FFFBEB] cursor-pointer transition-colors duration-150 border-b border-[#F5F4F0] last:border-0">
-                      <div className="text-sm font-semibold text-[#1A1A1A]">{c.name}</div>
-                      <div className="text-xs text-[#999]">{c.company}</div>
+                      <div className="flex items-center justify-between gap-2">
+                        <div>
+                          <div className="text-sm font-semibold text-[#1A1A1A]">{c.name}</div>
+                          <div className="text-xs text-[#999]">{c.company}</div>
+                        </div>
+                        <div className="flex gap-1 flex-shrink-0">
+                          {(c.mbti_types || []).map((mbti) => (
+                            <span key={mbti} className="px-1.5 py-0.5 bg-[#E8F4FF] text-[#2563EB] text-[9px] rounded-full font-bold">
+                              {mbti}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -302,19 +313,30 @@ export default function MyPage({ onGoChat }) {
             </div>
 
             <div className="grid grid-cols-4 gap-3">
-              {ownedCards.map((card) => (
-                <div key={card.card_id} className="relative bg-white rounded-xl p-4 shadow-sm border-2 border-[#E5E5E0] aspect-[3/4] flex flex-col justify-between">
-                  <button
-                    onClick={() => removeCard(card.card_id)}
-                    className="absolute -top-2 -left-2 w-6 h-6 bg-red-400 hover:bg-red-500 text-white rounded-full flex items-center justify-center text-xs font-bold cursor-pointer border-none z-10"
-                  >−</button>
-                  <div>
-                    <div className="text-xs font-semibold text-[#1A1A1A] leading-tight mb-1">{card.name}</div>
-                    <div className="text-[10px] text-[#999]">{card.company}</div>
+              {ownedCards.map((card) => {
+                const meta = cardOptions.find((c) => c.card_id === card.card_id);
+                const mbtiTypes = meta?.mbti_types || [];
+                return (
+                  <div key={card.card_id} className="relative bg-white rounded-xl p-4 shadow-sm border-2 border-[#E5E5E0] aspect-[3/4] flex flex-col justify-between">
+                    <button
+                      onClick={() => removeCard(card.card_id)}
+                      className="absolute -top-2 -left-2 w-6 h-6 bg-red-400 hover:bg-red-500 text-white rounded-full flex items-center justify-center text-xs font-bold cursor-pointer border-none z-10"
+                    >−</button>
+                    <div>
+                      <div className="text-xs font-semibold text-[#1A1A1A] leading-tight mb-1">{card.name}</div>
+                      <div className="text-[10px] text-[#999] mb-2">{card.company}</div>
+                      <div className="flex gap-1 flex-wrap">
+                        {mbtiTypes.map((mbti) => (
+                          <span key={mbti} className="px-1.5 py-0.5 bg-[#E8F4FF] text-[#2563EB] text-[9px] rounded-full font-bold">
+                            {mbti}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="text-2xl">💳</div>
                   </div>
-                  <div className="text-2xl">💳</div>
-                </div>
-              ))}
+                );
+              })}
               {Array.from({ length: Math.max(0, 4 - ownedCards.length) }).map((_, i) => (
                 <div key={`empty-${i}`} className="bg-white rounded-xl border-2 border-dashed border-[#E5E5E0] aspect-[3/4]" />
               ))}
