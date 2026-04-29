@@ -124,7 +124,9 @@ export default function ChatPage({ onGoMyPage }) {
   }, []);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (messages.length > 1) {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
   }, [messages]);
 
   const sendChat = async (text, forcePrevCardIds = null) => {
@@ -164,6 +166,7 @@ export default function ChatPage({ onGoMyPage }) {
           preferred_benefits: profile.preferred_benefits || [],
           monthly_spend: profile.monthly_spend || '',
           annual_fee_range: profile.annual_fee_range || '',
+          mbti: profile.mbti || '',
           owned_cards: profile.owned_cards || [],
         },
       });
@@ -210,7 +213,7 @@ export default function ChatPage({ onGoMyPage }) {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F5F4F0]">
+    <div className="fixed inset-0 flex overflow-hidden bg-[#F5F4F0]">
 
       {/* ── 사이드바 ── */}
       <aside className="w-[240px] min-w-[240px] bg-[#1A1A1A] text-white flex flex-col px-5 py-8 relative overflow-hidden">
@@ -307,8 +310,8 @@ export default function ChatPage({ onGoMyPage }) {
       </aside>
 
       {/* ── 채팅 메인 ── */}
-      <main className="flex-1 flex flex-col overflow-hidden">
-        <div className="flex-1 overflow-y-auto px-12 py-8">
+      <main className="flex-1 min-w-0 flex flex-col overflow-hidden">
+        <div className="flex-1 min-h-0 overflow-y-auto px-12 py-8">
           <div className="max-w-[700px] mx-auto flex flex-col gap-5">
             {messages.map((msg) => {
               const hasCards = msg.role === 'assistant' && msg.isRecommendation && msg.cards?.length >= 1;
