@@ -30,6 +30,12 @@ _INTENT_TEMPLATE_MAP = {
 
 _COMPARE_KEYWORDS = ["비교", " vs ", "vs.", "차이", "어느게", "어느 게", "둘 중", "더 나은", "더 좋은"]
 _RECOMMEND_KEYWORDS = ["추천", "골라", "뭐가 좋", "알려줘", "찾아줘", "뭐 써야", "어떤 카드"]
+# 특정 카드 상세 설명 요청 — recommend보다 먼저 체크해야 함 ("혜택 알려줘" 같은 패턴 포함)
+_DETAIL_KEYWORDS = [
+    "자세히", "상세히", "설명해줘", "설명해주세요",
+    "혜택도", "혜택에 대해", "에 대해서도", "에 대해서",
+    "어떤 카드야", "어떤 카드인가", "어떻게 돼",
+]
 
 
 def _render_template(name: str, variables: dict) -> str:
@@ -47,6 +53,7 @@ def _build_template_vars(user_profile: Dict[str, Any]) -> dict:
             "lifestyles": [],
             "preferred_benefits": [],
             "owned_cards": [],
+            "mbti": "",
         }
     raw_cards = user_profile.get("owned_cards", [])
     owned_cards = []
@@ -63,6 +70,7 @@ def _build_template_vars(user_profile: Dict[str, Any]) -> dict:
         "lifestyles": user_profile.get("lifestyles", []),
         "preferred_benefits": user_profile.get("preferred_benefits", []),
         "owned_cards": owned_cards,
+        "mbti": user_profile.get("mbti", ""),
     }
 
 
@@ -99,16 +107,22 @@ def _format_retrieved_for_template(retrieved: List[Tuple[float, Dict[str, Any]]]
 
 
 def _classify_intent(question: str) -> str:
-    """키워드 기반 의도 분류 (benefit_compare > card_recommend > general)"""
+    """키워드 기반 의도 분류 (benefit_compare > detail > card_recommend > general)
+
+    보유 카드 질문은 호출 전에 is_owned_card_question 플래그로 처리하므로 여기선 제외.
+    상세 설명 요청(자세히, 혜택도 등)은 추천 키워드보다 먼저 체크해서 general로 처리.
+    """
     q = question.lower()
     for kw in _COMPARE_KEYWORDS:
         if kw in q:
             return "benefit_compare"
+    for kw in _DETAIL_KEYWORDS:
+        if kw in q:
+            return "general"
     for kw in _RECOMMEND_KEYWORDS:
         if kw in q:
             return "card_recommend"
     return "general"
-
 
 
 def fallback_answer(question: str, retrieved: List[Tuple[float, Dict[str, Any]]]) -> str:
@@ -158,6 +172,7 @@ def llm_answer(
     user_profile: Dict[str, Any],
     model: str,
     temperature: float,
+    is_owned_card_question: bool = False,
 ) -> str:
     api_key = os.getenv("OPENAI_API_KEY", "")
     if not api_key:
@@ -176,10 +191,13 @@ def llm_answer(
         for m in chat_history[-8:]:
             messages.append({"role": m["role"], "content": m["content"]})
 
-        intent = _classify_intent(question)
+        # 보유 카드 질문은 무조건 general 인텐트 사용 (추천 포맷 대신 대화형 답변)
+        intent = "general" if is_owned_card_question else _classify_intent(question)
+
         instruction_vars = {
             **template_vars,
             "retrieved_cards": _format_retrieved_for_template(retrieved),
+            "is_owned_card_question": is_owned_card_question,
         }
         instruction = _render_template(_INTENT_TEMPLATE_MAP[intent], instruction_vars)
 

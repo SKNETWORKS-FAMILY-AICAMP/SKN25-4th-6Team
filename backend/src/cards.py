@@ -232,7 +232,6 @@ def load_cards(data_dir: Path, category_rules: List[Dict[str, Any]], mbti_profil
 def annual_fee_is_uncertain(card: Dict[str, Any], fee: int) -> bool:
     if fee != 0:
         return False
-    conf = safe_get(card, ["extraction_provenance", "annual_fee", "confidence"], 0.0)
     notes = str(safe_get(card, ["annual_fee", "notes"], ""))
     uncertain_markers = [
         "연회비 청구",
@@ -242,6 +241,10 @@ def annual_fee_is_uncertain(card: Dict[str, Any], fee: int) -> bool:
         "확인 필요",
         "미확인",
     ]
+    # confidence 필드가 없는 경우(None) 1.0으로 간주 — 106개 전 카드가 None이므로 기본값 0.0은 잘못된 판정
+    conf = safe_get(card, ["extraction_provenance", "annual_fee", "confidence"], 1.0)
+    if conf is None:
+        conf = 1.0
     return conf < 0.85 or any(marker in notes for marker in uncertain_markers)
 
 

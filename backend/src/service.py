@@ -1,11 +1,8 @@
 """
 서비스 레이어 — 비즈니스 로직의 단일 진입점
-
-현재: app.py(Streamlit)가 호출
-추후: Django view가 동일한 인터페이스로 호출
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
@@ -18,6 +15,17 @@ from .retrieval import (
     retrieve_cards_hybrid,
 )
 from .utils import FEE_BANDS_ORDERED, load_synonyms, safe_get
+
+# 보유 카드 질문 감지 키워드 — 단일 정의 (llm.py·views.py가 이 결과를 받아서 사용)
+OWNED_CARD_KEYWORDS = [
+    "보유한 카드", "내 카드", "내카드", "보유 카드",
+    "갖고 있는 카드", "가진 카드", "내가 가진",
+]
+
+MBTI_TYPES = {
+    "ISTJ", "ISFJ", "INFJ", "INTJ", "ISTP", "ISFP", "INFP", "INTP",
+    "ESTJ", "ESFJ", "ENFJ", "ENTJ", "ESTP", "ESFP", "ENFP", "ENTP",
+}
 
 
 @dataclass
@@ -67,12 +75,6 @@ def load_app_state(
     )
 
 
-MBTI_TYPES = {
-    "ISTJ", "ISFJ", "INFJ", "INTJ", "ISTP", "ISFP", "INFP", "INTP",
-    "ESTJ", "ESFJ", "ENFJ", "ENTJ", "ESTP", "ESFP", "ENFP", "ENTP",
-}
-
-
 def _detect_mbti(text: str) -> str:
     upper = text.upper()
     for m in MBTI_TYPES:
@@ -98,24 +100,30 @@ def chat(
     Returns:
         answer: LLM 또는 규칙 기반 답변 텍스트
         retrieved: 검색된 카드 목록 [(score, card), ...]
-        filters_applied: 실제 적용된 필터 (사용자 선택 + 자동 추론 합산)
+        filters_applied: 실제 적용된 필터
         inferred_filters: 질문에서 자동 추론된 필터
+        is_owned_card_question: 보유 카드 관련 질문 여부
     """
+    # 보유 카드 질문 여부 — 이후 모든 분기에서 사용
+    is_owned_card_question = any(kw in question for kw in OWNED_CARD_KEYWORDS)
+
+    # 동의어 확장을 포함한 필터 추론
     inferred = infer_filters_from_question(
         question,
         app_state.banks,
         app_state.all_categories,
         app_state.fee_bands,
+        synonyms=app_state.synonyms,
     )
     merged_banks = sorted(set(user_filters.get("banks", []) + inferred["banks"]))
     merged_categories = sorted(set(user_filters.get("categories", []) + inferred["categories"]))
     merged_fee_bands = sorted(set(user_filters.get("fee_bands", []) + inferred["fee_bands"]))
 
-    # MBTI 감지: 질문 또는 프로필에서
-    question_mbti = _detect_mbti(question)
+    # MBTI 감지: 보유 카드 질문엔 적용하지 않음 (엉뚱한 카드 풀 제한 방지)
+    question_mbti = _detect_mbti(question) if not is_owned_card_question else ""
     profile_mbti = (user_profile or {}).get("mbti", "")
 
-    # 검색 풀 결정 (질문에 MBTI 명시 시 해당 타입 카드만 검색)
+    # 검색 풀 결정 — 질문에 MBTI 명시 시 해당 타입 카드만 검색
     search_cards = app_state.cards
     if question_mbti and not prev_card_ids:
         mbti_pool = [
@@ -158,16 +166,13 @@ def chat(
             synonyms=app_state.synonyms,
         )
 
-    # 프로필 MBTI 부스팅: 질문에 MBTI 없고 프로필 MBTI 있으면 해당 타입 카드 앞으로
-    if profile_mbti and not question_mbti and not prev_card_ids:
+    # 프로필 MBTI 부스팅 — 보유 카드 질문·followup·MBTI 명시 질문엔 적용 안 함
+    if profile_mbti and not question_mbti and not prev_card_ids and not is_owned_card_question:
         matched = [(s, c) for s, c in retrieved if profile_mbti in (safe_get(c, ["_derived", "mbti_types"], []) or [])]
         unmatched = [(s, c) for s, c in retrieved if profile_mbti not in (safe_get(c, ["_derived", "mbti_types"], []) or [])]
         retrieved = (matched + unmatched)[:top_k]
 
-    # 보유 카드 관련 질문 감지
-    OWNED_CARD_KEYWORDS = ["보유한 카드", "내 카드", "내카드", "보유 카드", "갖고 있는 카드", "가진 카드"]
-    is_owned_card_question = any(kw in question for kw in OWNED_CARD_KEYWORDS)
-
+    # 보유 카드 처리
     owned_cards = (user_profile or {}).get("owned_cards", [])
     if owned_cards:
         owned_card_ids = {c.get("card_id", "") for c in owned_cards}
@@ -176,7 +181,7 @@ def chat(
             if card.get("_file", "").replace(".json", "") in owned_card_ids
         ]
         if is_owned_card_question:
-            # 보유 카드 관련 질문이면 owned cards만 컨텍스트에 사용
+            # 보유 카드 질문이면 owned cards만 컨텍스트로 사용
             retrieved = owned_retrieved if owned_retrieved else retrieved
         else:
             # 일반 질문이면 보유 카드를 앞에 추가하되 중복 제거
@@ -194,6 +199,7 @@ def chat(
         user_profile=user_profile or {},
         model=model,
         temperature=temperature,
+        is_owned_card_question=is_owned_card_question,
     )
 
     return {
@@ -205,4 +211,5 @@ def chat(
             "fee_bands": merged_fee_bands,
         },
         "inferred_filters": inferred,
+        "is_owned_card_question": is_owned_card_question,
     }

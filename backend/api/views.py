@@ -88,6 +88,10 @@ _FOLLOWUP_KEYWORDS = [
     "거기서", "그 카드들", "아까", "방금",
     "앞에서", "위에서", "그것들",
     "이 카드", "그 카드", "해당 카드", "방금 추천",
+    # 이전 답변에 대한 후속 상세 질문
+    "자세히", "상세히", "더 알려", "설명해줘", "설명해주세요",
+    "혜택도", "혜택에 대해", "혜택 알려", "혜택은", "혜택이",
+    "에 대해서도", "에 대해서", "도 알려줘",
 ]
 
 _RECOMMENDATION_KEYWORDS = [
@@ -105,8 +109,18 @@ _DETAIL_KEYWORDS = [
     "어떻게 돼", "어떻게 되나요",
 ]
 
+# 카드 개수 전체 요청 키워드
+_ALL_KEYWORDS = ["전부", "전체", "모두", "다 알려", "다 추천", "전부 보여", "전체 보여"]
 
-def _is_recommendation_query(question: str, inferred_filters: dict) -> bool:
+
+def _is_recommendation_query(
+    question: str,
+    inferred_filters: dict,
+    is_owned_card_question: bool = False,
+) -> bool:
+    # 보유 카드 질문은 텍스트 답변으로 처리
+    if is_owned_card_question:
+        return False
     if any(kw in question for kw in _DETAIL_KEYWORDS):
         return False
     has_keyword = any(kw in question for kw in _RECOMMENDATION_KEYWORDS)
@@ -219,13 +233,20 @@ def chat_view(request):
         from src.service import chat
         app_state = _get_app_state()
 
-        is_followup = bool(prev_card_ids) and (
-            any(kw in question for kw in _FOLLOWUP_KEYWORDS)
-            or any(kw in question for kw in ["가장 좋은", "제일 좋은", "최고의"])
-            or (
-                len(prev_card_ids) == 1
-                and not any(kw in question for kw in _RECOMMENDATION_KEYWORDS)
-                and not any(kw in question for kw in ["다른 카드", "다른 거", "새로운", "말고", "제외"])
+        # followup 판단: 명시적 followup 키워드 있거나, 단일 prev 카드로 좁혀진 상태에서
+        # 새 추천·제외 의도가 없는 질문 (단, 보유 카드 질문은 항상 새 검색)
+        _is_owned = any(kw in question for kw in ["내 카드", "내카드", "보유 카드", "내가 가진", "가진 카드"])
+        is_followup = (
+            not _is_owned
+            and bool(prev_card_ids)
+            and (
+                any(kw in question for kw in _FOLLOWUP_KEYWORDS)
+                or any(kw in question for kw in ["가장 좋은", "제일 좋은", "최고의"])
+                or (
+                    len(prev_card_ids) == 1
+                    and not any(kw in question for kw in _RECOMMENDATION_KEYWORDS)
+                    and not any(kw in question for kw in ["다른 카드", "다른 거", "새로운", "말고", "제외", "대신"])
+                )
             )
         )
 
@@ -239,12 +260,17 @@ def chat_view(request):
         )
 
         import re as _re
-        _single_keywords = ["가장 좋은", "제일 좋은", "최고의", "최고로 좋은", "하나만", "한 개만", "한개만", "1개만", "딱 하나", "딱 1개"]
-        _num_match = _re.search(r'([1-5])\s*개', question)
+        _single_keywords = [
+            "가장 좋은", "제일 좋은", "최고의", "최고로 좋은",
+            "하나만", "한 개만", "한개만", "1개만", "딱 하나", "딱 1개",
+        ]
+        _num_match = _re.search(r'([1-9])\s*개', question)
         if any(kw in question for kw in _single_keywords):
             _top_k = 1
+        elif any(kw in question for kw in _ALL_KEYWORDS):
+            _top_k = 8
         elif _num_match:
-            _top_k = int(_num_match.group(1))
+            _top_k = min(int(_num_match.group(1)), 8)
         else:
             _top_k = 5
 
@@ -252,7 +278,11 @@ def chat_view(request):
         cards_data = [c for c in cards_data if c.get("name")]
 
         inferred = result.get("inferred_filters", {})
-        is_recommendation = _is_recommendation_query(question, inferred) and len(cards_data) >= 1
+        is_owned_card_question = result.get("is_owned_card_question", False)
+        is_recommendation = (
+            _is_recommendation_query(question, inferred, is_owned_card_question)
+            and len(cards_data) >= 1
+        )
 
         return JsonResponse({
             "answer": result["answer"],

@@ -192,7 +192,8 @@ export default function ChatPage({ onGoMyPage }) {
       const cards = response.data.cards || [];
       const isRecommendation = response.data.is_recommendation ?? false;
       const assistantPayload = { cards, isRecommendation };
-      if (isRecommendation && cards.length > 0) {
+      // 추천 블록 여부와 관계없이 컨텍스트 카드가 있으면 저장 (후속 질문 대화 연결용)
+      if (cards.length > 0) {
         setPrevCardIds(cards.map((c) => c.card_id));
       }
       await addMessage(sessionId, 'assistant', answerText, assistantPayload);

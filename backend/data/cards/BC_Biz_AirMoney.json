@@ -28,13 +28,19 @@
     "brand_fees": [
       {
         "brand": "BC",
-        "amount": 0
+        "amount": 5000
       },
       {
         "brand": "Master",
-        "amount": 0
+        "amount": 10000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 5000,
+      "max": 10000
+    },
+    "notes": "국내전용(BC) 5,000원 / 국내외겸용(MC) 10,000원"
   },
   "benefits": {
     "benefit_items": [

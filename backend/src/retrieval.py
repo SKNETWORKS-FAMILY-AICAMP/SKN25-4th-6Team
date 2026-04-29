@@ -11,9 +11,9 @@ import os
 import re
 import unicodedata
 from pathlib import Path
+from typing import Any, Dict, List, Optional, Set, Tuple
 
 _RE_HAS_KOREAN = re.compile(r"[가-힣]")
-from typing import Any, Dict, List, Optional, Set, Tuple
 
 try:
     import numpy as np
@@ -27,6 +27,31 @@ from .utils import (
     safe_get,
     tokenize,
 )
+
+# 카드사 축약어 → 실제 DB 카드사명 매핑
+_BANK_ALIASES: Dict[str, str] = {
+    "국민": "KB국민카드",
+    "kb": "KB국민카드",
+    "kb카드": "KB국민카드",
+    "신한": "신한카드",
+    "삼성": "삼성카드",
+    "현대": "현대카드",
+    "롯데": "롯데카드",
+    "하나": "하나카드",
+    "우리": "우리카드",
+    "bc": "BC카드",
+    "비씨": "BC카드",
+    "비씨카드": "BC카드",
+    "농협": "NH농협카드",
+    "nh": "NH농협카드",
+    "nh카드": "NH농협카드",
+    "ibk": "IBK기업은행",
+    "기업은행": "IBK기업은행",
+    "카카오": "카카오뱅크",
+    "카카오뱅크": "카카오뱅크",
+    "케이뱅크": "케이뱅크",
+    "토스": "토스뱅크",
+}
 
 
 def load_rag_settings(config_path: Path) -> Dict[str, Any]:
@@ -87,8 +112,15 @@ def infer_fee_bands_from_question(question: str) -> Set[str]:
     q_lower = q.lower()
     bands: Set[str] = set()
 
-    premium_keywords = ["비싼", "고급", "프리미엄", "프리미엄", "럭셔리", "고가", "최고급"]
-    cheap_keywords = ["싼", "저렴", "싸다", "저가", "무료"]
+    premium_keywords = [
+        "비싼", "고급", "프리미엄", "럭셔리", "고가", "최고급",
+        "플래티늄", "프레스티지", "platinum", "prestige",
+    ]
+    cheap_keywords = [
+        "싼", "저렴", "싸다", "저가", "무료", "공짜",
+        "연회비 없는", "연회비없는", "연회비 안 내", "연회비 0",
+        "무료카드", "공짜카드", "0원", "연회비 무료",
+    ]
     standard_keywords = ["일반", "보통", "중간", "표준"]
 
     if any(kw in q_lower for kw in premium_keywords):
@@ -123,17 +155,52 @@ def infer_filters_from_question(
     banks: List[str],
     categories: List[str],
     fee_bands: List[str],
+    synonyms: Optional[Dict[str, Set[str]]] = None,
 ) -> Dict[str, List[str]]:
     q_lower = question.lower()
-    inferred_banks = [b for b in banks if b.lower() in q_lower]
-    inferred_categories = [c for c in categories if c.lower() in q_lower]
+    q_tokens = set(tokenize(q_lower))
+
+    # ── 카드사 추론 ──────────────────────────────────────────────────
+    # 1) DB 카드사명 직접 매칭
+    inferred_banks_set: Set[str] = {b for b in banks if b.lower() in q_lower}
+    # 2) 축약어/별칭 매칭
+    for alias, canonical in _BANK_ALIASES.items():
+        if alias in q_lower and canonical in banks:
+            inferred_banks_set.add(canonical)
+    inferred_banks = sorted(inferred_banks_set)
+
+    # ── 카테고리 추론 (동의어 역방향 확장 포함) ────────────────────
+    # 쿼리 토큰에서 동의어 역방향으로 개념어 추가
+    # 예: "GS25" → synonyms["편의점"]에 "gs25" 있음 → "편의점" 개념 추가
+    expanded_concepts: Set[str] = set(q_tokens)
+    if synonyms:
+        for token in q_tokens:
+            # 정방향: token이 base 키이면 그 synonyms 추가
+            if token in synonyms:
+                expanded_concepts.update(synonyms[token])
+        # 역방향: token이 어떤 개념의 synonym이면 그 개념 추가
+        for concept, syn_set in synonyms.items():
+            if any(t in q_tokens for t in syn_set):
+                expanded_concepts.add(concept)
+
+    inferred_categories: List[str] = []
+    for c in categories:
+        c_lower = c.lower()
+        c_tokens = set(tokenize(c_lower))
+        if c_lower in q_lower:
+            inferred_categories.append(c)
+        elif c_tokens & expanded_concepts:
+            inferred_categories.append(c)
+
+    # ── 연회비 구간 추론 ─────────────────────────────────────────────
     inferred_fee = set([b for b in fee_bands if b.lower() in q_lower])
     inferred_fee.update(infer_fee_bands_from_question(question))
-    inferred_fee = [b for b in fee_bands if b in inferred_fee]
+    inferred_fee_list = [b for b in fee_bands if b in inferred_fee]
+
     return {
         "banks": inferred_banks,
         "categories": inferred_categories,
-        "fee_bands": inferred_fee,
+        "fee_bands": inferred_fee_list,
     }
 
 
@@ -300,7 +367,7 @@ def retrieve_cards_hybrid(
     vector_weight: float = 0.6,
     keyword_weight: float = 0.4,
 ) -> List[Tuple[float, Dict[str, Any]]]:
-    """벡터 + 키워드 하이브리드 랭킹 (정규화 점수 가중합)"""
+    """벡터 + 키워드 하이브리드 랭킹 (Reciprocal Rank Fusion)"""
     vec_results: List[Tuple[float, Dict[str, Any]]] = []
     key_results: List[Tuple[float, Dict[str, Any]]] = []
 
@@ -334,8 +401,6 @@ def retrieve_cards_hybrid(
     if not key_results:
         return vec_results[:top_k]
 
-    # Reciprocal Rank Fusion: score = vec_weight/(k+rank_v) + kw_weight/(k+rank_k)
-    # category_match 카드(파일명/카드명 직접 일치)는 keyword RRF 가중치 2배 적용
     RRF_K = 30
     file_to_card: Dict[str, Dict[str, Any]] = {}
     rrf_scores: Dict[str, float] = {}
