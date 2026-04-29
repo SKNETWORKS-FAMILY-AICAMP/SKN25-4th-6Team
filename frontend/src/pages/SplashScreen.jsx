@@ -69,7 +69,7 @@ export default function SplashScreen({ onFinish }) {
         나에게 딱 맞는 카드를 찾아드릴게요
         <br />
         <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.2)', letterSpacing: 2 }}>
-          REAL AI CARD HUB SYSTEM FOR U
+          Retrieval Augmented Intelligent Card Helper for Users
         </span>
       </div>
 
