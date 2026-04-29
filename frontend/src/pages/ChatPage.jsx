@@ -18,6 +18,23 @@ const INITIAL_MSG = {
   text: `안녕하세요! 저는 RAIchU예요 ⚡\n맞춤 카드 추천과 혜택 질문을 도와드릴게요.\n무엇이 궁금하신가요?`,
 };
 
+const normalizeSessionMessage = (msg) => {
+  const payload = msg.payload || {};
+  return {
+    ...msg,
+    cards: Array.isArray(payload.cards) ? payload.cards : [],
+    isRecommendation: Boolean(payload.isRecommendation),
+  };
+};
+
+const extractPrevCardIds = (messages) => {
+  const lastRecommendation = [...messages]
+    .reverse()
+    .find((msg) => msg.role === 'assistant' && msg.isRecommendation && msg.cards?.length >= 1);
+
+  return lastRecommendation ? lastRecommendation.cards.map((card) => card.card_id) : [];
+};
+
 function CardBlocks({ cards, onDetail }) {
   const [openId, setOpenId] = useState(null);
 
@@ -174,11 +191,15 @@ export default function ChatPage({ onGoMyPage }) {
       const answerText = response.data.answer;
       const cards = response.data.cards || [];
       const isRecommendation = response.data.is_recommendation ?? false;
+      const assistantPayload = { cards, isRecommendation };
       if (isRecommendation && cards.length > 0) {
         setPrevCardIds(cards.map((c) => c.card_id));
       }
-      await addMessage(sessionId, 'assistant', answerText);
-      setMessages([...newMessages, { id: Date.now() + 1, role: 'assistant', text: answerText, cards, isRecommendation }]);
+      await addMessage(sessionId, 'assistant', answerText, assistantPayload);
+      setMessages([
+        ...newMessages,
+        { id: Date.now() + 1, role: 'assistant', text: answerText, cards, isRecommendation },
+      ]);
     } catch {
       setMessages([
         ...newMessages,
@@ -277,9 +298,12 @@ export default function ChatPage({ onGoMyPage }) {
                       setCurrentSessionId(s.id);
                       try {
                         const res = await getSessionDetail(s.id);
-                        setMessages([INITIAL_MSG, ...res.data.messages]);
+                        const restoredMessages = (res.data.messages || []).map(normalizeSessionMessage);
+                        setMessages([INITIAL_MSG, ...restoredMessages]);
+                        setPrevCardIds(extractPrevCardIds(restoredMessages));
                       } catch {
                         setMessages([INITIAL_MSG]);
+                        setPrevCardIds([]);
                       }
                     }}
                     className={`flex-1 text-left px-3 py-2 text-xs cursor-pointer bg-transparent border-none truncate pr-7

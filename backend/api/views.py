@@ -301,7 +301,15 @@ def session_detail_view(request, session_id):
         return JsonResponse({
             "id": session.id,
             "title": session.title,
-            "messages": [{"id": m.id, "role": m.role, "text": m.text} for m in messages],
+            "messages": [
+                {
+                    "id": m.id,
+                    "role": m.role,
+                    "text": m.text,
+                    "payload": m.payload or {},
+                }
+                for m in messages
+            ],
         })
 
     try:
@@ -311,8 +319,14 @@ def session_detail_view(request, session_id):
 
     role = body.get("role")
     text = body.get("text")
+    payload = body.get("payload", {})
     if role not in ("user", "assistant") or not text:
         return JsonResponse({"error": "role과 text가 필요합니다."}, status=400)
+    if not isinstance(payload, dict):
+        return JsonResponse({"error": "payload는 객체여야 합니다."}, status=400)
 
-    msg = ChatMessage.objects.create(session=session, role=role, text=text)
-    return JsonResponse({"id": msg.id, "role": msg.role, "text": msg.text}, status=201)
+    msg = ChatMessage.objects.create(session=session, role=role, text=text, payload=payload)
+    return JsonResponse(
+        {"id": msg.id, "role": msg.role, "text": msg.text, "payload": msg.payload},
+        status=201,
+    )

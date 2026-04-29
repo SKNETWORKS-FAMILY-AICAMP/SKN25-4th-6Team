@@ -38,8 +38,8 @@ export const createSession = (title) =>
 export const getSessionDetail = (sessionId) =>
   apiClient.get(`/api/sessions/${sessionId}/`);
 
-export const addMessage = (sessionId, role, text) =>
-  apiClient.post(`/api/sessions/${sessionId}/`, { role, text });
+export const addMessage = (sessionId, role, text, payload = {}) =>
+  apiClient.post(`/api/sessions/${sessionId}/`, { role, text, payload });
 
 export const deleteSession = (sessionId) =>
   apiClient.delete(`/api/sessions/${sessionId}/`);
