@@ -93,10 +93,9 @@
 | 백엔드 | Streamlit 내장 | Django REST Framework |
 | OCR | EasyOCR / PyPDF | GPT-5.4-mini Vision |
 | 데이터 구조 | 원시 텍스트 청킹 | JSON 구조화 후 청킹 |
-| 벡터 DB | ChromaDB | NumPy NPZ (자체 구현) |
+| 벡터 DB | ChromaDB | NumPy NPZ |
 | RAG 검색 | 유사도 검색 단일 | 하이브리드 (벡터 60% + 키워드 40%, RRF) |
 | 개인화 기준 | MBTI | 소비패턴 (라이프스타일, 월 사용액, 연회비 허용 등) |
-| 카드 수 | ~50개 | 106개 |
 
 <br>
 
