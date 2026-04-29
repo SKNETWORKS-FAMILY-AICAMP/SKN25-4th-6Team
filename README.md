@@ -31,6 +31,13 @@
 
 <table>
   <tr>
+    <td align="center"><img src="assets/yeonypark.png" width="100" height="100" style="border-radius:50%"/></td>
+    <td align="center"><img src="assets/seohyunkim.png" width="100" height="100" style="border-radius:50%"/></td>
+    <td align="center"><img src="assets/jihyunpark.png" width="100" height="100" style="border-radius:50%"/></td>
+    <td align="center"><img src="assets/moonsusin.png" width="100" height="100" style="border-radius:50%"/></td>
+    <td align="center"><img src="assets/geunhyuklee.png" width="100" height="100" style="border-radius:50%"/></td>
+  </tr>
+  <tr>
     <td align="center"><b>박연정</b><br>팀장</td>
     <td align="center"><b>김서현</b><br>팀원</td>
     <td align="center"><b>박지현</b><br>팀원</td>
@@ -43,13 +50,6 @@
     <td align="center"><a href="https://github.com/qkrwlgus89">@qkrwlgus89</a></td>
     <td align="center"><a href="https://github.com/anstn3375">@anstn3375</a></td>
     <td align="center"><a href="https://github.com/keunlee726">@keunlee726</a></td>
-  </tr>
-  <tr>
-    <td align="center">담당 업무</td>
-    <td align="center">담당 업무</td>
-    <td align="center">담당 업무</td>
-    <td align="center">담당 업무</td>
-    <td align="center">담당 업무</td>
   </tr>
 </table>
 
