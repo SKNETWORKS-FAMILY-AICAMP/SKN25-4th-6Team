@@ -61,7 +61,7 @@
 |------|----------------|--------------|
 | 프론트엔드 | Streamlit | React 19 + Vite + Tailwind CSS |
 | 백엔드 | Streamlit 내장 | Django REST Framework |
-| OCR | EasyOCR / PyPDF | GPT-4.1-mini Vision |
+| OCR | EasyOCR / PyPDF | GPT-5.4-mini Vision |
 | 데이터 구조 | 원시 텍스트 청킹 | JSON 구조화 후 청킹 |
 | 벡터 DB | ChromaDB | NumPy NPZ (자체 구현) |
 | RAG 검색 | 유사도 검색 단일 | 하이브리드 (벡터 60% + 키워드 40%, RRF) |
@@ -78,7 +78,7 @@
 | 카드 추천 | 소비패턴 기반 맞춤 카드 추천 (RAG) |
 | 카드 Q&A | 카드 약관 기반 정확한 혜택 질의응답 |
 | 보유 카드 우선 응답 | 보유 카드 관련 질문 시 해당 카드 데이터 우선 제공 |
-| 대화 이력 | 사용자별 채팅 세션 저장 (SQLite) |
+| 대화 이력 | 채팅 세션 및 메시지 저장 (SQLite) |
 | My Page | 보유 카드 추가/삭제 및 프로필 수정 |
 
 <br>
@@ -134,7 +134,7 @@ SKN25-4th-6Team/
 │   │   ├── system_prompt.j2
 │   │   └── instructions/
 │   │
-│   ├── config_files/               # RAG 설정
+│   ├── rag_config/                 # RAG 설정
 │   │   ├── rag_settings.json
 │   │   ├── card_category_rules.json
 │   │   └── synonyms.json
@@ -194,12 +194,13 @@ erDiagram
         int id PK
         string title
         datetime created_at
+        datetime updated_at
     }
     CHAT_MESSAGES {
         int id PK
         int session_id FK
         string role
-        text content
+        text text
         datetime created_at
     }
 ```
@@ -261,6 +262,7 @@ flowchart LR
 
 ### 대화 이력 저장 (SQLite)
 - 채팅 세션 단위로 대화 저장 (ChatSession, ChatMessage 모델)
+- 프론트엔드가 세션 생성, 사용자 메시지 저장, 답변 메시지 저장 API를 순차 호출
 - 사이드바에서 이전 대화 목록 조회 및 재진입 가능
 
 <br>
@@ -294,6 +296,8 @@ sequenceDiagram
  
     Note over U,L: 질문 처리
     U->>F: 질문 입력
+    F->>D: POST /api/sessions/ (세션 생성)
+    F->>D: POST /api/sessions/{id}/ (user 메시지 저장)
     F->>D: POST /api/chat/ (message + history + profile)
     D->>R: 질문 + 프로필 전달
     R->>R: 카드사·카테고리·연회비 필터 자동 추론
@@ -303,9 +307,10 @@ sequenceDiagram
     R-->>D: 검색된 카드 컨텍스트 반환
     D->>L: 카드 컨텍스트 + 사용자 프로필 + 질문
     L-->>D: 소비패턴 기반 맞춤 답변
-    D-->>F: 답변 반환
-    F-->>U: 채팅 화면에 답변 출력
+    D-->>F: 답변 + 추천 카드 반환
+    F->>D: POST /api/sessions/{id}/ (assistant 메시지 저장)
     D->>D: SQLite에 대화 이력 저장
+    F-->>U: 채팅 화면에 답변 출력
 ```
  
 <br>
@@ -347,6 +352,27 @@ docker-compose up -d --build
 # 프론트엔드: http://localhost:3000
 # 백엔드 API: http://localhost:8000
 ```
+
+---
+
+### 로컬 개발 실행
+
+```bash
+# 백엔드
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver 8000
+
+# 프론트엔드
+cd frontend
+npm install
+npm run dev
+```
+
+> `package.json`에 선언된 프론트엔드 의존성이 `node_modules`와 맞지 않으면 `react-markdown`, `remark-gfm` 같은 패키지 해석 오류로 빌드가 실패할 수 있습니다. 이 경우 `npm install`로 lockfile 기준 의존성을 다시 동기화하세요.
 
 ---
 
@@ -396,5 +422,3 @@ docker-compose exec backend bash scripts/rebuild_rag_index.sh
   <b>SK Networks AI Camp 25기 · 6팀 · 4차 미니 프로젝트</b><br>
   <i>Real AI Card Hub System for U</i>
 </div>
-
-
