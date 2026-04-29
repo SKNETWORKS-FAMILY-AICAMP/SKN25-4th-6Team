@@ -39,7 +39,12 @@
         "brand": "BC",
         "amount": 21000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 21000,
+      "max": 22000
+    }
   },
   "benefits": {
     "benefit_items": [

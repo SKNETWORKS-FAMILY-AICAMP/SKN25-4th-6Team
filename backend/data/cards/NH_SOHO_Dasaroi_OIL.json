@@ -23,7 +23,7 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 6000,
+      "amount": 15000,
       "total": 15000
     },
     "brand_fees": [
@@ -39,7 +39,12 @@
         "brand": "UPI",
         "amount": 17000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 15000,
+      "max": 17000
+    }
   },
   "benefits": {
     "benefit_items": [

@@ -21,15 +21,25 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 7000,
+      "amount": 10000,
       "total": 10000
     },
     "brand_fees": [
       {
-        "brand": "Mastercard",
-        "amount": 3000
+        "brand": "Mastercard (실물)",
+        "amount": 10000
+      },
+      {
+        "brand": "Mastercard (모바일)",
+        "amount": 5000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 5000,
+      "max": 10000
+    },
+    "notes": "실물카드 1만원 / 모바일카드 5천원 (동일 상품 실물·모바일 동시 보유 불가)"
   },
   "benefits": {
     "benefit_items": [

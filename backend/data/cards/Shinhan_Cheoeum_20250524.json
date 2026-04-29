@@ -12,6 +12,7 @@
     "name": "신한카드 처음",
     "bank": "신한카드",
     "brandType": [
+      "Local",
       "Mastercard"
     ],
     "grade": "미확인",
@@ -26,10 +27,20 @@
     },
     "brand_fees": [
       {
+        "brand": "Local",
+        "amount": 15000
+      },
+      {
         "brand": "Mastercard",
-        "amount": 11000
+        "amount": 18000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 15000,
+      "max": 18000
+    },
+    "notes": "국내전용(Local) 1만5천원 / 해외겸용(Mastercard) 1만8천원"
   },
   "benefits": {
     "benefit_items": [

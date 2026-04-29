@@ -34,7 +34,13 @@
         "brand": "VISA",
         "amount": 12000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 10000,
+      "max": 12000
+    },
+    "notes": "BC(국내전용) 10,000원 / VISA(해외겸용) 12,000원"
   },
   "benefits": {
     "benefit_items": [

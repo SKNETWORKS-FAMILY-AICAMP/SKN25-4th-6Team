@@ -21,15 +21,25 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 50000,
-      "total": 600000
+      "amount": 595000,
+      "total": 595000
     },
     "brand_fees": [
+      {
+        "brand": "Local",
+        "amount": 595000
+      },
       {
         "brand": "VISA",
         "amount": 600000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 595000,
+      "max": 600000
+    },
+    "notes": "국내전용(Local) 59만5천원 / 해외겸용(VISA) 60만원"
   },
   "benefits": {
     "benefit_items": [

@@ -21,15 +21,25 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 6000,
-      "total": 12000
+      "amount": 10000,
+      "total": 10000
     },
     "brand_fees": [
       {
-        "brand": "VISA",
-        "amount": 6000
+        "brand": "국내전용 (일반)",
+        "amount": 10000
+      },
+      {
+        "brand": "VISA (일반)",
+        "amount": 12000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 10000,
+      "max": 12000
+    },
+    "notes": "국내전용 일반 1만원(모바일 4천원) / VISA 일반 1만2천원(모바일 6천원)"
   },
   "benefits": {
     "benefit_items": [

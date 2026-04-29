@@ -39,7 +39,12 @@
         "brand": "VISA",
         "amount": 100000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 90000,
+      "max": 100000
+    }
   },
   "benefits": {
     "benefit_items": [

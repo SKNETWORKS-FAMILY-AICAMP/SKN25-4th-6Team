@@ -23,7 +23,7 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 5000,
+      "amount": 12000,
       "total": 12000
     },
     "brand_fees": [
@@ -39,7 +39,12 @@
         "brand": "UnionPay",
         "amount": 10000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 10000,
+      "max": 12000
+    }
   },
   "benefits": {
     "benefit_items": [

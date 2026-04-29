@@ -20,7 +20,7 @@
   "annual_fee": {
     "primary_card": {
       "amount": 5000,
-      "total": 10000
+      "total": 5000
     },
     "brand_fees": [
       {
@@ -31,7 +31,13 @@
         "brand": "국내전용",
         "amount": 5000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 5000,
+      "max": 10000
+    },
+    "notes": "가온카드 국내전용 5천원 / 국내외겸용 1만원"
   },
   "benefits": {
     "benefit_items": [

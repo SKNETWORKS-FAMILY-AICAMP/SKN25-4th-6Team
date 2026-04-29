@@ -34,7 +34,13 @@
         "brand": "Visa",
         "amount": 267000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 264000,
+      "max": 267000
+    },
+    "notes": "국내전용(Local) 26만4천원 / 해외겸용(Visa) 26만7천원"
   },
   "benefits": {
     "benefit_items": [

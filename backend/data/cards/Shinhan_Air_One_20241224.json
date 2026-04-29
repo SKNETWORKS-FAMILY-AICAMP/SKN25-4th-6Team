@@ -34,7 +34,12 @@
         "brand": "AMEX",
         "amount": 51000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 49000,
+      "max": 51000
+    }
   },
   "benefits": {
     "benefit_items": [

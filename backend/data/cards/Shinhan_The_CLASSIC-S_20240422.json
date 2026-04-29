@@ -24,7 +24,7 @@
   "annual_fee": {
     "primary_card": {
       "amount": 97000,
-      "total": 100000
+      "total": 97000
     },
     "brand_fees": [
       {
@@ -39,7 +39,13 @@
         "brand": "Mastercard",
         "amount": 100000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 97000,
+      "max": 100000
+    },
+    "notes": "국내전용(Local) 9만7천원 / 해외겸용(VISA/Mastercard) 10만원"
   },
   "benefits": {
     "benefit_items": [

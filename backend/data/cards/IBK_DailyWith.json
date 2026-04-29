@@ -32,14 +32,16 @@
         "amount": 10000
       },
       {
-        "brand": "Mastercard",
-        "amount": 12000
-      },
-      {
-        "brand": "UnionPay",
+        "brand": "Master/UnionPay",
         "amount": 12000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 10000,
+      "max": 12000
+    },
+    "notes": "BC(국내전용) 10,000원 / Master·UnionPay(해외겸용) 12,000원"
   },
   "benefits": {
     "benefit_items": [

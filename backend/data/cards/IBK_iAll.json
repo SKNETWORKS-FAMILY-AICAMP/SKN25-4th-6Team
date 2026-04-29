@@ -23,7 +23,7 @@
   "annual_fee": {
     "primary_card": {
       "amount": 14000,
-      "total": 15000
+      "total": 14000
     },
     "brand_fees": [
       {
@@ -34,7 +34,13 @@
         "brand": "해외겸용(Mastercard)",
         "amount": 15000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 14000,
+      "max": 15000
+    },
+    "notes": "국내전용(BC) 1만4천원 / 해외겸용(Mastercard) 1만5천원"
   },
   "benefits": {
     "benefit_items": [

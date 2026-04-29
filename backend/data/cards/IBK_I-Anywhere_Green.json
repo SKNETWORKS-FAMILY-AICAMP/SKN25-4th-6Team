@@ -33,7 +33,12 @@
         "brand": "제휴연회비",
         "amount": 11000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 4000,
+      "max": 11000
+    }
   },
   "benefits": {
     "benefit_items": [

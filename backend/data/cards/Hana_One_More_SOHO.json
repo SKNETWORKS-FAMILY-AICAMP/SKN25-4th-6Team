@@ -44,7 +44,12 @@
         "brand": "Mastercard",
         "amount": 25000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 23000,
+      "max": 25000
+    }
   },
   "benefits": {
     "benefit_items": [

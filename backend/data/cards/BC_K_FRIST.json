@@ -39,7 +39,12 @@
         "brand": "UnionPay",
         "amount": 5000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 5000,
+      "max": 10000
+    }
   },
   "benefits": {
     "benefit_items": [

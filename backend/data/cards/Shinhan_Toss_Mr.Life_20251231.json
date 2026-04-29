@@ -21,7 +21,7 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 5000,
+      "amount": 15000,
       "total": 15000
     },
     "brand_fees": [
@@ -33,7 +33,12 @@
         "brand": "VISA",
         "amount": 18000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 15000,
+      "max": 18000
+    }
   },
   "benefits": {
     "benefit_items": [

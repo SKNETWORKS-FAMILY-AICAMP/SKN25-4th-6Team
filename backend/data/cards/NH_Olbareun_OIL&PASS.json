@@ -22,7 +22,7 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 6000,
+      "amount": 13000,
       "total": 13000
     },
     "brand_fees": [
@@ -34,7 +34,12 @@
         "brand": "MasterCard",
         "amount": 9000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 7000,
+      "max": 9000
+    }
   },
   "benefits": {
     "benefit_items": [

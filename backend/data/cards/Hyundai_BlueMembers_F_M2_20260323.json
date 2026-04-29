@@ -26,10 +26,20 @@
     },
     "brand_fees": [
       {
-        "brand": "VISA Platium",
+        "brand": "국내전용",
+        "amount": 4000
+      },
+      {
+        "brand": "VISA Platinum",
         "amount": 5000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 4000,
+      "max": 5000
+    },
+    "notes": "국내전용 4,000원 / VISA Platinum(해외겸용) 5,000원"
   },
   "benefits": {
     "benefit_items": [

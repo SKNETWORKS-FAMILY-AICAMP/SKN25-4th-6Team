@@ -262,9 +262,9 @@ def annual_fee_display(card: Dict[str, Any]) -> Tuple[str, bool]:
         min_fee = fee_range.get("min", fee) if isinstance(fee_range, dict) else fee
         max_fee = fee_range.get("max", fee) if isinstance(fee_range, dict) else fee
         brand_parts = [f"{bf.get('brand')} {bf.get('amount', 0):,}원" for bf in brand_fees if isinstance(bf, dict)]
-        return f"{min_fee:,}~{max_fee:,}원 ({'/'.join(brand_parts[:3])}) ({fee_band})", False
+        return " / ".join(brand_parts[:3]), False
 
-    return f"{fee:,}원 ({fee_band})", False
+    return f"{fee:,}원", False
 
 
 def summarize_key_benefits(card: Dict[str, Any]) -> str:

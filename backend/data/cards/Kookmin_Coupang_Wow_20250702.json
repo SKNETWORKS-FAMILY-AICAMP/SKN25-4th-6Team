@@ -21,7 +21,7 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 7000,
+      "amount": 20000,
       "total": 20000
     },
     "brand_fees": [

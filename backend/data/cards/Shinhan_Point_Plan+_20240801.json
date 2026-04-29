@@ -22,7 +22,7 @@
   },
   "annual_fee": {
     "primary_card": {
-      "amount": 7000,
+      "amount": 30000,
       "total": 30000
     },
     "brand_fees": [
@@ -34,7 +34,12 @@
         "brand": "VISA Platinum",
         "amount": 33000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 30000,
+      "max": 33000
+    }
   },
   "benefits": {
     "benefit_items": [

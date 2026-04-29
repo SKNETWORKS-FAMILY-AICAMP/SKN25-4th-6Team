@@ -27,14 +27,11 @@
     },
     "brand_fees": [
       {
-        "brand": "Mastercard",
-        "amount": 0
-      },
-      {
         "brand": "UnionPay",
         "amount": 7000
       }
-    ]
+    ],
+    "notes": "UnionPay 7천원 / Mastercard 연회비 문서 미확인"
   },
   "benefits": {
     "benefit_items": [

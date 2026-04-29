@@ -29,22 +29,20 @@
     },
     "brand_fees": [
       {
-        "brand": "Union Pay",
+        "brand": "UnionPay",
         "amount": 10000
       },
       {
-        "brand": "JCB",
-        "amount": 12000
-      },
-      {
-        "brand": "VISA",
-        "amount": 12000
-      },
-      {
-        "brand": "Master",
+        "brand": "JCB/VISA/Master",
         "amount": 12000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 10000,
+      "max": 12000
+    },
+    "notes": "UnionPay 10,000원 / JCB·VISA·Master 12,000원"
   },
   "benefits": {
     "benefit_items": [

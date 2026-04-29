@@ -27,14 +27,20 @@
     },
     "brand_fees": [
       {
-        "brand": "VISA",
-        "amount": 0
+        "brand": "VISA (골드)",
+        "amount": 10000
       },
       {
-        "brand": "Mastercard",
-        "amount": 90000
+        "brand": "Mastercard (플래티넘)",
+        "amount": 100000
       }
-    ]
+    ],
+    "has_brand_fee_difference": true,
+    "fee_range": {
+      "min": 10000,
+      "max": 100000
+    },
+    "notes": "VISA 골드 1만원 / VISA·Mastercard 플래티넘 10만원"
   },
   "benefits": {
     "benefit_items": [
