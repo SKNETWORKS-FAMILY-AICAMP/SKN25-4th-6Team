@@ -67,6 +67,20 @@ def load_app_state(
     )
 
 
+MBTI_TYPES = {
+    "ISTJ", "ISFJ", "INFJ", "INTJ", "ISTP", "ISFP", "INFP", "INTP",
+    "ESTJ", "ESFJ", "ENFJ", "ENTJ", "ESTP", "ESFP", "ENFP", "ENTP",
+}
+
+
+def _detect_mbti(text: str) -> str:
+    upper = text.upper()
+    for m in MBTI_TYPES:
+        if m in upper:
+            return m
+    return ""
+
+
 def chat(
     question: str,
     chat_history: List[Dict[str, str]],
@@ -97,6 +111,20 @@ def chat(
     merged_categories = sorted(set(user_filters.get("categories", []) + inferred["categories"]))
     merged_fee_bands = sorted(set(user_filters.get("fee_bands", []) + inferred["fee_bands"]))
 
+    # MBTI 감지: 질문 또는 프로필에서
+    question_mbti = _detect_mbti(question)
+    profile_mbti = (user_profile or {}).get("mbti", "")
+
+    # 검색 풀 결정 (질문에 MBTI 명시 시 해당 타입 카드만 검색)
+    search_cards = app_state.cards
+    if question_mbti and not prev_card_ids:
+        mbti_pool = [
+            c for c in app_state.cards
+            if question_mbti in (safe_get(c, ["_derived", "mbti_types"], []) or [])
+        ]
+        if len(mbti_pool) >= 3:
+            search_cards = mbti_pool
+
     # 이전 추천 카드 ID가 있으면 해당 카드를 우선 컨텍스트로 사용
     if prev_card_ids:
         prev_id_set = set(prev_card_ids)
@@ -105,7 +133,7 @@ def chat(
             if card.get("_file", "").replace(".json", "") in prev_id_set
         ]
         retrieved = prev_retrieved if prev_retrieved else retrieve_cards_hybrid(
-            cards=app_state.cards,
+            cards=search_cards,
             query=question,
             top_k=top_k,
             banks=merged_banks,
@@ -118,7 +146,7 @@ def chat(
         )
     else:
         retrieved = retrieve_cards_hybrid(
-            cards=app_state.cards,
+            cards=search_cards,
             query=question,
             top_k=top_k,
             banks=merged_banks,
@@ -129,6 +157,12 @@ def chat(
             similarity_threshold=app_state.rag_settings["similarity_threshold"],
             synonyms=app_state.synonyms,
         )
+
+    # 프로필 MBTI 부스팅: 질문에 MBTI 없고 프로필 MBTI 있으면 해당 타입 카드 앞으로
+    if profile_mbti and not question_mbti and not prev_card_ids:
+        matched = [(s, c) for s, c in retrieved if profile_mbti in (safe_get(c, ["_derived", "mbti_types"], []) or [])]
+        unmatched = [(s, c) for s, c in retrieved if profile_mbti not in (safe_get(c, ["_derived", "mbti_types"], []) or [])]
+        retrieved = (matched + unmatched)[:top_k]
 
     # 보유 카드 관련 질문 감지
     OWNED_CARD_KEYWORDS = ["보유한 카드", "내 카드", "내카드", "보유 카드", "갖고 있는 카드", "가진 카드"]

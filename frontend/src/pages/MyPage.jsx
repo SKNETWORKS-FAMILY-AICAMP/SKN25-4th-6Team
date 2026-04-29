@@ -2,6 +2,25 @@ import { useEffect, useState } from 'react';
 import { getCards } from '../api/client';
 import useUserStore from '../store/userStore';
 
+const MBTI_PROFILES = [
+  { type: 'ISTJ', emoji: '📋', label: '신뢰할 수 있는 관리자' },
+  { type: 'ISFJ', emoji: '🏠', label: '용감한 수호자' },
+  { type: 'INFJ', emoji: '🌿', label: '선의의 옹호자' },
+  { type: 'INTJ', emoji: '🎯', label: '용의주도한 전략가' },
+  { type: 'ISTP', emoji: '🔧', label: '만능 재주꾼' },
+  { type: 'ISFP', emoji: '🎨', label: '호기심 많은 예술가' },
+  { type: 'INFP', emoji: '📚', label: '열정적인 중재자' },
+  { type: 'INTP', emoji: '💡', label: '논리적인 사색가' },
+  { type: 'ESTJ', emoji: '⚡', label: '엄격한 관리자' },
+  { type: 'ESFJ', emoji: '🤝', label: '사교적인 외교관' },
+  { type: 'ENFJ', emoji: '🌟', label: '정의로운 사회운동가' },
+  { type: 'ENTJ', emoji: '👑', label: '대담한 통솔자' },
+  { type: 'ESTP', emoji: '🚀', label: '모험을 즐기는 사업가' },
+  { type: 'ESFP', emoji: '🎉', label: '자유로운 연예인' },
+  { type: 'ENFP', emoji: '✨', label: '재기발랄한 활동가' },
+  { type: 'ENTP', emoji: '💫', label: '뜨거운 논쟁가' },
+];
+
 // 각 필드의 선택지 정의
 const FIELD_OPTIONS = {
   age_group: ['20대', '30대', '40대', '50대 이상'],
@@ -10,6 +29,7 @@ const FIELD_OPTIONS = {
   annual_fee_range: ['없음 선호', '3만원 이하', '5만원 이상도 OK'],
   preferred_benefits: ['즉시할인', '포인트적립', '마일리지', '캐시백'],
   lifestyles: ['카라이프', '여행러', '카페인중독', '디지털노마드', '헬스·건강', '가족중심', '배달·외식', '문화생활', '쇼핑'],
+  mbti: MBTI_PROFILES.map(p => p.type),
 };
 
 const PROFILE_ITEMS = [
@@ -19,6 +39,7 @@ const PROFILE_ITEMS = [
   { key: 'annual_fee_range',   label: '연회비 허용', icon: '💰' },
   { key: 'preferred_benefits', label: '선호 혜택',   icon: '🎯' },
   { key: 'lifestyles',         label: '라이프스타일', icon: '✨' },
+  { key: 'mbti',               label: 'MBTI',        icon: '🧠' },
 ];
 
 const formatValue = (key, value) => {
@@ -156,11 +177,12 @@ function ProfileCard({ item, value, onSave }) {
 const AVATAR_OPTIONS = ['🧑‍💻', '👤', '😊', '😎', '🦸', '🎩', '🐱', '🦊', '🌟', '🧑‍🎤'];
 
 export default function MyPage({ onGoChat }) {
-  const { profile, updateProfile } = useUserStore();
+  const { profile, updateProfile, resetOnboarding } = useUserStore();
   const [cardSearch, setCardSearch] = useState('');
   const [showDropdown, setShowDropdown] = useState(false);
   const [cardOptions, setCardOptions] = useState([]);
   const [showAvatarPicker, setShowAvatarPicker] = useState(false);
+  const [selectedMbti, setSelectedMbti] = useState(null);
 
   useEffect(() => {
     getCards()
@@ -193,7 +215,7 @@ export default function MyPage({ onGoChat }) {
   };
 
   return (
-    <div className="flex h-screen overflow-hidden bg-[#F5F4F0]">
+    <div className="fixed inset-0 flex overflow-hidden bg-[#F5F4F0]">
       {/* 사이드바 */}
       <aside className="w-[240px] min-w-[240px] bg-[#1A1A1A] text-white flex flex-col px-5 py-8 relative overflow-hidden">
         <div className="absolute -top-1/2 -left-1/3 w-[200%] h-[200%] pointer-events-none"
@@ -226,7 +248,19 @@ export default function MyPage({ onGoChat }) {
           <div className="mb-8">
             <div className="flex items-center justify-between mb-5">
               <h2 className="text-xl font-bold text-[#1A1A1A]">MY PROFILE</h2>
-              <span className="text-xs text-[#999]">항목을 클릭해서 수정하세요</span>
+              <div className="flex items-center gap-3">
+                <span className="text-xs text-[#999]">항목을 클릭해서 수정하세요</span>
+                <button
+                  onClick={() => {
+                    if (window.confirm('프로필을 초기화하면 모든 설정이 삭제되고 온보딩으로 돌아갑니다. 계속할까요?')) {
+                      resetOnboarding();
+                    }
+                  }}
+                  className="px-3 py-1 text-xs text-red-400 border border-red-200 rounded-lg hover:bg-red-50 cursor-pointer bg-transparent transition-all duration-150"
+                >
+                  초기화
+                </button>
+              </div>
             </div>
 
             <div className="flex items-start gap-5">
@@ -342,6 +376,58 @@ export default function MyPage({ onGoChat }) {
               ))}
             </div>
           </div>
+
+          {/* MBTI 카드 탐색 */}
+          <div className="mt-10">
+            <h2 className="text-xl font-bold text-[#1A1A1A] mb-1">MBTI 카드 탐색</h2>
+            <p className="text-sm text-[#999] mb-4">MBTI 유형을 선택하면 어울리는 카드를 확인할 수 있어요</p>
+
+            <div className="grid grid-cols-4 gap-2 mb-5">
+              {MBTI_PROFILES.map(({ type, emoji, label }) => (
+                <button
+                  key={type}
+                  onClick={() => setSelectedMbti(selectedMbti === type ? null : type)}
+                  className={`px-3 py-2 rounded-xl text-left border-2 cursor-pointer transition-all duration-150
+                    ${selectedMbti === type
+                      ? 'bg-[#E8F4FF] border-[#2563EB] text-[#2563EB]'
+                      : 'bg-white border-[#E5E5E0] text-[#555] hover:border-[#2563EB]/40 hover:bg-[#E8F4FF]/30'
+                    }`}
+                >
+                  <div className="text-xs font-bold">{emoji} {type}</div>
+                  <div className="text-[9px] mt-0.5 truncate opacity-60">{label}</div>
+                </button>
+              ))}
+            </div>
+
+            {selectedMbti && (() => {
+              const mbtiProfile = MBTI_PROFILES.find(p => p.type === selectedMbti);
+              const mbtiCards = cardOptions.filter(c => (c.mbti_types || []).includes(selectedMbti));
+              return (
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="text-lg">{mbtiProfile?.emoji}</span>
+                    <span className="text-sm font-bold text-[#1A1A1A]">{selectedMbti} · {mbtiProfile?.label}</span>
+                    <span className="text-xs text-[#999] bg-[#E8F4FF] text-[#2563EB] px-2 py-0.5 rounded-full font-medium">{mbtiCards.length}개</span>
+                  </div>
+                  {mbtiCards.length === 0 ? (
+                    <div className="text-sm text-[#999] py-6 text-center bg-white rounded-xl border border-dashed border-[#E5E5E0]">
+                      해당 유형에 매칭된 카드가 없어요
+                    </div>
+                  ) : (
+                    <div className="grid grid-cols-4 gap-3">
+                      {mbtiCards.map((card) => (
+                        <div key={card.card_id} className="bg-white rounded-xl p-4 shadow-sm border border-[#E5E5E0] hover:border-[#2563EB]/30 transition-colors duration-150">
+                          <div className="text-[10px] text-[#999] mb-1">{card.company}</div>
+                          <div className="text-sm font-semibold text-[#1A1A1A] leading-tight">{card.name}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })()}
+          </div>
+
         </div>
       </main>
     </div>

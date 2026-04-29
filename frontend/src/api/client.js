@@ -42,3 +42,21 @@ export const getChatHistory = (userId) =>
 /** 카드 목록 조회 */
 export const getCards = () =>
   apiClient.get('/api/cards/');
+<<<<<<< HEAD
+=======
+
+export const getSessions = () =>
+  apiClient.get('/api/sessions/');
+
+export const createSession = (title) =>
+  apiClient.post('/api/sessions/', { title });
+
+export const getSessionDetail = (sessionId) =>
+  apiClient.get(`/api/sessions/${sessionId}/`);
+
+export const addMessage = (sessionId, role, text, payload = {}) =>
+  apiClient.post(`/api/sessions/${sessionId}/`, { role, text, payload });
+
+export const deleteSession = (sessionId) =>
+  apiClient.delete(`/api/sessions/${sessionId}/`);
+>>>>>>> 11272c25f3266688cfc98c122137d133b88c755b
