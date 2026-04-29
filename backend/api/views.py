@@ -8,6 +8,16 @@ from django.views.decorators.http import require_http_methods
 
 from .models import ChatSession, ChatMessage
 
+try:
+    from src.utils import safe_get
+except Exception:
+    def safe_get(obj, keys, default=None):
+        for k in keys:
+            if not isinstance(obj, dict):
+                return default
+            obj = obj.get(k, default)
+        return obj
+
 logger = logging.getLogger(__name__)
 
 BACKEND_ROOT = Path(__file__).resolve().parent.parent
@@ -28,6 +38,7 @@ def _get_app_state():
             rag_config_path=BACKEND_ROOT / "rag_config" / "rag_settings.json",
             synonyms_config_path=BACKEND_ROOT / "rag_config" / "synonyms.json",
             rag_artifacts_dir=BACKEND_ROOT / "vector_store",
+            mbti_config_path=BACKEND_ROOT / "rag_config" / "mbti_rules.json",
         )
         logger.info("AppState 로드 완료: 카드 %d개", len(_app_state.cards))
     except Exception as e:
@@ -144,6 +155,8 @@ def _serialize_card(card: dict) -> dict:
         for t, items in sorted(by_threshold.items())
     ][:4]
 
+    mbti_types = safe_get(card, ["_derived", "mbti_types"], []) or []
+
     return {
         "card_id": card.get("_file", "").replace(".json", ""),
         "name": name,
@@ -152,30 +165,32 @@ def _serialize_card(card: dict) -> dict:
         "categories": categories[:5],
         "brands": brands[:3] if isinstance(brands, list) else [],
         "benefit_groups": benefit_groups,
+        "mbti_types": mbti_types[:2],
     }
 
 
 @require_http_methods(["GET"])
 def cards_list_view(request):
-    """data/cards/ 의 JSON 파일을 읽어 카드 목록 반환"""
-    cards = []
-    for idx, path in enumerate(sorted(CARDS_DIR.glob("*.json")), start=1):
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-            card_info = data.get("card", {})
-            name = card_info.get("name") or data.get("metadata", {}).get("카드명", path.stem)
-            company_raw = card_info.get("bank") or data.get("metadata", {}).get("카드사", "")
+    """AppState에서 카드 목록 반환 (MBTI 포함)"""
+    try:
+        app_state = _get_app_state()
+        cards = []
+        for idx, card in enumerate(sorted(app_state.cards, key=lambda c: c.get("_file", "")), start=1):
+            name = safe_get(card, ["card", "name"], "") or safe_get(card, ["metadata", "카드명"], card.get("_file", "").replace(".json", ""))
+            company_raw = safe_get(card, ["card", "bank"], "") or safe_get(card, ["metadata", "카드사"], "")
             company = _normalize_company(company_raw)
+            mbti_types = safe_get(card, ["_derived", "mbti_types"], []) or []
             cards.append({
                 "id": idx,
                 "name": name,
                 "company": company,
-                "card_id": path.stem,
+                "card_id": card.get("_file", "").replace(".json", ""),
+                "mbti_types": mbti_types[:2],
             })
-        except Exception as e:
-            logger.warning("카드 파일 로드 실패 %s: %s", path.name, e)
-
-    return JsonResponse({"cards": cards})
+        return JsonResponse({"cards": cards})
+    except Exception as e:
+        logger.exception("cards_list_view 오류")
+        return JsonResponse({"error": str(e)}, status=500)
 
 
 @csrf_exempt

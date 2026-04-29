@@ -11,3 +11,4 @@ backend/chroma/*
 frontend/.vite/
 frontend/.env
 .codex
+.DS_Store

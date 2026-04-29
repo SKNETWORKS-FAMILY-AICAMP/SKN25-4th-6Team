@@ -9,7 +9,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple
 
-from .cards import load_cards, load_category_rules
+from .cards import load_cards, load_category_rules, load_mbti_profiles
 from .llm import llm_answer
 from .retrieval import (
     infer_filters_from_question,
@@ -37,11 +37,13 @@ def load_app_state(
     rag_config_path: Path,
     synonyms_config_path: Path,
     rag_artifacts_dir: Path,
+    mbti_config_path: Optional[Path] = None,
 ) -> AppState:
     category_rules = load_category_rules(category_config_path)
     rag_settings = load_rag_settings(rag_config_path)
     synonyms = load_synonyms(str(synonyms_config_path))
-    cards = load_cards(data_dir, category_rules)
+    mbti_profiles = load_mbti_profiles(mbti_config_path) if mbti_config_path and mbti_config_path.exists() else {}
+    cards = load_cards(data_dir, category_rules, mbti_profiles)
     vector_store = load_vector_store(rag_artifacts_dir)
 
     banks = sorted({safe_get(c, ["card", "bank"], "미분류") for c in cards})

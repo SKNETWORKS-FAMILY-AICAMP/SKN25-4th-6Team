@@ -22,6 +22,39 @@ def resolve_card_data_dir(data_dir: Path) -> Path:
     return data_dir
 
 
+def load_mbti_profiles(config_path: Path) -> Dict[str, Any]:
+    try:
+        raw = json.loads(config_path.read_text(encoding="utf-8"))
+        return raw.get("profiles", {}) if isinstance(raw, dict) else {}
+    except Exception:
+        return {}
+
+
+def infer_mbti(card: Dict[str, Any], mbti_profiles: Dict[str, Any]) -> List[str]:
+    if not mbti_profiles:
+        return []
+
+    from collections import Counter
+    cat_counts: Counter = Counter()
+    for item in (card.get("benefits", {}).get("benefit_items") or []):
+        c = item.get("category", "")
+        if c:
+            cat_counts[c] += 1
+
+    fee_band = safe_get(card, ["_derived", "fee_band"], "")
+
+    scores: Dict[str, float] = {}
+    for mbti, profile in mbti_profiles.items():
+        cat_score = sum(cat_counts.get(c, 0) for c in profile.get("categories", []))
+        if cat_score == 0:
+            continue
+        fee_bonus = 1.5 if fee_band in profile.get("fee_bands", []) else 0.0
+        scores[mbti] = cat_score + fee_bonus
+
+    ranked = sorted(scores.items(), key=lambda x: x[1], reverse=True)
+    return [mbti for mbti, _ in ranked[:2] if _ > 0]
+
+
 def load_category_rules(config_path: Path) -> List[Dict[str, Any]]:
     try:
         raw = json.loads(config_path.read_text(encoding="utf-8"))
@@ -164,7 +197,7 @@ def infer_categories(data: Dict[str, Any], category_rules: List[Dict[str, Any]])
     return categories
 
 
-def load_cards(data_dir: Path, category_rules: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+def load_cards(data_dir: Path, category_rules: List[Dict[str, Any]], mbti_profiles: Dict[str, Any] = None) -> List[Dict[str, Any]]:
     """data_dir 아래 카드 JSON을 모두 로드하고 검색용 파생 필드를 붙여 반환"""
     cards: List[Dict[str, Any]] = []
     resolved_dir = resolve_card_data_dir(data_dir)
@@ -188,6 +221,8 @@ def load_cards(data_dir: Path, category_rules: List[Dict[str, Any]]) -> List[Dic
                 "fee_band": classify_fee_band(annual_fee),
                 "categories": infer_categories(data, category_rules),
             }
+            if mbti_profiles:
+                data["_derived"]["mbti_types"] = infer_mbti(data, mbti_profiles)
             cards.append(data)
         except Exception:
             continue

@@ -45,12 +45,20 @@ function CardBlocks({ cards, onDetail }) {
                 <div className="flex flex-col items-end gap-1.5 flex-shrink-0">
                   <span className="text-[10px] text-[#BBB]">{isOpen ? '▲' : '▼'}</span>
                   <div className="flex gap-1 flex-wrap justify-end">
-                    {card.categories.slice(0, 3).map((cat) => (
+                    {card.categories.slice(0, 2).map((cat) => (
                       <span
                         key={cat}
                         className="px-1.5 py-0.5 bg-[#F5C842]/20 text-[#8A6E00] text-[9px] rounded-full font-medium"
                       >
                         {cat}
+                      </span>
+                    ))}
+                    {card.mbti_types?.map((mbti) => (
+                      <span
+                        key={mbti}
+                        className="px-1.5 py-0.5 bg-[#E8F4FF] text-[#2563EB] text-[9px] rounded-full font-bold tracking-wide"
+                      >
+                        {mbti}
                       </span>
                     ))}
                   </div>
