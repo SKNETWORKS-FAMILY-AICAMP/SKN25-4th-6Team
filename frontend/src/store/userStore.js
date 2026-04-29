@@ -1,4 +1,4 @@
-﻿import { create } from 'zustand';
+import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 const initialProfile = {
@@ -9,7 +9,7 @@ const initialProfile = {
   monthly_spend: '',
   owned_cards: [],
   preferred_benefits: [],
-  avatar: '?쭛?랅윊?,
+  avatar: '🧑‍💻',
 };
 
 const isProfileComplete = (profile) =>
