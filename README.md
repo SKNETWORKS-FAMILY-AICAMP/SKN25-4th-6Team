@@ -45,6 +45,38 @@
     <td align="center"><b>이근혁</b><br>팀원</td>
   </tr>
   <tr>
+    <td align="center">
+      - Django 백엔드 API 서버<br>
+      - GPT Vision OCR 데이터 추출 파이프라인<br>
+      - Docker 개발 환경 세팅<br>
+      - 발표
+    </td>
+    <td align="center">
+      - 프론트엔드 : 스플래시 · 온보딩 · 챗봇 · 마이페이지 화면 구현<br>
+      - UI 스타일링<br>
+      - 백엔드 API 연동<br>
+      - PPT
+    </td>
+    <td align="center">
+      - Jinja2 기반 시스템 프롬프트 설계<br>
+      - 사용자 의도 분류 체계 및 프롬프트 설계<br>
+      - 라이프스타일 태그 기획<br>
+      - Figma 와이어프레임<br>
+      - PPT 및 발표
+    </td>
+    <td align="center">
+      - Docker Compose 기반 멀티 컨테이너 환경 구성<br>
+      - Frontend · Backend 컨테이너 세팅<br>
+      - 카드 데이터 로드 및 청킹 파이프라인 구현
+    </td>
+    <td align="center">
+      - 텍스트 JSON 구조화<br>
+      - RAG 파이프라인 구축<br>
+      - 키워드 검색과 벡터 검색 기반 리트리벌 구현<br>
+      - 메타데이터 필터링
+    </td>
+  </tr>
+  <tr>
     <td align="center"><a href="https://github.com/yeony-park">@yeony-park</a></td>
     <td align="center"><a href="https://github.com/bizseohyunkim">@bizseohyunkim</a></td>
     <td align="center"><a href="https://github.com/qkrwlgus89">@qkrwlgus89</a></td>
