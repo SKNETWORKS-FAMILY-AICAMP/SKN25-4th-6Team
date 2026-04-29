@@ -21,6 +21,14 @@
 
 <br>
 
+## 시연 영상
+
+<div align="center">
+  <img src="./docs/시연영상.gif" alt="RAIchU 시연 영상" width="800"/>
+</div>
+
+<br>
+
 ## 프로젝트 기간
 
 **2026.04.14 ~ 2026.04.28** (SK Networks AI Camp 25기 · 6팀 · 4차 미니 프로젝트)
@@ -413,7 +421,7 @@ docker-compose exec backend bash scripts/rebuild_rag_index.sh
 > **박연정** : <br>
 > **김서현** : <br>
 > **박지현** : <br>
-> **신문수** : <br>
+> **신문수** : <br> Docker Compose를 활용해 Django와 React(Vite)로 구성된 컨테이너 환경을 구축하였고 프론트 앤드와 백엔드를 분리한 개발 구조를 직접 설정해보았다 간단한 환경 세팅이었지만 서비스가 어떤 구조로 구성되고 연결되는지 흐름을 이해할 수 있었던 점이 의미 있었다. 아직 설정 과정이 익숙하진 않지만 전체 구조를 경험해볼 수 있었던 좋은 경험이라고 생각한다.
 > **이근혁** : <br>
 
 ---
