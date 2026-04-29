@@ -31,11 +31,11 @@
 
 <table>
   <tr>
-    <td align="center"><img src="assets/yeonypark.png" width="100"/></td>
-    <td align="center"><img src="assets/seohyunkim.png" width="100"/></td>
-    <td align="center"><img src="assets/jihyunpark.png" width="100"/></td>
-    <td align="center"><img src="assets/moonsusin.png" width="100"/></td>
-    <td align="center"><img src="assets/geunhyuklee.png" width="100"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/SKNETWORKS-FAMILY-AICAMP/SKN25-4th-6Team/biz.seohyunkim/assets/yeonypark.png" width="100"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/SKNETWORKS-FAMILY-AICAMP/SKN25-4th-6Team/biz.seohyunkim/assets/seohyunkim.png" width="100"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/SKNETWORKS-FAMILY-AICAMP/SKN25-4th-6Team/biz.seohyunkim/assets/jihyunpark.png" width="100"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/SKNETWORKS-FAMILY-AICAMP/SKN25-4th-6Team/biz.seohyunkim/assets/moonsusin.png" width="100"/></td>
+    <td align="center"><img src="https://raw.githubusercontent.com/SKNETWORKS-FAMILY-AICAMP/SKN25-4th-6Team/biz.seohyunkim/assets/geunhyuklee.png" width="100"/></td>
   </tr>
   <tr>
     <td align="center"><b>박연정</b><br>팀장</td>
